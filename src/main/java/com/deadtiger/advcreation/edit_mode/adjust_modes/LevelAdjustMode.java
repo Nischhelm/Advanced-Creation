@@ -193,7 +193,7 @@ public class LevelAdjustMode extends BaseAdjustMode
         //the initial radiusVec
         Vec3d radiusVec = new Vec3d(radius, 0, 0);
         EditMode.LINEVEC = radiusVec;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
 
         // Jumps to one of the nice circles in the middleCircleDict when the length is of the radius is close to it
         // These are recorded in the XZ plane and are transformed to other planes when necessary

@@ -44,7 +44,7 @@ public class Logging
         TIME = LocalDateTime.now(ZoneId.systemDefault());
         PREV_LOGTIME = System.currentTimeMillis();
 
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         MOD_LOGS_DIR = new File(mcDataDir, "mod_logs");
 
     }

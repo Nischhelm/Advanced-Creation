@@ -171,7 +171,7 @@ public class PaintBucketAdjustMode extends BaseAdjustMode
      */
     public IBlockState sameBlockStateExceptColorOrVariant(IBlockState currBlockState, IBlockState prevBlockState,IBlockState newBlockState)
     {
-        if(prevBlockState.getBlock().getUnlocalizedName().equals(currBlockState.getBlock().getUnlocalizedName()))
+        if(prevBlockState.getBlock().getTranslationKey().equals(currBlockState.getBlock().getTranslationKey()))
         {
             //the class of the current block is the same as
             for (IProperty key :prevBlockState.getPropertyKeys())

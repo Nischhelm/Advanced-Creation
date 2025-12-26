@@ -422,7 +422,7 @@ public class SelectInventoryItemGuiOverlay extends AbstractGuiOverlay
     {
         if (!this.mc.playerController.isSpectator())
         {
-            mc.mcProfiler.startSection("toolHighlight");
+            mc.profiler.startSection("toolHighlight");
 
             if (this.remainingHighlightTicks > 0 && !this.highlightingItemStack.isEmpty())
             {
@@ -461,7 +461,7 @@ public class SelectInventoryItemGuiOverlay extends AbstractGuiOverlay
                 }
             }
 
-            mc.mcProfiler.endSection();
+            mc.profiler.endSection();
         }
 
     }

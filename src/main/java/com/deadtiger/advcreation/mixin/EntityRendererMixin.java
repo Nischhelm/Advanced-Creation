@@ -190,7 +190,7 @@ public abstract class EntityRendererMixin
         return ModEntityRenderer.getCurrStartCursorVector(entity, partialTicks);
     }
 
-    @Redirect(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "net/minecraft/util/math/Vec3d.addVector(DDD)Lnet/minecraft/util/math/Vec3d;"))
+    @Redirect(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;add(DDD)Lnet/minecraft/util/math/Vec3d;"))
     public Vec3d customVectorCalculation(Vec3d vec3d, double x, double y, double z)
     {
 //        System.out.println("Successfully done the mixin customVectorCalculation in getMouseOver(F)V");

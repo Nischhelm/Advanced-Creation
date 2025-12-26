@@ -121,9 +121,9 @@ public class PullToolMode extends BaseToolMode
         if(surfaceBlocks != 0)
             maxPullVecLenght = (ConfigurationHandler.toolConfig.MAX_BLOCK_COUNT*10)/surfaceBlocks;
         
-        if(pullVec.lengthVector() > maxPullVecLenght)
+        if(pullVec.length() > maxPullVecLenght)
         {
-            pullVec = pullVec.scale(maxPullVecLenght/pullVec.lengthVector());
+            pullVec = pullVec.scale(maxPullVecLenght/pullVec.length());
         }
 
         if(BuildMode.WORK_DIRECTION_MODE == EnumDirectionMode.GROUND)
@@ -403,9 +403,9 @@ public class PullToolMode extends BaseToolMode
             }
 
             //limit the size of this newPullVec
-            if(newPullVec.lengthVector() > maxPullVecLenght)
+            if(newPullVec.length() > maxPullVecLenght)
             {
-                newPullVec = newPullVec.scale(maxPullVecLenght /newPullVec.lengthVector());
+                newPullVec = newPullVec.scale(maxPullVecLenght /newPullVec.length());
             }
 
             if(BuildMode.DELETE_MODE)

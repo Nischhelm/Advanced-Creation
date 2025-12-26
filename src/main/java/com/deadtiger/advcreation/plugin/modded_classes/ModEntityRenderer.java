@@ -207,7 +207,7 @@ public class ModEntityRenderer {
             if(ModEntity.currMouseVec!= null && ModEntity.currCursorVec.end != null)
                 return ModEntity.currCursorVec.end;
         }
-        return  eyes.addVector(lookVector.x * reach, lookVector.y * reach, lookVector.z * reach);
+        return  eyes.add(lookVector.x * reach, lookVector.y * reach, lookVector.z * reach);
 
     }
 
@@ -219,7 +219,7 @@ public class ModEntityRenderer {
             if(ModEntity.currMouseVec!= null && ModEntity.currCursorVec.end != null)
                 return ModEntity.currCursorVec.end;
         }
-        return  eyes.addVector(lookX,lookY,lookZ);
+        return  eyes.add(lookX,lookY,lookZ);
 
     }
 

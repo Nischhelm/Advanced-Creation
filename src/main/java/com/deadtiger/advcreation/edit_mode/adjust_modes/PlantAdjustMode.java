@@ -153,7 +153,7 @@ public class PlantAdjustMode extends BaseAdjustMode
         //the initial radiusVec
         Vec3d radiusVec = new Vec3d(radius,0,0);
         EditMode.LINEVEC = radiusVec;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
 
         //constraining the max radius
         if (radiusLength > 50.0) {
@@ -472,7 +472,7 @@ public class PlantAdjustMode extends BaseAdjustMode
                 if(handBlockState.getBlock() instanceof BlockDoublePlant)
                 {
                     int faceId = AdvCreation.rand.nextInt(3);
-                    handBlockState = handBlockState.withProperty(BlockDoublePlant.FACING,  EnumFacing.getHorizontal(faceId));
+                    handBlockState = handBlockState.withProperty(BlockDoublePlant.FACING,  EnumFacing.byHorizontalIndex(faceId));
 
 
 

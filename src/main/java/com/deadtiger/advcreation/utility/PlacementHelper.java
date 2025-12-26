@@ -183,8 +183,8 @@ public class PlacementHelper
 
         //unit vec and the number of times to iterate
         Vec3d unitVector = toAddVec.normalize().scale(0.10);
-        double toAddVeclenght = toAddVec.lengthVector();
-        int times = (int) Math.ceil(toAddVeclenght / (unitVector.lengthVector()));
+        double toAddVeclenght = toAddVec.length();
+        int times = (int) Math.ceil(toAddVeclenght / (unitVector.length()));
 
         //variables that are used in the loop
         Vec3d stepsTo = new Vec3d(0, 0, 0);
@@ -199,7 +199,7 @@ public class PlacementHelper
             Vec3d checkStepsTo = stepsTo.add(unitVector);
 
             //if the new vector is to long half the unitVector once and see if it fits
-            if(checkStepsTo.lengthVector() <= toAddVeclenght)
+            if(checkStepsTo.length() <= toAddVeclenght)
             {
                 stepsTo = checkStepsTo;
             }
@@ -209,7 +209,7 @@ public class PlacementHelper
                 stepsTo = stepsTo.add(unitVector);
             }
 
-            if(stepsTo.lengthVector() <= toAddVeclenght)
+            if(stepsTo.length() <= toAddVeclenght)
             {
                 currPosition = new BlockPos(startVec.add(stepsTo));
 
@@ -324,8 +324,8 @@ public class PlacementHelper
 
         //unit vec and the number of times to iterate
         Vec3d unitVector = toAddVec.normalize().scale(0.10);
-        double toAddVeclenght = toAddVec.lengthVector();
-        int times = (int) Math.ceil(toAddVeclenght / (unitVector.lengthVector()));
+        double toAddVeclenght = toAddVec.length();
+        int times = (int) Math.ceil(toAddVeclenght / (unitVector.length()));
 
         //variables that are used in the loop
         Vec3d currStep = new Vec3d(0, 0, 0);
@@ -341,7 +341,7 @@ public class PlacementHelper
         for (int i = 0; i < times+4; i++) {
 
             //if the new vector is to long half the unitVector once and see if it fits
-            if(nextStep.lengthVector() <= toAddVeclenght)
+            if(nextStep.length() <= toAddVeclenght)
             {
                 currStep = nextStep;
             }
@@ -351,7 +351,7 @@ public class PlacementHelper
                 currStep = currStep.add(unitVector);
             }
 
-            if(currStep.lengthVector() <= toAddVeclenght)
+            if(currStep.length() <= toAddVeclenght)
             {
                 currPosition = new BlockPos(startVec.add(currStep));
                 if (startBlock.getBlockState() != null && isWireRailOrNeedsConnection(startBlock))
@@ -515,8 +515,8 @@ public class PlacementHelper
 //
 //        //unit vec and the number of times to iterate
 //        Vec3d unitVector = toAddVec.normalize().scale(0.25);
-//        double toAddVeclenght = toAddVec.lengthVector();
-//        int times = (int) Math.ceil(toAddVeclenght / (unitVector.lengthVector()));
+//        double toAddVeclenght = toAddVec.length();
+//        int times = (int) Math.ceil(toAddVeclenght / (unitVector.length()));
 //
 //        //variables that are used in the loop
 //        Vec3d stepsTo = new Vec3d(0, 0, 0);
@@ -528,7 +528,7 @@ public class PlacementHelper
 //            Vec3d checkStepsTo = stepsTo.add(unitVector);
 //
 //            //if the new vector is to long half the unitVector once and see if it fits
-//            if(checkStepsTo.lengthVector() <= toAddVeclenght)
+//            if(checkStepsTo.length() <= toAddVeclenght)
 //            {
 //                stepsTo = checkStepsTo;
 //            }
@@ -538,7 +538,7 @@ public class PlacementHelper
 //                stepsTo = stepsTo.add(unitVector);
 //            }
 //
-//            if(stepsTo.lengthVector() <= toAddVeclenght)
+//            if(stepsTo.length() <= toAddVeclenght)
 //            {
 //                currPosition = new BlockPos(startVec.add(stepsTo));
 ////                if (startBlock.getBlockState() != null && startBlock.getBlockState().getBlock() instanceof BlockRedstoneWire &&  (prevPositions[0] == null || !prevPositions[0].equals(currPosition)))
@@ -629,8 +629,8 @@ public class PlacementHelper
 //
 //        //unit vec and the number of times to iterate
 //        Vec3d unitVector = toAddVec.normalize().scale(0.25);
-//        double toAddVeclenght = toAddVec.lengthVector();
-//        int times = (int) Math.ceil(toAddVeclenght / (unitVector.lengthVector()));
+//        double toAddVeclenght = toAddVec.length();
+//        int times = (int) Math.ceil(toAddVeclenght / (unitVector.length()));
 //
 //        //variables that are used in the loop
 //        Vec3d currStep = new Vec3d(0, 0, 0);
@@ -644,7 +644,7 @@ public class PlacementHelper
 //            Vec3d nextStep = currStep.add(unitVector);
 //
 //            //if the new vector is to long half the unitVector once and see if it fits
-//            if(nextStep.lengthVector() <= toAddVeclenght)
+//            if(nextStep.length() <= toAddVeclenght)
 //            {
 //                currStep = nextStep;
 //            }
@@ -654,7 +654,7 @@ public class PlacementHelper
 //                currStep = currStep.add(unitVector);
 //            }
 //
-//            if(currStep.lengthVector() <= toAddVeclenght)
+//            if(currStep.length() <= toAddVeclenght)
 //            {
 //                currPosition = new BlockPos(startVec.add(currStep));
 //                if (isWireRailOrNeedsConnection(startBlock))

@@ -55,7 +55,7 @@ public class IconMaker
             if (save)
             {
 
-                File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+                File mcDataDir = Minecraft.getMinecraft().gameDir;
                 File file1 = new File(mcDataDir, "advcreation_templates");
 
                 if (!file1.exists())

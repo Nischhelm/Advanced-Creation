@@ -789,7 +789,7 @@ public class HelpFunctions
         {
             Material stateMaterial = state.getMaterial();
             Block block = state.getBlock();
-            String blockName = block.getUnlocalizedName();
+            String blockName = block.getTranslationKey();
 
             if((stateMaterial == Material.SAND || stateMaterial == Material.ROCK || stateMaterial == Material.GROUND ||stateMaterial == Material.GRASS ||stateMaterial == Material.CLAY) &&
                     !(blockName.contains("polish") || blockName.contains("cut") || blockName.contains("cobble") ||

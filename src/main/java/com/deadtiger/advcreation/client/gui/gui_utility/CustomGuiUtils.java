@@ -320,7 +320,7 @@ public class CustomGuiUtils
     //get icon for a template
     public static ResourceLocation getResourceLocationsByName(Template template,EnumFacing face, boolean selected)
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         
         if (!saves.exists()) {
@@ -374,7 +374,7 @@ public class CustomGuiUtils
     
     public static boolean delectIcons(String templateName)
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
     
         if(!saves.exists())

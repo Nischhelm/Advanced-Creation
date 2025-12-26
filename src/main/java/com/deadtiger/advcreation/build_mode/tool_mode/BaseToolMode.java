@@ -221,7 +221,7 @@ public abstract class BaseToolMode
             BuildMode.setStartBlock(new TemplateBlock(face, block.getBlockPos().subtract(face.getDirectionVec()), Blocks.AIR.getDefaultState()));
 
 //            Vec3d faceDirVec = new Vec3d(face.getDirectionVec().getX(), face.getDirectionVec().getY(), face.getDirectionVec().getZ());
-//            BuildMode.setStartVec(hitVec.add(faceDirVec.scale(-1.0)).addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET));
+//            BuildMode.setStartVec(hitVec.add(faceDirVec.scale(-1.0)).add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET));
 //            newBlock = new TemplateBlock(face, block.getBlockPos().subtract(face.getDirectionVec()), Blocks.AIR.getDefaultState());
 //            BuildMode.setStartBlock(new TemplateBlock(newBlock.getFace(),newBlock.getBlockPos().add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET),newBlock.getBlockState()));
         }
@@ -230,7 +230,7 @@ public abstract class BaseToolMode
             BuildMode.setStartVec(hitVec);
             BuildMode.setStartBlock(block);
 
-//            BuildMode.setStartVec(hitVec.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET));
+//            BuildMode.setStartVec(hitVec.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET));
 //            BuildMode.setStartBlock((new TemplateBlock(newBlock.getFace(),newBlock.getBlockPos().add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET),newBlock.getBlockState())));
         }
 //        normalHitPos = newBlock.getBlockPos();
@@ -308,7 +308,7 @@ public abstract class BaseToolMode
                 BlockPos offsetBlockPos = BuildMode.START_BLOCK.getBlockPos().add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
                 BuildMode.START_BLOCK.setBlockPos(offsetBlockPos);
                 BuildMode.setStartBlock(BuildMode.getStartBlock());
-                BuildMode.setStartVec(BuildMode.getStartVec().addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET));
+                BuildMode.setStartVec(BuildMode.getStartVec().add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET));
                 this.addPositionToGuiOverlay(offsetBlockPos);
 //            GuiOverlayManager.setPlacePointedCoordinate(normalHitPos);
                 GuiOverlayManager.setPlacePointedCoordinate(offsetBlockPos);
@@ -634,7 +634,7 @@ public abstract class BaseToolMode
                 {
 
                     TemplateBlock tempBlock = currCopyTemplate.getTempBlockOffset(j);
-                    if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+                    if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
                         continue;
                     BuildMode.CURR_PREVIEW_BLOCKS.add(new TemplateBlock(tempBlock.getFace(), position2.add(tempBlock.getX_offset(), tempBlock.getY_offset(), tempBlock.getZ_offset()), tempBlock.getBlockState(), tempBlock.getTileEntity()));
 
@@ -649,7 +649,7 @@ public abstract class BaseToolMode
                 {
                     TemplateBlock tempBlock = offsetRotatedBlockList.get(j);
 
-                    if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+                    if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
                         continue;
 
 

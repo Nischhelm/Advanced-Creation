@@ -212,7 +212,7 @@ public class Template
 
     public boolean writeTemplate()
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         templateHashcode = generateTemplateHashcode();
 
@@ -238,7 +238,7 @@ public class Template
     public boolean moveToTrash()
     {
         boolean trashedSuccesfully = false;
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         File zipped_templates = new File(mcDataDir, "advcreation_templates_zips");
 
@@ -285,7 +285,7 @@ public class Template
     public boolean zipTemplate(boolean trash)
     {
         boolean zippedSuccessfully = false;
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         File newDir = new File(saves, this.getDirname());
 
@@ -358,7 +358,7 @@ public class Template
 
     public boolean createOnlyPropertiesFile()
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
 
         if (!ensureDirectoryExists(saves)) return false;
@@ -526,7 +526,7 @@ public class Template
     //load templates
     public boolean readTemplate(int i, String filename, boolean hashcode, String folderName)
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File folder = new File(mcDataDir, "advcreation_templates");
         File saves = new File(folder, filename.split(".nbt")[0]);
         File template = null;
@@ -1757,7 +1757,7 @@ public class Template
         {
             TemplateBlock tempBlock = getTempBlockOffset(j);
 
-            if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+            if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
                 continue;
 
             BlockPos new_pos = position.add(tempBlock.getX_offset(), tempBlock.getY_offset(), tempBlock.getZ_offset());

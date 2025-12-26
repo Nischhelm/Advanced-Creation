@@ -603,7 +603,7 @@ public class ClientEventHandler
                 GuiOverlayManager.setGuiOverlayVisible(false);
                 Minecraft.getMinecraft().gameSettings.thirdPersonView = 1;
                 //if the player was previously ingame then refresh the blacklist in
-                BlockBlackListManager.refreshBlackList(new File(Minecraft.getMinecraft().mcDataDir, BlockBlackListManager.BLACKLIST_FILENAME));
+                BlockBlackListManager.refreshBlackList(new File(Minecraft.getMinecraft().gameDir, BlockBlackListManager.BLACKLIST_FILENAME));
                 previouslyInGame = false;
             }
         }

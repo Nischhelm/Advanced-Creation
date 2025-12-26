@@ -60,7 +60,7 @@ public class VanillaCreativeGuiOverlay
     protected void renderNotification() {
         ScaledResolution res = new ScaledResolution(Minecraft.getMinecraft());
         Minecraft mc = Minecraft.getMinecraft();
-        mc.mcProfiler.startSection("toolHighlight");
+        mc.profiler.startSection("toolHighlight");
         if (this.remainingHighlightTicks > 0 && !this.notificationText.isEmpty()) {
 
             String name = this.notificationText;
@@ -93,7 +93,7 @@ public class VanillaCreativeGuiOverlay
             }
         }
 
-        mc.mcProfiler.endSection();
+        mc.profiler.endSection();
     }
 
 }

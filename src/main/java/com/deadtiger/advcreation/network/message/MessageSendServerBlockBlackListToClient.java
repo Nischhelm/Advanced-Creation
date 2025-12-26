@@ -50,7 +50,7 @@ public class MessageSendServerBlockBlackListToClient extends MessageBase<Message
             return;
 
         if(message.refreshlist)
-            BlockBlackListManager.refreshBlackList(new File(Minecraft.getMinecraft().mcDataDir, BlockBlackListManager.BLACKLIST_FILENAME));
+            BlockBlackListManager.refreshBlackList(new File(Minecraft.getMinecraft().gameDir, BlockBlackListManager.BLACKLIST_FILENAME));
 
         if(!message.serverBlackListBlocks.isEmpty())
             BlockBlackListManager.addBlacklistedEntries(message.serverBlackListBlocks);

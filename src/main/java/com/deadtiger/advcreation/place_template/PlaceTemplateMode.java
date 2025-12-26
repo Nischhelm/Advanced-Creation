@@ -474,7 +474,7 @@ public class PlaceTemplateMode
 
             if (flag)
             {
-                iblockstate.getBlock().onBlockDestroyedByPlayer(playerMP.world, offset, iblockstate);
+                iblockstate.getBlock().onPlayerDestroy(playerMP.world, offset, iblockstate);
             }
             playerMP.connection.sendPacket(new SPacketBlockChange(playerMP.world, offset));
         }
@@ -811,7 +811,7 @@ public class PlaceTemplateMode
         {
             TemplateBlock tempBlock = offsetRotatedBlockList.get(j);
 
-            if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+            if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
                 continue;
 
             hashcode += ~~RenderPreview.drawPreviewBlock(position, tempBlock, entityplayer, partialTicks,EnumFacing.UP);
@@ -843,7 +843,7 @@ public class PlaceTemplateMode
 //        {
 //            TemplateBlock tempBlock = template.getTempBlockOffset(j);
 //
-//            if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+//            if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
 //                continue;
 //
 //
@@ -938,7 +938,7 @@ public class PlaceTemplateMode
 
     private static int drawPreviewBlockAndAddToBlockPosList( Template template, BlockPos position, TemplateBlock tempBlock, int x, int y, int z, EntityPlayer entityplayer, Float partialTicks, EnumFacing face, ArrayList<BlockPos> blockPosListToFill, int hashcode)
     {
-        if (!(tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed()))
+        if (!(tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed()))
         {
             if (blockPosListToFill != null)
                 blockPosListToFill.add(new BlockPos(x, y, z));

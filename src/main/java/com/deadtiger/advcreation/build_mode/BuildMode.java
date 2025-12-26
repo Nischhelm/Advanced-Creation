@@ -316,7 +316,7 @@ public class BuildMode {
 //        else
 //        {
 //            block.setBlockPos(block.getBlockPos().add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET));
-//            TOOLMODE.addNewBlock(block,hitVec.addVector(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET), hitBlockPos.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET),face);
+//            TOOLMODE.addNewBlock(block,hitVec.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET), hitBlockPos.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET),face);
 //        }
 
     }
@@ -501,7 +501,7 @@ public class BuildMode {
 
 //            TOOLMODE.normalHitPos = new BlockPos(END_VEC);
 
-//            END_VEC = END_VEC.addVector(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET);
+//            END_VEC = END_VEC.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET);
             if(ConfigurationHandler.toolConfig.ALWAYS_SNAP_TO_BLOCK_CENTER)
                 END_VEC = parseVec(END_VEC);
             LINE_VEC = END_VEC.subtract(NEW_START_VEC);

@@ -57,7 +57,7 @@ public class RenderCameraFocusPoint
             {
                 Vec3d straightVec = clientPlayer.getPositionEyes(partialTicks).add(IsometricCamera.CAMERA_VECTOR).subtract(otherPlayer.getPositionEyes(partialTicks));
                 Vec3d horVec = new Vec3d(straightVec.x, 0, straightVec.z);
-                pitch = (float) (Math.atan2(straightVec.y, horVec.lengthVector()) / Math.PI) * 180.0f;
+                pitch = (float) (Math.atan2(straightVec.y, horVec.length()) / Math.PI) * 180.0f;
                 yaw = (float) -((Math.atan2(straightVec.x, straightVec.z) / Math.PI) * 180.0f) - 180f;
             }
 
@@ -79,7 +79,7 @@ public class RenderCameraFocusPoint
         {
             Vec3d straightVec = IsometricCamera.CAMERA_VECTOR;
             Vec3d horVec = new Vec3d(straightVec.x, 0, straightVec.z);
-            pitch = (float) (Math.atan2(straightVec.y, horVec.lengthVector()) / Math.PI) * 180.0f;
+            pitch = (float) (Math.atan2(straightVec.y, horVec.length()) / Math.PI) * 180.0f;
             yaw = (float) -((Math.atan2(straightVec.x, straightVec.z) / Math.PI) * 180.0f) - 180f;
         }
 

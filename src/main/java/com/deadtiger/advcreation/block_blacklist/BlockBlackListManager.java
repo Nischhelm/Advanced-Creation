@@ -32,7 +32,7 @@ public class BlockBlackListManager
 
     public static boolean IsOnBlackList(Item item)
     {
-        String itemID =  Item.REGISTRY.getNameForObject(item).getResourceDomain() + ":" + Item.REGISTRY.getNameForObject(item).getResourcePath();
+        String itemID =  Item.REGISTRY.getNameForObject(item).getNamespace() + ":" + Item.REGISTRY.getNameForObject(item).getNamespace();
         for (String entry: BLACKLISTED_BLOCKS)
         {
             if(itemID.contains(entry))
@@ -160,7 +160,7 @@ public class BlockBlackListManager
 
                 for (Item item:Item.REGISTRY)
                 {
-                    String itemText = Item.REGISTRY.getNameForObject(item).getResourceDomain() + ":" + Item.REGISTRY.getNameForObject(item).getResourcePath();;
+                    String itemText = Item.REGISTRY.getNameForObject(item).getNamespace() + ":" + Item.REGISTRY.getNameForObject(item).getNamespace();;
 
                     if(itemText.contains(entry))
                     {
@@ -200,7 +200,7 @@ public class BlockBlackListManager
 
             for (Item item:Item.REGISTRY)
             {
-                String itemText = Item.REGISTRY.getNameForObject(item).getResourceDomain() + ":" + Item.REGISTRY.getNameForObject(item).getResourcePath();;
+                String itemText = Item.REGISTRY.getNameForObject(item).getNamespace() + ":" + Item.REGISTRY.getNameForObject(item).getNamespace();;
 
                 if(itemText.contains(entry))
                 {
@@ -217,7 +217,7 @@ public class BlockBlackListManager
         System.out.println("Refreshing Advanced Creation's Block BlackList");
         BLACKLIST_ACTIVE = false;
         BLACKLISTED_BLOCKS.clear();
-        initialiseBlackList(new File(Minecraft.getMinecraft().mcDataDir, BlockBlackListManager.BLACKLIST_FILENAME));
+        initialiseBlackList(new File(Minecraft.getMinecraft().gameDir, BlockBlackListManager.BLACKLIST_FILENAME));
 
     }
 

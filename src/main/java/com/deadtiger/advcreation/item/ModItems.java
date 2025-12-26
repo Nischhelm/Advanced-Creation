@@ -19,7 +19,7 @@ public class ModItems
 
     public static void init() 
     {
-//        tutorialItem = new Item().setRegistryName(tutorialItemName).setUnlocalizedName(tutorialItemName);
+//        tutorialItem = new Item().setRegistryName(tutorialItemName).setTranslationKey(tutorialItemName);
     }
 
     @SubscribeEvent

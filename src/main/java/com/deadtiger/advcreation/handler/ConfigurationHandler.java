@@ -284,7 +284,7 @@ public class ConfigurationHandler
 //        {
 //            fieldsArePresentMap.put(field,false);
 //        }
-//        File mcDataFolder = Minecraft.getMinecraft().mcDataDir;
+//        File mcDataFolder = Minecraft.getMinecraft().gameDir;
 //        File configFolder = new File(mcDataFolder, "config");
 //        File configFile = new File( configFolder , Reference.MODID + ".cfg");
 //

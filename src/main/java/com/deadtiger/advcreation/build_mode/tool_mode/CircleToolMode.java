@@ -61,7 +61,7 @@ public class CircleToolMode extends BaseToolMode
         
         //the initial radiusVec
         Vec3d radiusVec = BuildMode.LINE_VEC;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
     
         //constraining the max radius(difflenght)
         if (radiusLength > ConfigurationHandler.toolConfig.CIRCLE_MAX_RADIUS) {
@@ -128,7 +128,7 @@ public class CircleToolMode extends BaseToolMode
 
         for (Vec3d vec: blockDict.keySet())
         {
-            Vec3d blockMiddleVec = vec.addVector(0.5,0.5,0.5);
+            Vec3d blockMiddleVec = vec.add(0.5,0.5,0.5);
             double s = newStartVec.distanceTo(blockMiddleVec);
             double a = newStartVec.z - blockMiddleVec.z;
             double angle = Math.acos(a/s);

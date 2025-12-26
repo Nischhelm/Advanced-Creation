@@ -420,7 +420,7 @@ public class MainModeGuiOverlay extends AbstractGuiOverlay
                 // some code as test to change the position of the placePointedCoordinate on screen to the new offset position
 //                Vec3d offsetVec= new Vec3d(offsetBlockPos.getX(),offsetBlockPos.getY(),offsetBlockPos.getY());
 //                Vec3d cursorOffset = Vec3d.ZERO;
-//                if(offsetVec.lengthVector() >= 1.0)
+//                if(offsetVec.length() >= 1.0)
 //                    cursorOffset = IsometricCamera.CAMERA_LOOK_VECTOR.crossProduct(offsetVec.normalize());
 
 //                int placedPointedTextPosX = x_resized + (int) (cursorOffset.z*width);

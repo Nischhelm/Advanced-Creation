@@ -39,7 +39,7 @@ public class ModWorld
                 BlockPos blockpos = new BlockPos(l, i1, j1);
                 IBlockState iblockstate = world.getBlockState(blockpos);
                 Block block = iblockstate.getBlock();
-                String unlocalized_name = block.getUnlocalizedName();
+                String unlocalized_name = block.getTranslationKey();
     
     
     
@@ -215,14 +215,14 @@ public class ModWorld
                     blockpos = new BlockPos(l, i1, j1);
                     IBlockState iblockstate1 = world.getBlockState(blockpos);
                     Block block1 = iblockstate1.getBlock();
-                    String unlocalized_name1 = block1.getUnlocalizedName();
+                    String unlocalized_name1 = block1.getTranslationKey();
                     
 //                    if(ModBlockRendererDispatcher.cuttThroughOn)
 //                    {
-//                        System.out.println("k1 " + k1 +" Block " + block1.getUnlocalizedName() + " canCollide "+block1.canCollideCheck(iblockstate1, stopOnLiquid) + " ceiling " + isCeiling);
+//                        System.out.println("k1 " + k1 +" Block " + block1.getTranslationKey() + " canCollide "+block1.canCollideCheck(iblockstate1, stopOnLiquid) + " ceiling " + isCeiling);
                         if(isCeiling)
                         {
-                            //System.out.println("k1 " + k1 +" Block " + block1.getUnlocalizedName() + " canCollide "+block1.canCollideCheck(iblockstate1, stopOnLiquid)+ "!leaves " + !unlocalized_name1.equals("tile.leaves")+ " !tallgrass " + !(block1 instanceof BlockTallGrass));
+                            //System.out.println("k1 " + k1 +" Block " + block1.getTranslationKey() + " canCollide "+block1.canCollideCheck(iblockstate1, stopOnLiquid)+ "!leaves " + !unlocalized_name1.equals("tile.leaves")+ " !tallgrass " + !(block1 instanceof BlockTallGrass));
 
                             if(!((block1 instanceof BlockLiquid || unlocalized_name1.equals("tile.air")) && block1 != Blocks.BEDROCK))
                                 continue;
@@ -250,7 +250,7 @@ public class ModWorld
                             if( IsometricCamera.isLeafRaytracingDisabled() &&
                                     (!PlacementHelper.isLog(block1.getDefaultState()) && PlacementHelper.isPlant(block1.getDefaultState())))
                             {
-                                //System.out.println("k1 " + k1 +" Block " + block1.getUnlocalizedName() + " canCollide "+block1.canCollideCheck(iblockstate1, stopOnLiquid)+ "!leaves " + !unlocalized_name1.equals("tile.leaves")+ " !tallgrass " + !(block1 instanceof BlockTallGrass));
+                                //System.out.println("k1 " + k1 +" Block " + block1.getTranslationKey() + " canCollide "+block1.canCollideCheck(iblockstate1, stopOnLiquid)+ "!leaves " + !unlocalized_name1.equals("tile.leaves")+ " !tallgrass " + !(block1 instanceof BlockTallGrass));
                                 raytraceresult1 = null;
                             }
                             

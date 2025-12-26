@@ -96,9 +96,9 @@ public class GuiAnimatedImage extends Gui
 
     public void initGif(Minecraft mc)
     {
-        if(texture.getResourcePath().contains(".gif"))
+        if(texture.getNamespace().contains(".gif"))
             itextureobject = new GifTexture(texture, mc.getResourceManager());
-        if(texture.getResourcePath().contains(".mp4"))
+        if(texture.getNamespace().contains(".mp4"))
             itextureobject = new MP4Texture(texture,new ResourceLocation(Reference.MODID, "textures/gui/mp4s/" + this.name +".txt"), mc.getResourceManager(),this.name);
 
 

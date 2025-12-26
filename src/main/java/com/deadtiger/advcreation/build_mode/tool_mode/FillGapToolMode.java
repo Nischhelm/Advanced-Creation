@@ -43,7 +43,7 @@ public class FillGapToolMode extends BaseToolMode
     public void addNewBlockRightClick0(TemplateBlock block, Vec3d hitVec, BlockPos hitBlockPos, EnumFacing face)
     {
 //        normalHitPos = block.getBlockPos();
-//        Vec3d newHitvec = hitVec.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+//        Vec3d newHitvec = hitVec.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
 //        TemplateBlock newBlock = new TemplateBlock(block.getFace(),block.getBlockPos().add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET),block.getBlockState());
 
         Vec3d newHitvec = hitVec;

@@ -35,15 +35,15 @@ public class ModBlocks
 
     public static void init() {
 
-        WATER_PREVIEW = new Block(Material.WATER).setCreativeTab(CreativeTabs.MISC).setLightLevel(1.0f).setRegistryName(WATER_PREVIEW_NAME).setUnlocalizedName(WATER_PREVIEW_NAME);
-        LAVA_PREVIEW = new Block(Material.LAVA).setCreativeTab(CreativeTabs.MISC).setLightLevel(1.0f).setRegistryName(LAVA_PREVIEW_NAME).setUnlocalizedName(LAVA_PREVIEW_NAME);
+        WATER_PREVIEW = new Block(Material.WATER).setCreativeTab(CreativeTabs.MISC).setLightLevel(1.0f).setRegistryName(WATER_PREVIEW_NAME).setTranslationKey(WATER_PREVIEW_NAME);
+        LAVA_PREVIEW = new Block(Material.LAVA).setCreativeTab(CreativeTabs.MISC).setLightLevel(1.0f).setRegistryName(LAVA_PREVIEW_NAME).setTranslationKey(LAVA_PREVIEW_NAME);
 
 
         MODBLOCKS.add(WATER_PREVIEW);
         MODBLOCKS.add(LAVA_PREVIEW);
 
-        WATER_ITEM = (ItemBlock) new CustomItemBlock(Blocks.WATER).setRegistryName(WATER_ITEM_NAME).setUnlocalizedName(WATER_ITEM_NAME).setCreativeTab(CreativeTabs.MISC);
-        LAVA_ITEM = (ItemBlock) new CustomItemBlock(Blocks.LAVA).setRegistryName(LAVA_ITEM_NAME).setUnlocalizedName(LAVA_ITEM_NAME).setCreativeTab(CreativeTabs.MISC);
+        WATER_ITEM = (ItemBlock) new CustomItemBlock(Blocks.WATER).setRegistryName(WATER_ITEM_NAME).setTranslationKey(WATER_ITEM_NAME).setCreativeTab(CreativeTabs.MISC);
+        LAVA_ITEM = (ItemBlock) new CustomItemBlock(Blocks.LAVA).setRegistryName(LAVA_ITEM_NAME).setTranslationKey(LAVA_ITEM_NAME).setCreativeTab(CreativeTabs.MISC);
 
     }
 
