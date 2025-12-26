@@ -1,8 +1,21 @@
 {
-    "compatibilityLevel": "JAVA_8",
+    "required": true,
     "package": "com.deadtiger.advcreation.mixin",
     "refmap": "refmap.advcreation.json",
-    "mixins": [],
-    "client": ["EntityPlayerMixin","EntityRendererMixin","RenderChunkMixin","EntityLivingBaseMixin","MouseHelperMixin"],
-    "server": []
+    "compatibilityLevel": "JAVA_8",
+    "target": "@env(DEFAULT)",
+    "minVersion": "0.8",
+    "client": [
+        "EntityLivingBaseMixin",
+        "EntityPlayerMixin",
+        "EntityRendererMixin",
+        "MouseHelperMixin",
+        "RenderChunkMixin",
+        "accessor.EntityPlayerSPAccessor",
+        "accessor.GuiTextFieldAccessor",
+        "accessor.ScreenshotHelperAccessor"
+    ],
+    "mixins": [
+        "accessor.ItemDoorAccessor"
+    ]
 }

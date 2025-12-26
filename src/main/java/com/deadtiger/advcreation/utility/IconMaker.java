@@ -1,5 +1,6 @@
 package com.deadtiger.advcreation.utility;
 
+import com.deadtiger.advcreation.mixin.accessor.ScreenshotHelperAccessor;
 import com.deadtiger.advcreation.template.Template;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -112,20 +113,20 @@ public class IconMaker
 
         int i = frameWidth * frameHeight;
 
-        if (ScreenShotHelper.pixelBuffer == null || ScreenShotHelper.pixelBuffer.capacity() < i)
+        if (ScreenshotHelperAccessor.getPixelBuffer() == null || ScreenshotHelperAccessor.getPixelBuffer().capacity() < i)
         {
-            ScreenShotHelper.pixelBuffer = BufferUtils.createIntBuffer(i);
-            ScreenShotHelper.pixelValues = new int[i];
+            ScreenshotHelperAccessor.setPixelBuffer(BufferUtils.createIntBuffer(i));
+            ScreenshotHelperAccessor.setPixelValues(new int[i]);
         }
 
         GlStateManager.glPixelStorei(3333, 1);
         GlStateManager.glPixelStorei(3317, 1);
-        ScreenShotHelper.pixelBuffer.clear();
+        ScreenshotHelperAccessor.getPixelBuffer().clear();
 
-        GlStateManager.glReadPixels(x, y, frameWidth, frameHeight, 32993, 33639, ScreenShotHelper.pixelBuffer);
+        GlStateManager.glReadPixels(x, y, frameWidth, frameHeight, 32993, 33639, ScreenshotHelperAccessor.getPixelBuffer());
 
-        ScreenShotHelper.pixelBuffer.get(ScreenShotHelper.pixelValues);
-        TextureUtil.processPixelValues(ScreenShotHelper.pixelValues, frameWidth, frameHeight);
+        ScreenshotHelperAccessor.getPixelBuffer().get(ScreenshotHelperAccessor.getPixelValues());
+        TextureUtil.processPixelValues(ScreenshotHelperAccessor.getPixelValues(), frameWidth, frameHeight);
 
         if (imageBuffer == null)
         {
@@ -141,7 +142,7 @@ public class IconMaker
 
         try
         {
-            imageBuffer.setRGB(x_icon, y_icon, width, height, ScreenShotHelper.pixelValues, 0, width);
+            imageBuffer.setRGB(x_icon, y_icon, width, height, ScreenshotHelperAccessor.getPixelValues(), 0, width);
         }
         catch (Exception e)
         {

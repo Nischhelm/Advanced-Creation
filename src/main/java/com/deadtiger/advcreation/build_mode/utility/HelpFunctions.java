@@ -5,6 +5,7 @@ import com.deadtiger.advcreation.block_blacklist.BlockBlackListManager;
 import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
 import com.deadtiger.advcreation.edit_mode.utility.EnumTerrainMode;
+import com.deadtiger.advcreation.mixin.accessor.ItemDoorAccessor;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
 import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.utility.FakeWorld;
@@ -61,7 +62,7 @@ public class HelpFunctions
     public static TemplateBlock getTemplateBlockFromItemDoor(RayTraceResult objectMouseOver, ItemDoor handStack, Vec3d hitVec, BlockPos position)
     {
         IBlockState handBlockState;
-        handBlockState = handStack.block.getDefaultState().withProperty(BlockDoor.POWERED, false).withProperty(BlockDoor.OPEN, false);
+        handBlockState = ((ItemDoorAccessor) handStack).getBlock().getDefaultState().withProperty(BlockDoor.POWERED, false).withProperty(BlockDoor.OPEN, false);
 
 //                          //Some code to change the blockState to be orientated based on the camera look or on the side hit
         if (objectMouseOver.sideHit.getAxis().isHorizontal())

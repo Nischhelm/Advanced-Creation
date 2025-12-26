@@ -15,6 +15,7 @@ import com.deadtiger.advcreation.client.gui.gui_screen.saveTemplateScreen.GuiSav
 import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplaceInventoryScreenFunctionality;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.mixin.accessor.GuiTextFieldAccessor;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.undo_actions.Action;
@@ -533,7 +534,7 @@ public class AbsoluteCoordScreen extends GuiScreen
             firstHoverOverTime = time;
 
         long delay = 500;
-        if(endPosX.isEnabled &&  endPosLockButton.isMouseOver())
+        if(((GuiTextFieldAccessor) endPosX).getIsEnabled() &&  endPosLockButton.isMouseOver())
         {
             if(time-firstHoverOverTime > delay)
             {
@@ -557,7 +558,7 @@ public class AbsoluteCoordScreen extends GuiScreen
             else if(firstHoverOverTime == time)
                 firstHoverOverTime = time;
         }
-        else if(middlePosX.isEnabled && middlePosLockButton.isMouseOver())
+        else if(((GuiTextFieldAccessor) middlePosX).getIsEnabled() && middlePosLockButton.isMouseOver())
         {
             if(time-firstHoverOverTime > delay)
             {
@@ -924,7 +925,7 @@ public class AbsoluteCoordScreen extends GuiScreen
                     else
                     {
                         endPosEdited = true;
-                        if(middlePosX.isEnabled)
+                        if(((GuiTextFieldAccessor) middlePosX).getIsEnabled())
                             setMiddlePosEdited(true);
                         setStartPosEdited(true);
                     }
@@ -971,7 +972,7 @@ public class AbsoluteCoordScreen extends GuiScreen
                         keyCode == rightArrow || keyCode == minus || keyCode == altMinus)
                 {
                     typed = field.textboxKeyTyped(typedChar, keyCode);
-                    if(typed && field.isEnabled)
+                    if(typed && ((GuiTextFieldAccessor) field).getIsEnabled())
                         processFieldTyped(field);
                 }
 
@@ -1392,7 +1393,7 @@ public class AbsoluteCoordScreen extends GuiScreen
 
     public void setMiddlePosEdited(boolean middlePosEdited)
     {
-        if(middlePosX.isEnabled)
+        if(((GuiTextFieldAccessor) middlePosX).getIsEnabled())
         {
             this.middlePosEdited = middlePosEdited;
             this.middlePosLockButton.active = middlePosEdited;
@@ -1406,7 +1407,7 @@ public class AbsoluteCoordScreen extends GuiScreen
 
     public void setEndPosEdited(boolean endPosEdited)
     {
-        if(endPosX.isEnabled)
+        if(((GuiTextFieldAccessor) endPosX).getIsEnabled())
         {
             this.endPosEdited = endPosEdited;
             this.endPosLockButton.active = endPosEdited;

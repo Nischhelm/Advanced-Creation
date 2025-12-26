@@ -22,7 +22,7 @@ public class MouseHelperMixin
     }
 
 //    @Redirect(method = "grabMouseCursor()V", at = @At(value = "INVOKE", target = "org/lwjgl/input/Mouse.setGrabbed(Z)V"))
-    @Inject(method = "grabMouseCursor()V", at = @At(value = "INVOKE", target = "org/lwjgl/input/Mouse.setGrabbed(Z)V"),cancellable = true)
+    @Inject(method = "grabMouseCursor()V", at = @At(value = "INVOKE", target = "org/lwjgl/input/Mouse.setGrabbed(Z)V", remap = false), cancellable = true)
     public void dontGrabMouseInIsometric(CallbackInfo ci)
     {
 //        System.out.println("Successfully done the mixin dontGrabMouseInIsometric in grabMouseCursor()V");
