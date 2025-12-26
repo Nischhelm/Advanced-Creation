@@ -1,0 +1,16 @@
+[
+{
+  "modid": "advcreation",
+  "name": "AdvancedCreation",
+  "description": "A mod that gives you a isometric perspective of minecraft and equips you with many simple tools to build with less effort and more fun",
+  "version": "beta1.2.3",
+  "mcversion": "${mcversion}",
+  "url": "https://advancedcreationmod.com/",
+  "updateUrl": "",
+  "authorList": ["ChryonicWolf(GraphiteGames)"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "advcreationicon.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

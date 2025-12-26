@@ -1,0 +1,13 @@
+﻿Details
+1. Avoiding null-pointer crash highlighted mossie, thx to feedback by mossie
+2. Introduced compatibility with bewitchments mod, thx to feedback from ThePrimarch and civil
+3. Improved mod compatibility by removing all Minecraft class coremods these functions are now done in forge events. This should fix re-entrance crashes that were found thx to feedback from civil, ThePrimarch and ᛖᚱᚱᚩᚱ_ᚳᚩᛞᛖ×509
+4. Added Placeable lava and waterblock, thx to feedback from ranger10700
+5. Changed ingame menu view button to show the right tooltip instead of "isometric view is only available in CREATIVE"
+6. Fixed placing block while in water or in lava.
+7. Added option to assign keybinds as hotkeys to tools in BUILD and EDIT mode. thx to feedback from benB_Epic
+8. Fixed bug: single tool now deletes the red highlighted block in GROUND mode.
+9. Fixed bug: when in copy or move tool using alt-mode will jump to a plane based on the current direction mode
+10. Added advcreation_block_blacklist.txt file were you can put the Block/Item IDs that make the mod crash to prevent future crashes. thx to feedback from Koal Summersong
+11. Many thx to mossie, ThePrimarch, civil, ᛖᚱᚱᚩᚱ_ᚳᚩᛞᛖ×509, ranger10700, benB_Epic and Koal Summersong for their awesome feedback. Please give me more of that stuff, preferable on my Discord channel (See directions on my website: www.advancedcreationmod.com). If your feedback is not in this update then it might be in the next!
+

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "inventory": { "model": "advcreation:lava_block" },
+    "normal": { "model": "advcreation:lava_block" }
+
+  }
+}

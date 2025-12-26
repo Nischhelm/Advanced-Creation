@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "inventory": { "model": "advcreation:water_block" },
+    "normal": { "model": "advcreation:water_block" }
+  }
+}

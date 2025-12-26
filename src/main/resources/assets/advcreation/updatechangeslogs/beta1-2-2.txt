@@ -1,0 +1,5 @@
+﻿Details:
+1. Fixed gui overlay visible while in survival when entering a survival world after exiting a creative world
+2. Fixed AbsoluteCoordScreen crash when end or middle original position does exist yet. Thx to feedback from Osas
+3. Made AbsoluteCoordScreen more robust Thx to feedback from Osas
+4. Fix Z coordinate of GuiOverlayFreeSizeCustomButton sub elements

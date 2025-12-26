@@ -1,0 +1,101 @@
+﻿Highlights
+1. Added abillity to place double slabs from isometric view, thx to feedback by Songbyrd
+2. Fixed crash due to package too large when previewing a large amount of blocks with level tool on a server, probably also works for other EDIT mode tools,  thx to feedback by Psi9000
+3. Fixed colors on block color legend in EDIT mode tool selection screen,  thx to feedback by Psi9000
+4. Fixed gray and transparent preview from other players, thx to feedback from Psi9000
+5. Fixed double offset in Single tool in BUILD mode
+6. Added ‘template delete’ trash bin to template inventory screen
+7. Added SMOOTH/SHARPEN, DIG/RAISE, LEVEL tools to EDIT mode.
+8. Added TERRAIN SHAPE, TERRAIN_ONLY modes to EDIT mode (only SMOOTH/SHARPEN, DIG/RAISE, LEVEL tools)
+9. Improved block calculation algorithm for all BUILD tools (except COPY, MOVE/DEL and FILLGAP).
+10. Added collapsable legend in tool selection wheel screen for EDIT mode to explain what block highlight colors mean.
+11. Added option to always snap to the middle of a block with LINE and CURVE tool.
+12. Added loading system for large placement operations
+13. Added a fps optimisation system
+14. Changed the way client and server coordinate the placement of large amounts of blocks.
+15. Optimized drawing of the preview of large templates.
+16. Reintroduced empty template buttons for better feedback.
+17. Added tabs for filtering on MC version and warnings about incorrect MC version in Template inventory screen
+18. In EDIT mode left-clicking doesn’t immediately active a delete operation anymore. It switches to a delete version of the current tool. Vice-versa when right-clicking again.
+19. Added mode to ignore liquids. (default is ignoring liquids) (see button ingame menu)
+20. Fixed various issues with the copy and move tools such as: long wait times for large operations to appear, adding limits to previews of  large operations to improve performance, critical bug were memory would fill up when using these tools, ‘not handled by advance creation mod’ incorrectly shown. thx to feedback from 🌙~𝓝𝓲𝓰𝓱𝓽~🌙
+21. Improved multiplayer preview sharing
+22. Added various mod options.
+23. Various crash and bug fixes.
+24. Changed coremod features to work via Mixins for improved compatibility with other mixin mods
+25. Many thx to 🌙~𝓝𝓲𝓰𝓱𝓽~🌙,Psi9000 and Songbyrd for their awesome feedback. Please give me more of that stuff, preferable on my Discord channel (See directions on my website: www.advancedcreationmod.com).
+
+
+Details:
+1. Fixed ignore plant functionality, it will now ignore all plants except logs, vines are now included, grass can now be selected
+2. Added abillity to place double slabs from isometric view, thx to feedback by Songbyrd
+3. Improved zoom and camera rotation with keys
+4. improved mcVersion extraction and management in template inventory
+5. Fixed colors on block color legend in EDIT mode tool selection screen,  thx to feedback by Psi9000
+6. Fixed crash due to package too large when previewing a large amount of blocks with level tool on a server, probably also works for other EDIT mode tools,  thx to feedback by Psi9000
+7. Redesigned and improved isometric camera and zoom mechanism and speed
+8. Added ability to zoom towards entity that you point at
+9. fixed scroll issue with wrong merge from alpha2.0.2
+10. Added ‘template delete’ trash bin to template inventory screen that you can drop your unwanted templates into. These do not get deleted they just get moved from the folder ‘advcreation_templates_zips’ to ‘advcreation_templates_zips_trash’. You can manually move them back to recover.
+11. Fixed ladder orientation when pointing at a side
+12. Fixed unable to delete ladders, banners, torches with anything other than single tool.
+13. Cut-through mode now limits view distance and refreshes world after deactivation to make it function better
+14. Fixed bug when in a vertical direction mode and pressing alt selection the offset block should only move on horizontal plane
+15. Fixed bug where it said ‘not handled by advance creation mod’ when right-clicking the last time in copy and move/del tool and other modes. Now you can place copy & move action and templates with no block in hand. thx to feedback from 🌙~𝓝𝓲𝓰𝓱𝓽~🌙
+16. Fixed bug where pieces of large copy or move action or template placement go missing  (see next items for solution)
+17. Fixed bug where you have to wait a long time for a large copy or move action or template placement to finish (see next items for solution)  thx to feedback from 🌙~𝓝𝓲𝓰𝓱𝓽~🌙
+18. Limits to previews of big templates now also apply to COPY and MOVE/DEL tool so that they perform better when trying to copy/move large areas. thx to feedback from 🌙~𝓝𝓲𝓰𝓱𝓽~🌙
+19. Fixed critical bug were memory would fill up when using the COPY and MOVE/DEL tool decreasing performance over time. thx to feedback from 🌙~𝓝𝓲𝓰𝓱𝓽~🌙
+20. Changed the way client and server coordinate the placement of large amounts of blocks.
+21. Added loading system for large placement operations, this will give the player a loading bar and say ‘Waiting for placement’. During loading no preview is drawn and the player cannot do any action. Loading can be canceled with the red X-icon on the loading bar. A warning screen is given as this will leave the operation half finished. This helps solve missing blocks and reduce loading of large operation.
+22. Added optimised system for very large placement operations.
+23. Optimized drawing the preview of large templates.
+24. Added a fps optimisation system that pops-up when your fps drops belong 5 fps for a time but can also be accessed manually. This allows the user to change certain mod options from the gui overlay HUD to improve the Frames Per Second (FPS) of their game. These can either be mod options that reduce the amount of preview blocks drawn or decrease the limit of the tool so it uses less computation resource but has less reach depended on the current tool used. There is also a button to increase these limits which will reduce the FPS if that is desired.
+25. Added highlighting of entities (mobs or players) when they are pointed at.
+26. Reintroduced empty template buttons for better feedback.
+27. Since templates from other minecraft versions (MC 1.12.2) can have errors in them when placed in this version (MC 1.16.5). These templates have warning indicators when they are from a different version.
+28. Added tabs for filtering on MC version in Template inventory screen
+29. Added message to player when entering isometric view with GUI_VISIBILITY mod option as false
+30. Added Main mode buttons (BUILD, EDIT) to the tool selection wheel screen for quick switching
+31. Added message ‘No action to undo/redo’ in progress bar when there are not operations to undo/redo
+32. Made undo/redo functionality available in other perspectives (such as first-person). Actions done in first-person can no be undone
+33. Added warning screen when player is about the undo/redo a large operation that might take a while to load with the ability to cancel the command.
+34. Undo/Redo command/buttons will be unavailable until previous undo/redo action is completed.
+35. Added mod options to disable each pop-up help message.
+36. Fixed functionality of the back and next topic button in help screen
+37. In EDIT mode left-clicking doesn’t immediately active a delete operation anymore. Instead it will switch your current tool to the delete version of it without changing the world. This is also reported in the progressbar with a blue bar. Subsequent left-clicks will actually do delete operations. Vise-versa when right-clicking again you will switch back to the normal place version of the current tool.
+38. Added SMOOTH/SHARPEN tool to EDIT mode to smoothen or sharpen terrain.
+39. Added DIG/RAISE tool to EDIT mode to dig a hole or raise a hill from current terrain.
+40. Added LEVEL tool to bring EDIT mode to raise/lower brush selection to highest or lowest terrain blocks in selection.
+41. Added TERRAIN SHAPE mode to EDIT mode (only SMOOTH/SHARPEN, DIG/RAISE, LEVEL tools) this will alter the slope or height that is created with these tools (just try it out or read about it on the helpscreen)
+42. Added TERRAIN_ONLY mode to EDIT mode (only SMOOTH/SHARPEN, DIG/RAISE, LEVEL tools) allowing you set the tool to only change blocks that are typical to normal terrain (such as grass blocks, dirt, stone, sand,etc.) while trying not to affect player made structures.
+43. Redesigned block highlight colors for EDIT mode to make the preview more clearly indicate the changes that the tool will make when clicking.
+44. Added collapsable legend in tool selection wheel screen for EDIT mode to explain what block highlight colors mean.
+45. FILLGAP tool will now ignore grass and plants when used in IGNORE PLANTS mode
+46. Added mode to be able to select liquids (water and lava). Button added to ingame menu allows you to toggle this (default is ignoring liquids). Hotkey is also available.
+47. Mouse cursor will now return to the original position before opening tool selection wheel screen after closing the tool selection wheel screen.
+48. CIRCLE tool can now place a single block.
+49. Improved block calculation algorithm for all BUILD tools (except COPY, MOVE/DEL and FILLGAP). This means that block lines and circles will more closely represent the helpline that is drawn. This should make tools more accurate to what you wanted to make.
+50. Made LINE tool commutative meaning: drawing a line from left to right or from right to left makes the same line.
+51. Improved EDIT mode brushes to provide better circles and more rectangular brushes.
+52. Added adaptive acceleration of brush size so you can scroll quicker from small brush to large brush (can be disabled in mod options)
+53. Added support of alt-press changes to brush size with the keyboard (you need to set zooming to a key)
+54. Added option to always snap to the middle of a block with LINE and CURVE tool. There is a button inside the LINE and CURVE tool button in the tool selection wheel screen. But you also set a hotkey for it.
+55. Help button on gui overlay HUD is no longer locked when the help message is displayed
+56. The mod option ‘selection highlight brightness’ is set to 75 as default and now affects all selection highlighting 
+57. Improved brush terrain finding algorithm for all EDIT mode tools
+58. In CREATE mode when in the save template screen you can press enter (or whatever you set as ‘Finish template creation’ key) to complete and save the template (needs a name though) and cannot be default 
+59. Fixed error when blockstate is not recognized by networking code
+60. Fixed crash when certain static variable in ModEntity are not initialised before being called
+61. Added advanced creation mod icon to mod page
+62. Fixed bug were you saw the template you were holding in the previous world when entered any world within same session
+63. Added new helpscreen pages for the new features
+64. Fixed multiplayer issue where players in first-person cannot see players in isometric and vise-versa
+65. Fixed multiplayer issue where players could see a selectionbox from another player while the other player already delete that selection box
+66. Added multiplayer feature where you can always see where the pointer of other players is pointing, marked with a white cube
+67. Changed multiplayer feature where you can see if a player is in the delete version of a EDIT tool.
+68. Fixes bug where when selected template in hotbar is changed in the template inventory player would still be holding the previously selected template
+69. Added ability to open chests and other containers from isometric perspective
+70. Changed OFFSET behavior in BUILD mode: OFFSET is kept through steps of one operation
+71. Changed cursor to snap to direction XZ in FREE mode after first click of CIRCLE tool
+72. Changed coremod features to work via Mixins for improved compatibility with other mixin mods

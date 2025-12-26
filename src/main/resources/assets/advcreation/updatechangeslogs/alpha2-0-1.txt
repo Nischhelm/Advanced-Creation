@@ -1,0 +1,10 @@
+﻿Details
+1. Added a mod option 'max camera height' to increase the maximum height your camera can go. Thx to feedback from ThePrimarch
+2. Fixed survival players having infinite reach. Thx to feedback from Swagmaster
+3. improved curve tool block placement
+4. Fixed scrolling in screens with keyboard key or mouse button: Helpscreen, save template screen, adjust mode selection wheel screen, template inventory screen. thx to feedback from EMPEROR ARCHAON
+5. pick block works again in anything but isometric view when same key as rotate camera binding. Thx to feedback from Greenjoe1234 
+6. Fixed the offset measurement when starting from a work direction that is not free
+7. Added 2 separate mod options for inverting horizontal and vertical camera rotation relative to mouse movement. Thx to feedback from Greenjoe12345
+8. Added 4 new key controls for rotating the camera in up,down,left,right direction. UNBOUND by default.
+9. Many thx to EMPEROR ARCHAON, Swagmaster, Greenjoe1234 and ThePrimarch for his awesome feedback. Please give me more of that stuff, preferable on my Discord channel (See directions on my website: www.advancedcreationmod.com). If your feedback is not in this update then it might be in the next!

@@ -1,0 +1,3 @@
+height: 544
+width: 800
+frameCount: 369

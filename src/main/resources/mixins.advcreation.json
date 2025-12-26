@@ -1,0 +1,8 @@
+{
+    "compatibilityLevel": "JAVA_8",
+    "package": "com.deadtiger.advcreation.mixin",
+    "refmap": "refmap.advcreation.json",
+    "mixins": [],
+    "client": ["EntityPlayerMixin","EntityRendererMixin","RenderChunkMixin","EntityLivingBaseMixin","MouseHelperMixin"],
+    "server": []
+}

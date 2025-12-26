@@ -1,0 +1,3 @@
+height: 608
+width: 800
+frameCount: 157

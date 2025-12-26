@@ -1,0 +1,12 @@
+﻿Details:
+1. when both holding and pointing at a slab you can now delete the slab(s) you are pointing at
+2. Fixed being able to select and delete snow when ignore plants is off
+3. Fixed crash in AbsoluteCoordScreen when a fill in textfield is left empty
+4. Fixed coordinate info not updating when putting the first template in your hotbar
+5. Turned OFF infinite reach for players in first-person in creative. thx to feedback by TwoFace17
+6. Added mod option to turn  infinite reach for players in first-person in creative  on with the "First-person infinite reach in creative" option under general. thx to feedback by TwoFace17
+7. Added option "Enter CREATIVE in isometric" allows you to set it to false so you don't enter isometric everytime you go from survival to creative. thx to feedback by +washabe
+8. Changed LINE tool algorithm to be consistent from left to right and viseversa
+9. Improved the algorithm for planes in a 3D enviroment
+10. Added “Toggle Isometric view” to controls, default it is set to F5 operating as before. When you set this to a different hotkey F5 will only be used to toggle the normal perspectives to and this new hotkey will switch you from isometric view to normal view. thx to feedback by Osas
+11. Added button on overlay and selection wheels to disable the advanced creation tools so you can use other mods in the isometric perspective thx to feedback by Mukkod

@@ -1,0 +1,3 @@
+height: 816
+width: 1440
+frameCount: 113
