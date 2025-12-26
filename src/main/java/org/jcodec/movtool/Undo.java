@@ -1,9 +1,8 @@
 package org.jcodec.movtool;
 
-import java.io.File;
-
 import org.jcodec.containers.mp4.MP4Util.Atom;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 

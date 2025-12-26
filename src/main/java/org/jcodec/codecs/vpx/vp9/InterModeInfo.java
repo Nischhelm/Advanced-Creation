@@ -1,46 +1,9 @@
 package org.jcodec.codecs.vpx.vp9;
 
-import static org.jcodec.codecs.vpx.vp9.Consts.ALTREF_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BOTH_INTRA;
-import static org.jcodec.codecs.vpx.vp9.Consts.BOTH_NEW;
-import static org.jcodec.codecs.vpx.vp9.Consts.BOTH_PREDICTED;
-import static org.jcodec.codecs.vpx.vp9.Consts.BOTH_ZERO;
-import static org.jcodec.codecs.vpx.vp9.Consts.CLASS0_SIZE;
-import static org.jcodec.codecs.vpx.vp9.Consts.COMPOUND_REF;
-import static org.jcodec.codecs.vpx.vp9.Consts.GOLDEN_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.INTRA_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.INTRA_PLUS_NON_INTRA;
-import static org.jcodec.codecs.vpx.vp9.Consts.LAST_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_CLASS_TREE;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_FR_TREE;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_JOINT_HNZVNZ;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_JOINT_HNZVZ;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_JOINT_HZVNZ;
-import static org.jcodec.codecs.vpx.vp9.Consts.NEARESTMV;
-import static org.jcodec.codecs.vpx.vp9.Consts.NEARMV;
-import static org.jcodec.codecs.vpx.vp9.Consts.NEWMV;
-import static org.jcodec.codecs.vpx.vp9.Consts.NEW_PLUS_NON_INTRA;
-import static org.jcodec.codecs.vpx.vp9.Consts.REFERENCE_MODE_SELECT;
-import static org.jcodec.codecs.vpx.vp9.Consts.SEG_LVL_REF_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.SEG_LVL_SKIP;
-import static org.jcodec.codecs.vpx.vp9.Consts.SWITCHABLE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_INTERP_FILTER;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_INTER_MODE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_INTRA_MODE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_MV_JOINT;
-import static org.jcodec.codecs.vpx.vp9.Consts.ZEROMV;
-import static org.jcodec.codecs.vpx.vp9.Consts.ZERO_PLUS_PREDICTED;
-import static org.jcodec.codecs.vpx.vp9.Consts.blH;
-import static org.jcodec.codecs.vpx.vp9.Consts.blW;
-import static org.jcodec.codecs.vpx.vp9.Consts.mv_ref_blocks;
-import static org.jcodec.codecs.vpx.vp9.Consts.mv_ref_blocks_sm;
-import static org.jcodec.codecs.vpx.vp9.Consts.size_group_lookup;
-
 import org.jcodec.codecs.common.biari.Packed4BitList;
 import org.jcodec.codecs.vpx.VPXBooleanDecoder;
+
+import static org.jcodec.codecs.vpx.vp9.Consts.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

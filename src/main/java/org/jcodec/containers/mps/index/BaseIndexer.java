@@ -1,4 +1,5 @@
 package org.jcodec.containers.mps.index;
+
 import org.jcodec.codecs.mpeg12.MPEGConst;
 import org.jcodec.common.ArrayUtil;
 import org.jcodec.common.IntArrayList;
@@ -11,14 +12,8 @@ import org.jcodec.containers.mps.PESPacket;
 import org.jcodec.containers.mps.index.MPSIndex.MPSStreamIndex;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

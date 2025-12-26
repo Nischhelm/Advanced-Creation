@@ -1,36 +1,12 @@
 package org.jcodec.containers.mxf;
 
-import static org.jcodec.containers.mxf.model.UL.newUL;
-
-import org.jcodec.containers.mxf.model.AES3PCMDescriptor;
-import org.jcodec.containers.mxf.model.CDCIEssenceDescriptor;
-import org.jcodec.containers.mxf.model.ContentStorage;
-import org.jcodec.containers.mxf.model.EssenceContainerData;
-import org.jcodec.containers.mxf.model.FileDescriptor;
-import org.jcodec.containers.mxf.model.GenericDataEssenceDescriptor;
-import org.jcodec.containers.mxf.model.GenericDescriptor;
-import org.jcodec.containers.mxf.model.GenericPictureEssenceDescriptor;
-import org.jcodec.containers.mxf.model.GenericSoundEssenceDescriptor;
-import org.jcodec.containers.mxf.model.Identification;
-import org.jcodec.containers.mxf.model.IndexSegment;
-import org.jcodec.containers.mxf.model.J2KPictureDescriptor;
-import org.jcodec.containers.mxf.model.MPEG2VideoDescriptor;
-import org.jcodec.containers.mxf.model.MXFMetadata;
-import org.jcodec.containers.mxf.model.MXFPartitionPack;
-import org.jcodec.containers.mxf.model.MaterialPackage;
-import org.jcodec.containers.mxf.model.Preface;
-import org.jcodec.containers.mxf.model.RGBAEssenceDescriptor;
-import org.jcodec.containers.mxf.model.Sequence;
-import org.jcodec.containers.mxf.model.SourceClip;
-import org.jcodec.containers.mxf.model.SourcePackage;
-import org.jcodec.containers.mxf.model.TimecodeComponent;
-import org.jcodec.containers.mxf.model.TimelineTrack;
-import org.jcodec.containers.mxf.model.UL;
-import org.jcodec.containers.mxf.model.WaveAudioDescriptor;
+import org.jcodec.containers.mxf.model.*;
 
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.jcodec.containers.mxf.model.UL.newUL;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

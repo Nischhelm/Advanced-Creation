@@ -3,9 +3,7 @@ package org.jcodec.common;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static org.jcodec.common.TrackType.AUDIO;
-import static org.jcodec.common.TrackType.VIDEO;
-import static org.jcodec.common.TrackType.TEXT;
+import static org.jcodec.common.TrackType.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

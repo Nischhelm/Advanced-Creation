@@ -1,8 +1,7 @@
 package org.jcodec.containers.mxf.model;
-import java.util.Iterator;
 
-import java.lang.System;
 import java.nio.ByteBuffer;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 

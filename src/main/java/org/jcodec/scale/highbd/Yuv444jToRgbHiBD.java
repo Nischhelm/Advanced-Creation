@@ -1,8 +1,8 @@
 package org.jcodec.scale.highbd;
 
-import static org.jcodec.scale.highbd.Yuv420jToRgbHiBD.YUVJtoRGB;
-
 import org.jcodec.common.model.PictureHiBD;
+
+import static org.jcodec.scale.highbd.Yuv420jToRgbHiBD.YUVJtoRGB;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

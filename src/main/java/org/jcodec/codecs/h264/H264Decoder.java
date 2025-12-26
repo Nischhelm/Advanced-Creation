@@ -1,33 +1,9 @@
 package org.jcodec.codecs.h264;
-import static org.jcodec.codecs.h264.H264Const.PROFILE_BASELINE;
-import static org.jcodec.codecs.h264.H264Const.PROFILE_HIGH;
-import static org.jcodec.codecs.h264.H264Const.PROFILE_MAIN;
-import static org.jcodec.common.tools.MathUtil.wrap;
-
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
 
 import org.jcodec.codecs.h264.H264Utils.MvList2D;
-import org.jcodec.codecs.h264.decode.DeblockerInput;
-import org.jcodec.codecs.h264.decode.FrameReader;
-import org.jcodec.codecs.h264.decode.SliceDecoder;
-import org.jcodec.codecs.h264.decode.SliceHeaderReader;
-import org.jcodec.codecs.h264.decode.SliceReader;
+import org.jcodec.codecs.h264.decode.*;
 import org.jcodec.codecs.h264.decode.deblock.DeblockingFilter;
-import org.jcodec.codecs.h264.io.model.Frame;
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.h264.io.model.NALUnitType;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.RefPicMarking;
-import org.jcodec.codecs.h264.io.model.RefPicMarkingIDR;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
+import org.jcodec.codecs.h264.io.model.*;
 import org.jcodec.common.IntObjectMap;
 import org.jcodec.common.UsedViaReflection;
 import org.jcodec.common.VideoCodecMeta;
@@ -37,6 +13,17 @@ import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Rect;
 import org.jcodec.common.model.Size;
+
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ThreadFactory;
+
+import static org.jcodec.codecs.h264.H264Const.*;
+import static org.jcodec.common.tools.MathUtil.wrap;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

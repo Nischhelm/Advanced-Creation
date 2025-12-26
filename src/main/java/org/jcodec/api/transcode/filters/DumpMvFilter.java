@@ -1,9 +1,5 @@
 package org.jcodec.api.transcode.filters;
 
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvRef;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvX;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvY;
-
 import org.jcodec.api.transcode.Filter;
 import org.jcodec.api.transcode.PixelStore;
 import org.jcodec.api.transcode.PixelStore.LoanerPicture;
@@ -12,6 +8,8 @@ import org.jcodec.codecs.h264.io.model.Frame;
 import org.jcodec.codecs.h264.io.model.SliceType;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.h264.H264Utils.Mv.*;
 
 public class DumpMvFilter implements Filter {
     private boolean js;

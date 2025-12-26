@@ -1,8 +1,5 @@
 package org.jcodec.containers.mp4.boxes;
 
-import static org.jcodec.containers.mp4.boxes.channel.ChannelLayout.kCAFChannelLayoutTag_UseChannelBitmap;
-import static org.jcodec.containers.mp4.boxes.channel.ChannelLayout.kCAFChannelLayoutTag_UseChannelDescriptions;
-
 import org.jcodec.api.NotSupportedException;
 import org.jcodec.common.AudioFormat;
 import org.jcodec.common.model.ChannelLabel;
@@ -13,13 +10,10 @@ import org.jcodec.platform.Platform;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
+import static org.jcodec.containers.mp4.boxes.channel.ChannelLayout.kCAFChannelLayoutTag_UseChannelBitmap;
+import static org.jcodec.containers.mp4.boxes.channel.ChannelLayout.kCAFChannelLayoutTag_UseChannelDescriptions;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

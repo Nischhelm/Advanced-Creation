@@ -1,9 +1,9 @@
 package org.jcodec.codecs.ppm;
+
 import org.jcodec.common.JCodecUtil2;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
 
-import java.lang.IllegalArgumentException;
 import java.nio.ByteBuffer;
 
 /**

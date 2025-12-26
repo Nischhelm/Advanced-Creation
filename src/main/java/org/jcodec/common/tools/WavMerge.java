@@ -1,4 +1,5 @@
 package org.jcodec.common.tools;
+
 import org.jcodec.codecs.wav.WavHeader;
 import org.jcodec.common.AudioUtil;
 import org.jcodec.common.io.IOUtils;
@@ -6,7 +7,6 @@ import org.jcodec.common.io.NIOUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;

@@ -1,18 +1,5 @@
 package org.jcodec.containers.mp4.muxer;
 
-import static org.jcodec.common.Preconditions.checkState;
-import static org.jcodec.common.VideoCodecMeta.createSimpleVideoCodecMeta;
-
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import org.jcodec.codecs.aac.ADTSParser;
 import org.jcodec.codecs.h264.H264Utils;
 import org.jcodec.codecs.h264.io.model.SeqParameterSet;
@@ -27,15 +14,16 @@ import org.jcodec.common.model.Packet;
 import org.jcodec.common.model.Packet.FrameType;
 import org.jcodec.common.model.Size;
 import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.Box;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.Box.LeafBox;
-import org.jcodec.containers.mp4.boxes.Header;
-import org.jcodec.containers.mp4.boxes.MovieHeaderBox;
-import org.jcodec.containers.mp4.boxes.PixelAspectExt;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
 import org.jcodec.platform.Platform;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.*;
+
+import static org.jcodec.common.Preconditions.checkState;
+import static org.jcodec.common.VideoCodecMeta.createSimpleVideoCodecMeta;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

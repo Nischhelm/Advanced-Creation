@@ -1,34 +1,21 @@
 package org.jcodec.containers.mp4.demuxer;
 
-import static org.jcodec.common.VideoCodecMeta.createSimpleVideoCodecMeta;
-
-import java.nio.ByteBuffer;
-import java.util.List;
-
 import org.jcodec.codecs.aac.AACUtils;
 import org.jcodec.codecs.h264.H264Utils;
 import org.jcodec.codecs.h264.io.model.SeqParameterSet;
 import org.jcodec.codecs.h264.mp4.AvcCBox;
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.Ints;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.VideoCodecMeta;
+import org.jcodec.common.*;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.RationalLarge;
 import org.jcodec.containers.mp4.BoxUtil;
 import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.PixelAspectExt;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.SyncSamplesBox;
-import org.jcodec.containers.mp4.boxes.TrackHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
-import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.platform.Platform;
+
+import java.nio.ByteBuffer;
+import java.util.List;
+
+import static org.jcodec.common.VideoCodecMeta.createSimpleVideoCodecMeta;
 
 public class MP4DemuxerTrackMeta extends DemuxerTrackMeta {
     private SampleEntry[] sampleEntries;

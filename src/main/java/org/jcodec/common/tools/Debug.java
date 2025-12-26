@@ -1,7 +1,7 @@
 package org.jcodec.common.tools;
+
 import org.jcodec.common.ArrayUtil;
 
-import java.lang.System;
 import java.nio.ShortBuffer;
 
 /**

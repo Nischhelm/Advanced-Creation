@@ -2,8 +2,8 @@ package com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen;
 
 import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiBigTemplateButton;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
-import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.reference.Reference;
+import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateManager;
 import com.deadtiger.advcreation.utility.IconMaker;
 import net.minecraft.client.Minecraft;

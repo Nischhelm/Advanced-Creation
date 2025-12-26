@@ -1,15 +1,4 @@
 package org.jcodec.codecs.aac.blocks;
-import static java.lang.Math.min;
-import static java.lang.Math.pow;
-import static java.lang.String.format;
-import static org.jcodec.codecs.aac.Profile.LC;
-import static org.jcodec.codecs.aac.Profile.MAIN;
-import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.INTENSITY_BT;
-import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.INTENSITY_BT2;
-import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.NOISE_BT;
-import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.ZERO_BT;
-import static org.jcodec.common.io.VLCBuilder.createVLCBuilder;
-import static org.jcodec.common.tools.MathUtil.clip;
 
 import org.jcodec.codecs.aac.Profile;
 import org.jcodec.codecs.prores.ProresDecoder;
@@ -17,7 +6,14 @@ import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.VLC;
 import org.jcodec.common.tools.MathUtil;
 
-import java.lang.System;
+import static java.lang.Math.min;
+import static java.lang.Math.pow;
+import static java.lang.String.format;
+import static org.jcodec.codecs.aac.Profile.LC;
+import static org.jcodec.codecs.aac.Profile.MAIN;
+import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.*;
+import static org.jcodec.common.io.VLCBuilder.createVLCBuilder;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

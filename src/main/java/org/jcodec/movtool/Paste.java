@@ -1,29 +1,17 @@
 package org.jcodec.movtool;
 
-import static java.util.Arrays.fill;
-import static org.jcodec.common.io.NIOUtils.readableChannel;
-import static org.jcodec.common.io.NIOUtils.writableChannel;
-import static org.jcodec.movtool.Util.forceEditListMov;
-import static org.jcodec.movtool.Util.insertTo;
-import static org.jcodec.movtool.Util.shift;
-import static org.jcodec.movtool.Util.spread;
-
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.containers.mp4.MP4Util;
 import org.jcodec.containers.mp4.MP4Util.Movie;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.ClipRegionBox;
-import org.jcodec.containers.mp4.boxes.LoadSettingsBox;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SoundMediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrackHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
-import org.jcodec.containers.mp4.boxes.VideoMediaHeaderBox;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.platform.Platform;
 
 import java.io.File;
+
+import static java.util.Arrays.fill;
+import static org.jcodec.common.io.NIOUtils.readableChannel;
+import static org.jcodec.common.io.NIOUtils.writableChannel;
+import static org.jcodec.movtool.Util.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

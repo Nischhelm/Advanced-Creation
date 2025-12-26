@@ -1,23 +1,14 @@
 package org.jcodec.containers.mkv;
-import static org.jcodec.containers.mkv.MKVType.Cluster;
-import static org.jcodec.containers.mkv.MKVType.CueClusterPosition;
-import static org.jcodec.containers.mkv.MKVType.CuePoint;
-import static org.jcodec.containers.mkv.MKVType.CueTime;
-import static org.jcodec.containers.mkv.MKVType.CueTrack;
-import static org.jcodec.containers.mkv.MKVType.CueTrackPositions;
-import static org.jcodec.containers.mkv.MKVType.Cues;
-import static org.jcodec.containers.mkv.MKVType.Timecode;
-import static org.jcodec.containers.mkv.MKVType.createByType;
-import static org.jcodec.containers.mkv.MKVType.findFirst;
-import static org.jcodec.containers.mkv.boxes.EbmlUint.calculatePayloadSize;
 
 import org.jcodec.containers.mkv.boxes.EbmlMaster;
 import org.jcodec.containers.mkv.boxes.EbmlUint;
 import org.jcodec.containers.mkv.util.EbmlUtil;
 
-import java.lang.System;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.jcodec.containers.mkv.MKVType.*;
+import static org.jcodec.containers.mkv.boxes.EbmlUint.calculatePayloadSize;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed under FreeBSD License

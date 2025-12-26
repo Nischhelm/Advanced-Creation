@@ -6,17 +6,20 @@ import com.deadtiger.advcreation.build_mode.utility.FillVector;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
 import com.deadtiger.advcreation.client.render.RenderPlaneSurface;
+import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
+import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
 import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateBlock;
-import com.deadtiger.advcreation.client.render.RenderTemplate;
-import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.utility.MultiThreadLock;
 import com.deadtiger.advcreation.utility.PlacementHelper;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockAir;
+import net.minecraft.block.BlockBanner;
+import net.minecraft.block.BlockSkull;
+import net.minecraft.block.BlockStandingSign;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -25,7 +28,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class BaseToolMode
 {

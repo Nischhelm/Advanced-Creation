@@ -1,9 +1,4 @@
 package org.jcodec.codecs.h264.decode;
-import static org.jcodec.codecs.h264.H264Utils.unescapeNAL;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.IDR_SLICE;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.NON_IDR_SLICE;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.PPS;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.SPS;
 
 import org.jcodec.codecs.common.biari.MDecoder;
 import org.jcodec.codecs.h264.decode.aso.MapManager;
@@ -22,6 +17,9 @@ import org.jcodec.common.logging.Logger;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.jcodec.codecs.h264.H264Utils.unescapeNAL;
+import static org.jcodec.codecs.h264.io.model.NALUnitType.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,15 +1,5 @@
 package org.jcodec.containers.mps;
 
-import static java.util.Arrays.asList;
-import static org.jcodec.common.Preconditions.checkState;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
-import java.util.HashSet;
-import java.util.Set;
-
 import org.jcodec.common.IntArrayList;
 import org.jcodec.common.IntIntMap;
 import org.jcodec.common.io.NIOUtils;
@@ -21,6 +11,16 @@ import org.jcodec.containers.mps.psi.PATSection;
 import org.jcodec.containers.mps.psi.PMTSection;
 import org.jcodec.containers.mps.psi.PMTSection.PMTStream;
 import org.jcodec.platform.Platform;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.ReadableByteChannel;
+import java.util.HashSet;
+import java.util.Set;
+
+import static java.util.Arrays.asList;
+import static org.jcodec.common.Preconditions.checkState;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,12 +1,11 @@
 package com.deadtiger.advcreation.edit_mode.adjust_modes;
 
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
-import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
-import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.edit_mode.EditMode;
+import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -19,7 +18,8 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class PaintBucketAdjustMode extends BaseAdjustMode
 {

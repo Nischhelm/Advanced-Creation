@@ -1,13 +1,11 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.codecs.h264.decode.CoeffTransformer.reorderDC4x4;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.collectPredictors;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveMvsIntra;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveVectIntra;
-
 import org.jcodec.codecs.h264.decode.aso.Mapper;
 import org.jcodec.codecs.h264.io.model.SliceHeader;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.h264.decode.CoeffTransformer.reorderDC4x4;
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.*;
 
 /**
  * A decoder for I16x16 macroblocks

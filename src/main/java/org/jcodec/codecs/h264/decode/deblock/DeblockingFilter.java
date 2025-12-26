@@ -1,18 +1,13 @@
 package org.jcodec.codecs.h264.decode.deblock;
 
-import static java.lang.Math.abs;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvRef;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvX;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvY;
-import static org.jcodec.common.tools.MathUtil.clip;
-
 import org.jcodec.codecs.h264.decode.DeblockerInput;
-import org.jcodec.codecs.h264.encode.EncodedMB;
-import org.jcodec.codecs.h264.encode.MBEncoderHelper;
 import org.jcodec.codecs.h264.io.model.SliceHeader;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
-import org.jcodec.common.tools.MathUtil;
+
+import static java.lang.Math.abs;
+import static org.jcodec.codecs.h264.H264Utils.Mv.*;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

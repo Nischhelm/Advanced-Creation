@@ -1,17 +1,14 @@
 package org.jcodec.codecs.vpx;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
+import org.jcodec.common.*;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.model.Packet;
 import org.jcodec.common.model.Size;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

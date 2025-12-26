@@ -1,7 +1,8 @@
 package org.jcodec.containers.mp4.boxes;
-import java.nio.ByteBuffer;
 
 import org.jcodec.platform.Platform;
+
+import java.nio.ByteBuffer;
 
 //@formatter:off
 

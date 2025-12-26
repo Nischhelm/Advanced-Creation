@@ -1,11 +1,12 @@
 package org.jcodec.codecs.mpeg12;
-import static org.jcodec.codecs.mpeg12.MPEGConst.vlcMotionCode;
-import static org.jcodec.codecs.mpeg12.bitstream.SequenceExtension.Chroma420;
-import static org.jcodec.codecs.mpeg12.bitstream.SequenceExtension.Chroma444;
 
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.codecs.mpeg12.MPEGConst.vlcMotionCode;
+import static org.jcodec.codecs.mpeg12.bitstream.SequenceExtension.Chroma420;
+import static org.jcodec.codecs.mpeg12.bitstream.SequenceExtension.Chroma444;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

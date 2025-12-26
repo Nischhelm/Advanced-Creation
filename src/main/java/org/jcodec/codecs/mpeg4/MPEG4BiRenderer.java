@@ -1,21 +1,12 @@
 package org.jcodec.codecs.mpeg4;
 
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_BACKWARD;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_DIRECT;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_DIRECT_NONE_MV;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_FORWARD;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTERPOLATE;
-import static org.jcodec.codecs.mpeg4.MPEG4DCT.idctAdd;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate16x16QP;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate8x8Planar;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate8x8QP;
-import static org.jcodec.codecs.mpeg4.MPEG4Renderer.calcChromaMv;
-import static org.jcodec.codecs.mpeg4.MPEG4Renderer.calcChromaMvAvg;
-import static org.jcodec.codecs.mpeg4.MPEG4Renderer.renderInter;
-import static org.jcodec.codecs.mpeg4.MPEG4Renderer.validateVector;
-
 import org.jcodec.codecs.mpeg4.Macroblock.Vector;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.mpeg4.MPEG4Consts.*;
+import static org.jcodec.codecs.mpeg4.MPEG4DCT.idctAdd;
+import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.*;
+import static org.jcodec.codecs.mpeg4.MPEG4Renderer.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

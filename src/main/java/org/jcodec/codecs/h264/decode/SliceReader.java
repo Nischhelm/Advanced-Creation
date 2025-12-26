@@ -1,39 +1,23 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.codecs.h264.H264Const.bPartPredModes;
-import static org.jcodec.codecs.h264.H264Const.bSubMbTypes;
-import static org.jcodec.codecs.h264.H264Const.identityMapping16;
-import static org.jcodec.codecs.h264.H264Const.last_sig_coeff_map_8x8;
-import static org.jcodec.codecs.h264.H264Const.sig_coeff_map_8x8;
-import static org.jcodec.codecs.h264.H264Const.PartPred.Direct;
-import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.moreRBSPData;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readBool;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readNBit;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readSE;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readTE;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readUEtrace;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.debugPrint;
-import static org.jcodec.codecs.h264.io.model.MBType.B_8x8;
-import static org.jcodec.codecs.h264.io.model.MBType.I_16x16;
-import static org.jcodec.codecs.h264.io.model.MBType.P_8x8;
-import static org.jcodec.common.model.ColorSpace.MONO;
-
 import org.jcodec.codecs.common.biari.MDecoder;
 import org.jcodec.codecs.h264.H264Const;
-import org.jcodec.codecs.h264.H264Const.PartPred;
+import org.jcodec.codecs.h264.H264Const.*;
 import org.jcodec.codecs.h264.decode.aso.Mapper;
 import org.jcodec.codecs.h264.io.CABAC;
 import org.jcodec.codecs.h264.io.CABAC.BlockType;
 import org.jcodec.codecs.h264.io.CAVLC;
-import org.jcodec.codecs.h264.io.model.MBType;
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
+import org.jcodec.codecs.h264.io.model.*;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.ColorSpace;
+
+import static org.jcodec.codecs.h264.H264Const.PartPred.Direct;
+import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
+import static org.jcodec.codecs.h264.decode.CAVLCReader.*;
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.debugPrint;
+import static org.jcodec.codecs.h264.io.model.MBType.*;
+import static org.jcodec.common.model.ColorSpace.MONO;
 
 /**
  * Contains methods for reading high-level symbols out of H.264 bitstream

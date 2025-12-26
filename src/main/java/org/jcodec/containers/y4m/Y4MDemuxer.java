@@ -1,26 +1,21 @@
 package org.jcodec.containers.y4m;
 
-import static org.jcodec.common.StringUtils.splitC;
-import static org.jcodec.platform.Platform.stringFromBytes;
+import org.jcodec.common.*;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.io.SeekableByteChannel;
+import org.jcodec.common.model.ColorSpace;
+import org.jcodec.common.model.Packet;
+import org.jcodec.common.model.Packet.FrameType;
+import org.jcodec.common.model.Rational;
+import org.jcodec.common.model.Size;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jcodec.common.Codec;
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.io.SeekableByteChannel;
-import org.jcodec.common.model.ColorSpace;
-import org.jcodec.common.model.Packet;
-import org.jcodec.common.model.Rational;
-import org.jcodec.common.model.Size;
-import org.jcodec.common.model.Packet.FrameType;
+import static org.jcodec.common.StringUtils.splitC;
+import static org.jcodec.platform.Platform.stringFromBytes;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

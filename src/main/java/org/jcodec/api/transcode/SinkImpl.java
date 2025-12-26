@@ -1,24 +1,5 @@
 package org.jcodec.api.transcode;
 
-import static org.jcodec.common.Codec.PNG;
-import static org.jcodec.common.Codec.PRORES;
-import static org.jcodec.common.Codec.VP8;
-import static org.jcodec.common.Format.IMG;
-import static org.jcodec.common.Format.IVF;
-import static org.jcodec.common.Format.MKV;
-import static org.jcodec.common.Format.MOV;
-import static org.jcodec.common.Format.WAV;
-import static org.jcodec.common.Format.Y4M;
-import static org.jcodec.common.io.NIOUtils.writableFileChannel;
-
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
-import java.nio.ByteBuffer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import org.jcodec.codecs.h264.H264Encoder;
 import org.jcodec.codecs.h264.encode.CQPRateControl;
 import org.jcodec.codecs.png.PNGEncoder;
@@ -28,34 +9,32 @@ import org.jcodec.codecs.vpx.IVFMuxer;
 import org.jcodec.codecs.vpx.VP8Encoder;
 import org.jcodec.codecs.wav.WavMuxer;
 import org.jcodec.codecs.y4m.Y4MMuxer;
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.AudioEncoder;
-import org.jcodec.common.AudioFormat;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Format;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.VideoEncoder;
+import org.jcodec.common.*;
 import org.jcodec.common.VideoEncoder.EncodedFrame;
 import org.jcodec.common.io.IOUtils;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.logging.Logger;
-import org.jcodec.common.model.AudioBuffer;
-import org.jcodec.common.model.ColorSpace;
-import org.jcodec.common.model.Packet;
+import org.jcodec.common.model.*;
 import org.jcodec.common.model.Packet.FrameType;
-import org.jcodec.common.model.Picture;
-import org.jcodec.common.model.Rational;
-import org.jcodec.common.model.Size;
-import org.jcodec.common.model.Unit;
 import org.jcodec.containers.imgseq.ImageSequenceMuxer;
 import org.jcodec.containers.mkv.muxer.MKVMuxer;
 import org.jcodec.containers.mp4.muxer.CodecMP4MuxerTrack;
 import org.jcodec.containers.mp4.muxer.MP4Muxer;
 import org.jcodec.containers.mp4.muxer.MP4MuxerTrack;
 import org.jcodec.containers.raw.RawMuxer;
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import static org.jcodec.common.Codec.*;
+import static org.jcodec.common.Format.*;
+import static org.jcodec.common.io.NIOUtils.writableFileChannel;
 
 /**
  * The sink that consumes the uncompressed frames and stores them into a

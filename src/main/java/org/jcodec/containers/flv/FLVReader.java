@@ -1,20 +1,15 @@
 package org.jcodec.containers.flv;
+
 import org.jcodec.common.AudioFormat;
 import org.jcodec.common.Codec;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.tools.MathUtil;
-import org.jcodec.containers.flv.FLVTag.AacAudioTagHeader;
-import org.jcodec.containers.flv.FLVTag.AudioTagHeader;
-import org.jcodec.containers.flv.FLVTag.AvcVideoTagHeader;
-import org.jcodec.containers.flv.FLVTag.TagHeader;
-import org.jcodec.containers.flv.FLVTag.Type;
-import org.jcodec.containers.flv.FLVTag.VideoTagHeader;
+import org.jcodec.containers.flv.FLVTag.*;
 import org.jcodec.platform.Platform;
 
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.ReadableByteChannel;

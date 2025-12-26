@@ -1,16 +1,11 @@
 package org.jcodec.codecs.wav;
 
-import java.io.IOException;
-
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.AudioFormat;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
+import org.jcodec.common.*;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.model.Packet;
+
+import java.io.IOException;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

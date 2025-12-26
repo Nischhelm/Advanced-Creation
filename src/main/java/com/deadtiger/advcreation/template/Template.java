@@ -2,11 +2,13 @@ package com.deadtiger.advcreation.template;
 
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.build_mode.utility.ExtremaXYZ;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
 import com.deadtiger.advcreation.reference.Reference;
-import com.deadtiger.advcreation.utility.*;
+import com.deadtiger.advcreation.utility.PlacementHelper;
+import com.deadtiger.advcreation.utility.TemplateFolderUtility;
+import com.deadtiger.advcreation.utility.UnzipUtility;
+import com.deadtiger.advcreation.utility.ZipUtility;
 import com.google.common.hash.Hashing;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;

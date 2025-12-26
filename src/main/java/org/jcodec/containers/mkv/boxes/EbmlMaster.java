@@ -1,11 +1,11 @@
 package org.jcodec.containers.mkv.boxes;
-import static org.jcodec.containers.mkv.util.EbmlUtil.ebmlLength;
 
 import org.jcodec.containers.mkv.util.EbmlUtil;
 
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+
+import static org.jcodec.containers.mkv.util.EbmlUtil.ebmlLength;
 
 
 /**

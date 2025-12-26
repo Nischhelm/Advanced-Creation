@@ -1,13 +1,14 @@
 package org.jcodec.codecs.mpeg12;
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
 
 import org.jcodec.common.io.IOUtils;
 import org.jcodec.common.model.RationalLarge;
 import org.jcodec.common.tools.MainUtils;
 import org.jcodec.common.tools.MainUtils.Cmd;
 import org.jcodec.common.tools.MainUtils.Flag;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,9 +1,5 @@
 package org.jcodec.containers.mp4.demuxer;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.List;
-
 import org.jcodec.common.DemuxerTrackMeta;
 import org.jcodec.common.SeekableDemuxerTrack;
 import org.jcodec.common.io.NIOUtils;
@@ -11,19 +7,13 @@ import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.model.RationalLarge;
 import org.jcodec.containers.mp4.MP4Packet;
 import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsets64Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsetsBox;
-import org.jcodec.containers.mp4.boxes.Edit;
-import org.jcodec.containers.mp4.boxes.EditListBox;
-import org.jcodec.containers.mp4.boxes.NameBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.SampleToChunkBox.SampleToChunkEntry;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
-import org.jcodec.containers.mp4.boxes.TrakBox;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.List;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

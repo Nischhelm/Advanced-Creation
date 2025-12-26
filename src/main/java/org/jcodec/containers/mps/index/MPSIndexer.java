@@ -1,6 +1,4 @@
 package org.jcodec.containers.mps.index;
-import static org.jcodec.containers.mps.MPSUtils.mediaStream;
-import static org.jcodec.containers.mps.MPSUtils.readPESHeader;
 
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.NIOUtils.FileReader;
@@ -9,8 +7,10 @@ import org.jcodec.containers.mps.PESPacket;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
+
+import static org.jcodec.containers.mps.MPSUtils.mediaStream;
+import static org.jcodec.containers.mps.MPSUtils.readPESHeader;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

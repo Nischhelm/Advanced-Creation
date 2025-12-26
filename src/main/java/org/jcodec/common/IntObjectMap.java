@@ -1,9 +1,10 @@
 package org.jcodec.common;
+
 import org.jcodec.platform.Platform;
 
-import static java.lang.System.arraycopy;
-
 import java.lang.reflect.Array;
+
+import static java.lang.System.arraycopy;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

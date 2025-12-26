@@ -1,17 +1,15 @@
 package org.jcodec.containers.mps;
 
-import static org.jcodec.codecs.h264.io.model.NALUnitType.IDR_SLICE;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.NON_IDR_SLICE;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.PPS;
-import static org.jcodec.codecs.h264.io.model.NALUnitType.SPS;
-import static org.jcodec.common.TrackType.AUDIO;
-import static org.jcodec.common.TrackType.OTHER;
-import static org.jcodec.common.TrackType.VIDEO;
-import static org.jcodec.common.io.NIOUtils.asByteBufferInt;
-import static org.jcodec.containers.mps.MPSUtils.audioStream;
-import static org.jcodec.containers.mps.MPSUtils.psMarker;
-import static org.jcodec.containers.mps.MPSUtils.readPESHeader;
-import static org.jcodec.containers.mps.MPSUtils.videoStream;
+import org.jcodec.codecs.aac.AACConts;
+import org.jcodec.codecs.aac.ADTSParser;
+import org.jcodec.codecs.h264.io.model.NALUnit;
+import org.jcodec.codecs.mpeg12.MPEGDecoder;
+import org.jcodec.codecs.mpeg12.MPEGES;
+import org.jcodec.codecs.mpeg12.SegmentReader;
+import org.jcodec.common.*;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.model.Packet;
+import org.jcodec.common.model.Packet.FrameType;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -21,20 +19,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.jcodec.codecs.aac.AACConts;
-import org.jcodec.codecs.aac.ADTSParser;
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.mpeg12.MPEGDecoder;
-import org.jcodec.codecs.mpeg12.MPEGES;
-import org.jcodec.codecs.mpeg12.SegmentReader;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.IntIntHistogram;
-import org.jcodec.common.LongArrayList;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.UsedViaReflection;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.model.Packet;
-import org.jcodec.common.model.Packet.FrameType;
+import static org.jcodec.codecs.h264.io.model.NALUnitType.*;
+import static org.jcodec.common.TrackType.*;
+import static org.jcodec.common.io.NIOUtils.asByteBufferInt;
+import static org.jcodec.containers.mps.MPSUtils.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,10 +1,13 @@
 package org.jcodec.containers.mp4.demuxer;
 
-import static org.jcodec.common.Fourcc.free;
-import static org.jcodec.common.Fourcc.ftyp;
-import static org.jcodec.common.Fourcc.mdat;
-import static org.jcodec.common.Fourcc.moov;
-import static org.jcodec.common.Fourcc.wide;
+import org.jcodec.common.*;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.io.SeekableByteChannel;
+import org.jcodec.containers.mp4.MP4TrackType;
+import org.jcodec.containers.mp4.MP4Util;
+import org.jcodec.containers.mp4.MP4Util.Movie;
+import org.jcodec.containers.mp4.boxes.*;
+import org.jcodec.platform.Platform;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -12,27 +15,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.jcodec.common.Codec;
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.SeekableDemuxerTrack;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.UsedViaReflection;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.io.SeekableByteChannel;
-import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.MP4Util;
-import org.jcodec.containers.mp4.MP4Util.Movie;
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.HandlerBox;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
-import org.jcodec.platform.Platform;
+import static org.jcodec.common.Fourcc.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

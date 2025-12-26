@@ -1,23 +1,17 @@
 package org.jcodec.containers.mp3;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.UsedViaReflection;
+import org.jcodec.common.*;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.Packet;
 import org.jcodec.common.model.Packet.FrameType;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Demuxer for MPEG 1/2 audio layer 1,2,3 (MP3).

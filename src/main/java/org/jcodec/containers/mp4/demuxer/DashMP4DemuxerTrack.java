@@ -1,9 +1,19 @@
 package org.jcodec.containers.mp4.demuxer;
 
-import static org.jcodec.common.TrackType.AUDIO;
-import static org.jcodec.common.TrackType.OTHER;
-import static org.jcodec.common.TrackType.VIDEO;
-import static org.jcodec.common.VideoCodecMeta.createSimpleVideoCodecMeta;
+import org.jcodec.codecs.aac.AACUtils;
+import org.jcodec.codecs.h264.H264Utils;
+import org.jcodec.codecs.h264.io.model.SeqParameterSet;
+import org.jcodec.codecs.h264.mp4.AvcCBox;
+import org.jcodec.common.*;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.io.SeekableByteChannel;
+import org.jcodec.common.model.ColorSpace;
+import org.jcodec.common.model.Packet.FrameType;
+import org.jcodec.containers.mp4.MP4Packet;
+import org.jcodec.containers.mp4.MP4TrackType;
+import org.jcodec.containers.mp4.MP4Util;
+import org.jcodec.containers.mp4.MP4Util.Atom;
+import org.jcodec.containers.mp4.boxes.*;
 
 import java.io.Closeable;
 import java.io.File;
@@ -14,36 +24,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import org.jcodec.codecs.aac.AACUtils;
-import org.jcodec.codecs.h264.H264Utils;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.mp4.AvcCBox;
-import org.jcodec.common.ArrayUtil;
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.SeekableDemuxerTrack;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.io.SeekableByteChannel;
-import org.jcodec.common.model.ColorSpace;
-import org.jcodec.common.model.Packet.FrameType;
-import org.jcodec.containers.mp4.MP4Packet;
-import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.MP4Util;
-import org.jcodec.containers.mp4.MP4Util.Atom;
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieFragmentBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.PixelAspectExt;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.TrackFragmentBaseMediaDecodeTimeBox;
-import org.jcodec.containers.mp4.boxes.TrackFragmentBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
-import org.jcodec.containers.mp4.boxes.TrunBox;
-import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
+import static org.jcodec.common.TrackType.*;
+import static org.jcodec.common.VideoCodecMeta.createSimpleVideoCodecMeta;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

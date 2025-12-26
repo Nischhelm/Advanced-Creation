@@ -1,9 +1,8 @@
 package org.jcodec.scale.highbd;
+
 import org.jcodec.api.NotSupportedException;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.PictureHiBD;
-
-import java.lang.IllegalArgumentException;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

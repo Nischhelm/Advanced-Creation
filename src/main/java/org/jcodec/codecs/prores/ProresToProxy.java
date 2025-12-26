@@ -1,13 +1,4 @@
 package org.jcodec.codecs.prores;
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static org.jcodec.codecs.prores.ProresDecoder.bitstream;
-import static org.jcodec.codecs.prores.ProresDecoder.clip;
-import static org.jcodec.codecs.prores.ProresDecoder.readACCoeffs;
-import static org.jcodec.codecs.prores.ProresDecoder.readDCCoeffs;
-import static org.jcodec.codecs.prores.ProresDecoder.scaleMat;
-import static org.jcodec.codecs.prores.ProresEncoder.writeACCoeffs;
-import static org.jcodec.codecs.prores.ProresEncoder.writeDCCoeffs;
 
 import org.jcodec.codecs.prores.ProresConsts.FrameHeader;
 import org.jcodec.codecs.prores.ProresConsts.PictureHeader;
@@ -15,6 +6,12 @@ import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.BitWriter;
 
 import java.nio.ByteBuffer;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static org.jcodec.codecs.prores.ProresDecoder.*;
+import static org.jcodec.codecs.prores.ProresEncoder.writeACCoeffs;
+import static org.jcodec.codecs.prores.ProresEncoder.writeDCCoeffs;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

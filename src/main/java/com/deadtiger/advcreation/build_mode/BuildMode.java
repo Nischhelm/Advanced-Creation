@@ -8,8 +8,8 @@ import com.deadtiger.advcreation.client.player.IsometricCamera;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.utility.CursorVector;
 import com.deadtiger.advcreation.utility.MultiThreadLock;
@@ -22,11 +22,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import static com.deadtiger.advcreation.utility.PlacementHelper.isNotGroundMaterial;
 import static com.deadtiger.advcreation.utility.PlacementHelper.parseVec;

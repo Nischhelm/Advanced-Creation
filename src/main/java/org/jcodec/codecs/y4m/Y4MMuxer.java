@@ -1,16 +1,12 @@
 package org.jcodec.codecs.y4m;
 
+import org.jcodec.common.*;
+import org.jcodec.common.model.Packet;
+import org.jcodec.common.model.Size;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
-
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.model.Packet;
-import org.jcodec.common.model.Size;
 
 /**
  * Stores frames into Y4M file.

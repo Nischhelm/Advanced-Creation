@@ -1,13 +1,13 @@
 package org.jcodec.containers.mp4.boxes;
 
-import static org.jcodec.common.JCodecUtil2.asciiString;
-
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.platform.Platform;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.jcodec.common.JCodecUtil2.asciiString;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

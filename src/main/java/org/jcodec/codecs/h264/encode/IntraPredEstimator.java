@@ -1,16 +1,16 @@
 package org.jcodec.codecs.h264.encode;
 
-import static org.jcodec.codecs.h264.H264Const.BLK_DISP_MAP;
-import static org.jcodec.common.tools.MathUtil.clip;
-
-import java.util.Arrays;
-
 import org.jcodec.codecs.h264.decode.ChromaPredictionBuilder;
 import org.jcodec.codecs.h264.decode.CoeffTransformer;
 import org.jcodec.codecs.h264.decode.Intra16x16PredictionBuilder;
 import org.jcodec.codecs.h264.decode.Intra4x4PredictionBuilder;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.tools.MathUtil;
+
+import java.util.Arrays;
+
+import static org.jcodec.codecs.h264.H264Const.BLK_DISP_MAP;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

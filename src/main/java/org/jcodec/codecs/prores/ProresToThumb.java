@@ -1,4 +1,5 @@
 package org.jcodec.codecs.prores;
+
 import org.jcodec.codecs.prores.ProresConsts.FrameHeader;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.model.ColorSpace;
@@ -6,7 +7,6 @@ import org.jcodec.common.model.Picture;
 import org.jcodec.common.model.Rect;
 import org.jcodec.common.tools.MathUtil;
 
-import java.lang.System;
 import java.nio.ByteBuffer;
 
 /**

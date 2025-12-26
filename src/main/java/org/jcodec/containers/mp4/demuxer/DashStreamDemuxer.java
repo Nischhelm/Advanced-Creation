@@ -1,35 +1,20 @@
 package org.jcodec.containers.mp4.demuxer;
 
+import org.jcodec.api.JCodecException;
+import org.jcodec.common.*;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.model.Packet;
+import org.jcodec.containers.mp4.MP4Packet;
+import org.jcodec.containers.mp4.MPDModel;
+
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
-
-import org.jcodec.api.JCodecException;
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.SeekableDemuxerTrack;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.model.Packet;
-import org.jcodec.containers.mp4.MP4Packet;
-import org.jcodec.containers.mp4.MPDModel;
+import java.util.concurrent.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

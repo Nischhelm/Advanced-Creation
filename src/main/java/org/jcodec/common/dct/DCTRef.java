@@ -1,7 +1,6 @@
 package org.jcodec.common.dct;
-import static java.lang.Math.PI;
-import static java.lang.Math.cos;
-import static java.lang.Math.sqrt;
+
+import static java.lang.Math.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

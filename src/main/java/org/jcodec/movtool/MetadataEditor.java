@@ -1,21 +1,15 @@
 package org.jcodec.movtool;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jcodec.common.Format;
 import org.jcodec.common.JCodecUtil;
 import org.jcodec.containers.mp4.MP4Util;
 import org.jcodec.containers.mp4.MP4Util.Movie;
-import org.jcodec.containers.mp4.boxes.MetaBox;
-import org.jcodec.containers.mp4.boxes.MetaValue;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieFragmentBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.UdtaBox;
-import org.jcodec.containers.mp4.boxes.UdtaMetaBox;
+import org.jcodec.containers.mp4.boxes.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

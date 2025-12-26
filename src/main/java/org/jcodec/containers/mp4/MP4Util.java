@@ -1,31 +1,21 @@
 package org.jcodec.containers.mp4;
 
-import static org.jcodec.common.io.IOUtils.closeQuietly;
-import static org.jcodec.common.io.NIOUtils.readableChannel;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import org.jcodec.common.AutoFileChannelWrapper;
 import org.jcodec.common.Codec;
 import org.jcodec.common.io.FileChannelWrapper;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.logging.Logger;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.FileTypeBox;
-import org.jcodec.containers.mp4.boxes.Header;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieFragmentBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
+import org.jcodec.containers.mp4.boxes.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+import java.util.*;
+
+import static org.jcodec.common.io.IOUtils.closeQuietly;
+import static org.jcodec.common.io.NIOUtils.readableChannel;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

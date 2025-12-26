@@ -1,17 +1,13 @@
 package org.jcodec.codecs.mpeg12;
-import static org.jcodec.codecs.mpeg12.MPEGConst.BLOCK_TO_CC;
-import static org.jcodec.codecs.mpeg12.MPEGConst.SQUEEZE_X;
-import static org.jcodec.codecs.mpeg12.MPEGConst.SQUEEZE_Y;
-import static org.jcodec.codecs.mpeg12.MPEGConst.vlcCoeff0;
-import static org.jcodec.codecs.mpeg12.MPEGConst.vlcDCSizeChroma;
-import static org.jcodec.codecs.mpeg12.MPEGConst.vlcDCSizeLuma;
-import static org.jcodec.codecs.mpeg12.bitstream.SequenceExtension.Chroma420;
 
 import org.jcodec.codecs.mpeg12.bitstream.PictureHeader;
 import org.jcodec.codecs.mpeg12.bitstream.SequenceHeader;
 import org.jcodec.common.dct.IDCT2x2;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.VLC;
+
+import static org.jcodec.codecs.mpeg12.MPEGConst.*;
+import static org.jcodec.codecs.mpeg12.bitstream.SequenceExtension.Chroma420;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

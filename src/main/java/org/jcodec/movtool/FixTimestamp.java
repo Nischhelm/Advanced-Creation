@@ -1,9 +1,5 @@
 package org.jcodec.movtool;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-
 import org.jcodec.common.IntArrayList;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
@@ -14,6 +10,10 @@ import org.jcodec.containers.mp4.boxes.Edit;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
 import org.jcodec.containers.mp4.boxes.TrakBox;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

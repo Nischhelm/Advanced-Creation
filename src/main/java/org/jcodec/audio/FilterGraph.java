@@ -1,7 +1,7 @@
 package org.jcodec.audio;
+
 import org.jcodec.audio.Audio.DummyFilter;
 
-import java.lang.IllegalArgumentException;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;

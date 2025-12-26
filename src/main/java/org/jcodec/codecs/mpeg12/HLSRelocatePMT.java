@@ -1,4 +1,5 @@
 package org.jcodec.codecs.mpeg12;
+
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.tools.MainUtils;
 import org.jcodec.common.tools.MainUtils.Cmd;
@@ -6,7 +7,6 @@ import org.jcodec.containers.mps.psi.PATSection;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;

@@ -1,15 +1,5 @@
 package org.jcodec.movtool;
 
-import static java.lang.System.arraycopy;
-import static org.jcodec.common.io.NIOUtils.readableChannel;
-import static org.jcodec.common.io.NIOUtils.writableChannel;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.jcodec.common.Tuple._2;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.model.RationalLarge;
@@ -17,20 +7,20 @@ import org.jcodec.containers.mp4.Chunk;
 import org.jcodec.containers.mp4.ChunkReader;
 import org.jcodec.containers.mp4.MP4Util;
 import org.jcodec.containers.mp4.MP4Util.Movie;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsets64Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsetsBox;
-import org.jcodec.containers.mp4.boxes.Edit;
-import org.jcodec.containers.mp4.boxes.MediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.SampleToChunkBox.SampleToChunkEntry;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
-import org.jcodec.containers.mp4.boxes.TrakBox;
 import org.jcodec.platform.Platform;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import static java.lang.System.arraycopy;
+import static org.jcodec.common.io.NIOUtils.readableChannel;
+import static org.jcodec.common.io.NIOUtils.writableChannel;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

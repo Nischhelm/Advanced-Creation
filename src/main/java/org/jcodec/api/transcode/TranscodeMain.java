@@ -1,29 +1,9 @@
 package org.jcodec.api.transcode;
 
-import static org.jcodec.common.Tuple._2;
-import static org.jcodec.common.Tuple._3;
-import static org.jcodec.common.Tuple.triple;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import org.jcodec.api.transcode.Transcoder.TranscoderBuilder;
 import org.jcodec.api.transcode.filters.DumpMvFilter;
 import org.jcodec.api.transcode.filters.ScaleFilter;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.Format;
-import org.jcodec.common.JCodecUtil;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.Tuple;
+import org.jcodec.common.*;
 import org.jcodec.common.logging.LogLevel;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.logging.OutLogSink;
@@ -35,6 +15,12 @@ import org.jcodec.common.tools.MainUtils.Flag;
 import org.jcodec.common.tools.MainUtils.FlagType;
 import org.jcodec.common.tools.MathUtil;
 import org.jcodec.platform.Platform;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
+import static org.jcodec.common.Tuple.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,5 +1,4 @@
 package org.jcodec.codecs.aac;
-import static org.jcodec.codecs.aac.ObjectType.AOT_ESCAPE;
 
 import org.jcodec.codecs.mpeg4.mp4.EsdsBox;
 import org.jcodec.common.AudioFormat;
@@ -10,8 +9,9 @@ import org.jcodec.containers.mp4.boxes.Box.LeafBox;
 import org.jcodec.containers.mp4.boxes.NodeBox;
 import org.jcodec.containers.mp4.boxes.SampleEntry;
 
-import java.lang.IllegalArgumentException;
 import java.nio.ByteBuffer;
+
+import static org.jcodec.codecs.aac.ObjectType.AOT_ESCAPE;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

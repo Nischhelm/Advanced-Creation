@@ -1,41 +1,17 @@
 package org.jcodec.codecs.mpeg4;
 
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.BS_VERSION_BUGGY_DC_CLIP;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.CBPY_TABLE;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.COEFF_TAB;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.DC_LUM_TAB;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.DEFAULT_ACDC_VALUES;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.INTRA_DC_THRESHOLD_TABLE;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MAX_LEVEL;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MAX_RUN;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MCBPC_INTER_TABLE;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MCBPC_INTRA_TABLE;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_BACKWARD;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_DIRECT;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_DIRECT_NONE_MV;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_FORWARD;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTER;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTER4V;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTERPOLATE;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTER_Q;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTRA;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTRA_Q;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.SCAN_TABLES;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.TMNMV_TAB_0;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.TMNMV_TAB_1;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.TMNMV_TAB_2;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.ZERO_MV;
-import static org.jcodec.common.tools.MathUtil.abs;
-import static org.jcodec.common.tools.MathUtil.log2;
-
-import java.util.Arrays;
-
 import org.jcodec.codecs.mpeg4.Macroblock.Vector;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.tools.MathUtil;
+
+import java.util.Arrays;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static org.jcodec.codecs.mpeg4.MPEG4Consts.*;
+import static org.jcodec.common.tools.MathUtil.abs;
+import static org.jcodec.common.tools.MathUtil.log2;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,10 +1,10 @@
 package org.jcodec.containers.mxf.model;
-import org.jcodec.platform.Platform;
 
-import java.util.Iterator;
+import org.jcodec.platform.Platform;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 /**

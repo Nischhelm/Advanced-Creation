@@ -1,20 +1,12 @@
 package org.jcodec.codecs.mpeg4;
 
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.ALT_CHROMA_ROUNDING;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTER;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTER4V;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.MODE_INTER_Q;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.ROUNDTAB_76;
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.ROUNDTAB_79;
-import static org.jcodec.codecs.mpeg4.MPEG4DCT.idctAdd;
-import static org.jcodec.codecs.mpeg4.MPEG4DCT.idctPut;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate16x16Planar;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate16x16QP;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate8x8Planar;
-import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.interpolate8x8QP;
-
 import org.jcodec.codecs.mpeg4.Macroblock.Vector;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.mpeg4.MPEG4Consts.*;
+import static org.jcodec.codecs.mpeg4.MPEG4DCT.idctAdd;
+import static org.jcodec.codecs.mpeg4.MPEG4DCT.idctPut;
+import static org.jcodec.codecs.mpeg4.MPEG4Interpolator.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,17 +1,5 @@
 package org.jcodec.codecs.h264.io;
 
-import static org.jcodec.codecs.h264.H264Const.PartPred.Bi;
-import static org.jcodec.codecs.h264.H264Const.PartPred.Direct;
-import static org.jcodec.codecs.h264.io.CABAC.BlockType.CHROMA_AC;
-import static org.jcodec.codecs.h264.io.CABAC.BlockType.CHROMA_DC;
-import static org.jcodec.codecs.h264.io.CABAC.BlockType.LUMA_16_DC;
-import static org.jcodec.codecs.h264.io.model.MBType.B_Direct_16x16;
-import static org.jcodec.codecs.h264.io.model.MBType.I_16x16;
-import static org.jcodec.codecs.h264.io.model.MBType.I_NxN;
-import static org.jcodec.codecs.h264.io.model.MBType.I_PCM;
-import static org.jcodec.common.tools.MathUtil.clip;
-import static org.jcodec.common.tools.MathUtil.sign;
-
 import org.jcodec.codecs.common.biari.MDecoder;
 import org.jcodec.codecs.common.biari.MEncoder;
 import org.jcodec.codecs.h264.H264Const;
@@ -21,6 +9,13 @@ import org.jcodec.codecs.h264.decode.CABACContst;
 import org.jcodec.codecs.h264.io.model.MBType;
 import org.jcodec.codecs.h264.io.model.SliceType;
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.codecs.h264.H264Const.PartPred.Bi;
+import static org.jcodec.codecs.h264.H264Const.PartPred.Direct;
+import static org.jcodec.codecs.h264.io.CABAC.BlockType.*;
+import static org.jcodec.codecs.h264.io.model.MBType.*;
+import static org.jcodec.common.tools.MathUtil.clip;
+import static org.jcodec.common.tools.MathUtil.sign;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

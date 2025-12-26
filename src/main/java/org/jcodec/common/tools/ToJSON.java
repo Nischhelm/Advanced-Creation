@@ -1,22 +1,13 @@
 package org.jcodec.common.tools;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import org.jcodec.common.IntArrayList;
 import org.jcodec.common.io.NIOUtils;
 
-import java.lang.IllegalArgumentException;
-import java.lang.StringBuilder;
-import java.lang.System;
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.nio.ByteBuffer;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

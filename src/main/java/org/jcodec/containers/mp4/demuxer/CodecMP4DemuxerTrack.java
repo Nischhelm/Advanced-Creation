@@ -1,9 +1,5 @@
 package org.jcodec.containers.mp4.demuxer;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.Arrays;
-
 import org.jcodec.codecs.aac.AACUtils;
 import org.jcodec.codecs.aac.ADTSParser;
 import org.jcodec.codecs.aac.ADTSParser.Header;
@@ -16,6 +12,10 @@ import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.Packet;
 import org.jcodec.containers.mp4.MP4Packet;
 import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

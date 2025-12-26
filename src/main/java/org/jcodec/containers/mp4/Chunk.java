@@ -1,8 +1,9 @@
 package org.jcodec.containers.mp4;
 
+import org.jcodec.common.Tuple._2;
+
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import org.jcodec.common.Tuple._2;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

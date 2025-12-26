@@ -1,10 +1,10 @@
 package org.jcodec.api.transcode;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
 import org.jcodec.common.AudioCodecMeta;
 import org.jcodec.common.VideoCodecMeta;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

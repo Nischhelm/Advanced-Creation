@@ -1,17 +1,17 @@
 package org.jcodec.codecs.vpx;
 
-import static org.jcodec.codecs.vpx.VP8Util.vp8CoefUpdateProbs;
-import static org.jcodec.common.tools.MathUtil.clip;
-
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Arrays;
-
 import org.jcodec.common.ArrayUtil;
 import org.jcodec.common.VideoEncoder;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Arrays;
+
+import static org.jcodec.codecs.vpx.VP8Util.vp8CoefUpdateProbs;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,7 +1,6 @@
 package org.jcodec.scale.highbd;
-import org.jcodec.common.model.PictureHiBD;
 
-import java.lang.IllegalArgumentException;
+import org.jcodec.common.model.PictureHiBD;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

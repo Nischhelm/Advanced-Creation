@@ -1,10 +1,10 @@
 package org.jcodec.api.transcode;
 
-import java.io.IOException;
-
 import org.jcodec.common.AudioCodecMeta;
 import org.jcodec.common.VideoCodecMeta;
 import org.jcodec.common.model.Packet;
+
+import java.io.IOException;
 
 
 /**

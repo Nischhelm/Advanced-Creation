@@ -3,7 +3,6 @@ package com.deadtiger.advcreation.network.message;
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.network.network_utility.ByteBufCustomUtils;
-import com.deadtiger.advcreation.utility.FakeWorld;
 import com.deadtiger.advcreation.utility.TileEntityPlacementHelper;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.advancements.CriteriaTriggers;

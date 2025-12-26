@@ -1,11 +1,12 @@
 package org.jcodec.scale.highbd;
-import static java.lang.System.arraycopy;
+
+import org.jcodec.common.model.ColorSpace;
+import org.jcodec.common.model.PictureHiBD;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.jcodec.common.model.ColorSpace;
-import org.jcodec.common.model.PictureHiBD;
+import static java.lang.System.arraycopy;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

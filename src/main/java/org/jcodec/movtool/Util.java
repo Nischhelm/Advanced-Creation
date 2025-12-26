@@ -1,31 +1,17 @@
 package org.jcodec.movtool;
 
-import static org.jcodec.common.ArrayUtil.addAllInt;
-import static org.jcodec.common.ArrayUtil.addAllObj;
+import org.jcodec.common.ArrayUtil;
+import org.jcodec.common.model.Rational;
+import org.jcodec.containers.mp4.boxes.*;
+import org.jcodec.containers.mp4.boxes.SampleToChunkBox.SampleToChunkEntry;
+import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-import org.jcodec.common.ArrayUtil;
-import org.jcodec.common.model.Rational;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsets64Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsetsBox;
-import org.jcodec.containers.mp4.boxes.DataRefBox;
-import org.jcodec.containers.mp4.boxes.Edit;
-import org.jcodec.containers.mp4.boxes.MediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieHeaderBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleDescriptionBox;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox.SampleToChunkEntry;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
-import org.jcodec.containers.mp4.boxes.TrakBox;
+import static org.jcodec.common.ArrayUtil.addAllInt;
+import static org.jcodec.common.ArrayUtil.addAllObj;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

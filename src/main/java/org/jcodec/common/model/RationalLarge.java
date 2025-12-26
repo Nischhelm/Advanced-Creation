@@ -1,7 +1,8 @@
 package org.jcodec.common.model;
 
-import static org.jcodec.common.StringUtils.splitS;
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.common.StringUtils.splitS;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

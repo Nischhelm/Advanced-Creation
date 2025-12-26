@@ -1,6 +1,5 @@
 package org.jcodec.scale;
 
-import org.jcodec.common.Ints;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.model.Size;
 import org.jcodec.common.tools.MathUtil;

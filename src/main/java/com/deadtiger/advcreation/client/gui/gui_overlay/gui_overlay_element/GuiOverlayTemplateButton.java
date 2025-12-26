@@ -1,6 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element;
 
-import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateManager;

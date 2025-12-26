@@ -1,21 +1,8 @@
 package org.jcodec.codecs.vpx.vp9;
 
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.DC_PRED;
-import static org.jcodec.codecs.vpx.vp9.Consts.SEG_LVL_SKIP;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_INTRA_MODE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_SEGMENT_ID;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_TX_SIZE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_MODE_SELECT;
-import static org.jcodec.codecs.vpx.vp9.Consts.blH;
-import static org.jcodec.codecs.vpx.vp9.Consts.blW;
-import static org.jcodec.codecs.vpx.vp9.Consts.maxTxLookup;
-
 import org.jcodec.codecs.vpx.VPXBooleanDecoder;
+
+import static org.jcodec.codecs.vpx.vp9.Consts.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

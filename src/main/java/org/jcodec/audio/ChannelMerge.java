@@ -1,7 +1,7 @@
 package org.jcodec.audio;
+
 import org.jcodec.common.AudioFormat;
 
-import java.lang.IllegalArgumentException;
 import java.nio.FloatBuffer;
 
 import static org.jcodec.common.Preconditions.checkState;

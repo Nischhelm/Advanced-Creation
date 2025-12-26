@@ -1,6 +1,5 @@
 package org.jcodec.common;
 
-import java.lang.StringBuilder;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package org.jcodec.api.transcode;
 
+import org.jcodec.common.model.ColorSpace;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Map;
-
-import org.jcodec.common.model.ColorSpace;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,5 +1,4 @@
 package org.jcodec.codecs.mpeg12;
-import static org.jcodec.common.io.NIOUtils.cloneBuffer;
 
 import org.jcodec.common.AudioFormat;
 import org.jcodec.common.Codec;
@@ -16,11 +15,9 @@ import org.jcodec.containers.mps.MPSUtils.PESReader;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import static org.jcodec.common.io.NIOUtils.cloneBuffer;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

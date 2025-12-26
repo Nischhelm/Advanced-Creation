@@ -1,26 +1,22 @@
 package com.deadtiger.advcreation.network.message;
 
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.network.NetworkHandler;
 import com.deadtiger.advcreation.network.network_utility.ByteBufCustomUtils;
 import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.undo_actions.UndoFunctionality;
-import com.deadtiger.advcreation.utility.FakeWorld;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;

@@ -1,5 +1,4 @@
 package org.jcodec.codecs.mjpeg;
-import static org.jcodec.codecs.mjpeg.JpegConst.naturalOrder;
 
 import org.jcodec.api.UnhandledStateException;
 import org.jcodec.common.VideoCodecMeta;
@@ -18,6 +17,8 @@ import org.jcodec.common.tools.MathUtil;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+
+import static org.jcodec.codecs.mjpeg.JpegConst.naturalOrder;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

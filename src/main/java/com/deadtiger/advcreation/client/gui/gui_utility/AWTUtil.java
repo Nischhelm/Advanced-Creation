@@ -1,13 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_utility;
 
-import static org.jcodec.common.model.ColorSpace.RGB;
-
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
 import org.jcodec.codecs.png.PNGDecoder;
 import org.jcodec.codecs.png.PNGEncoder;
 import org.jcodec.common.Preconditions;
@@ -18,6 +10,14 @@ import org.jcodec.common.model.Picture;
 import org.jcodec.scale.ColorUtil;
 import org.jcodec.scale.RgbToBgr;
 import org.jcodec.scale.Transform;
+
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+
+import static org.jcodec.common.model.ColorSpace.RGB;
 
 public class AWTUtil {
     private static final int alphaR = 0xff;

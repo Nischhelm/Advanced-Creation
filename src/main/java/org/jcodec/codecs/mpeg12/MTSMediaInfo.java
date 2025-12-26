@@ -1,4 +1,5 @@
 package org.jcodec.codecs.mpeg12;
+
 import org.jcodec.codecs.mpeg12.MPSMediaInfo.MPEGTrackMetadata;
 import org.jcodec.codecs.mpeg12.MPSMediaInfo.MediaInfoDone;
 import org.jcodec.common.io.FileChannelWrapper;
@@ -10,7 +11,6 @@ import org.jcodec.containers.mps.psi.PMTSection.PMTStream;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;

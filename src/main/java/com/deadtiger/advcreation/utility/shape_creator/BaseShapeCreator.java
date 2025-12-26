@@ -2,18 +2,14 @@ package com.deadtiger.advcreation.utility.shape_creator;
 
 import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
-import com.deadtiger.advcreation.build_mode.utility.EnumFillMode;
 import com.deadtiger.advcreation.build_mode.utility.FillVector;
-import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.utility.PlacementHelper;
-import net.minecraft.block.BlockRedstoneWire;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 
 import static com.deadtiger.advcreation.utility.PlacementHelper.isWireRailOrNeedsConnection;

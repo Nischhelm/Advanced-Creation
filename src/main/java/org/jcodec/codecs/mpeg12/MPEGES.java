@@ -1,14 +1,15 @@
 package org.jcodec.codecs.mpeg12;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.jcodec.codecs.mpeg12.bitstream.PictureHeader;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.Packet.FrameType;
 import org.jcodec.containers.mps.MPEGPacket;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.ReadableByteChannel;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

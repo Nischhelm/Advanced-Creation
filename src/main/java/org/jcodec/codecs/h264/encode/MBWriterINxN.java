@@ -1,8 +1,5 @@
 package org.jcodec.codecs.h264.encode;
 
-import static org.jcodec.codecs.h264.H264Const.BLK_DISP_MAP;
-import static org.jcodec.common.tools.MathUtil.clip;
-
 import org.jcodec.codecs.h264.H264Const;
 import org.jcodec.codecs.h264.H264Encoder.NonRdVector;
 import org.jcodec.codecs.h264.decode.CoeffTransformer;
@@ -12,6 +9,9 @@ import org.jcodec.codecs.h264.io.model.MBType;
 import org.jcodec.codecs.h264.io.write.CAVLCWriter;
 import org.jcodec.common.io.BitWriter;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.h264.H264Const.BLK_DISP_MAP;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

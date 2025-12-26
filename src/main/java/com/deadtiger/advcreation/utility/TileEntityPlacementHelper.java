@@ -1,27 +1,20 @@
 package com.deadtiger.advcreation.utility;
 
 //import com.bewitchment.common.block.tile.entity.TileEntityStatue;
-import com.deadtiger.advcreation.plugin.transformer.GeneralTransformer;
+
 import com.mojang.authlib.GameProfile;
-import it.unimi.dsi.fastutil.Hash;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTUtil;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.tileentity.TileEntitySkull;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.apache.commons.lang3.StringUtils;
-import org.objectweb.asm.tree.ClassNode;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.UUID;
 
 public class TileEntityPlacementHelper
 {

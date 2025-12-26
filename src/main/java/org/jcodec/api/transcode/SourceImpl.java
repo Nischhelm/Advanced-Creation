@@ -1,32 +1,5 @@
 package org.jcodec.api.transcode;
 
-import static org.jcodec.common.Codec.AAC;
-import static org.jcodec.common.Codec.JPEG;
-import static org.jcodec.common.Codec.MPEG2;
-import static org.jcodec.common.Codec.MPEG4;
-import static org.jcodec.common.Codec.PCM;
-import static org.jcodec.common.Codec.PNG;
-import static org.jcodec.common.Codec.PRORES;
-import static org.jcodec.common.Codec.VP8;
-import static org.jcodec.common.Format.DASHURL;
-import static org.jcodec.common.Format.IMG;
-import static org.jcodec.common.Format.MKV;
-import static org.jcodec.common.Format.MOV;
-import static org.jcodec.common.Format.MPEG_AUDIO;
-import static org.jcodec.common.Format.MPEG_PS;
-import static org.jcodec.common.Format.MPEG_TS;
-import static org.jcodec.common.Format.WAV;
-import static org.jcodec.common.Format.WEBP;
-import static org.jcodec.common.Format.Y4M;
-import static org.jcodec.common.io.NIOUtils.readableFileChannel;
-
-import java.io.IOException;
-import java.net.URL;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import org.jcodec.api.transcode.PixelStore.LoanerPicture;
 import org.jcodec.codecs.h264.BufferH264ES;
 import org.jcodec.codecs.h264.H264Decoder;
@@ -46,18 +19,8 @@ import org.jcodec.codecs.prores.ProresToThumb4x4;
 import org.jcodec.codecs.raw.RAWVideoDecoder;
 import org.jcodec.codecs.vpx.VP8Decoder;
 import org.jcodec.codecs.wav.WavDemuxer;
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.AudioDecoder;
-import org.jcodec.common.AudioFormat;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.Format;
-import org.jcodec.common.SeekableDemuxerTrack;
+import org.jcodec.common.*;
 import org.jcodec.common.Tuple._3;
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.VideoDecoder;
 import org.jcodec.common.io.IOUtils;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
@@ -80,6 +43,17 @@ import org.jcodec.containers.mps.MPSDemuxer;
 import org.jcodec.containers.mps.MTSDemuxer;
 import org.jcodec.containers.webp.WebpDemuxer;
 import org.jcodec.containers.y4m.Y4MDemuxer;
+
+import java.io.IOException;
+import java.net.URL;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static org.jcodec.common.Codec.*;
+import static org.jcodec.common.Format.*;
+import static org.jcodec.common.io.NIOUtils.readableFileChannel;
 
 /**
  * A source producing uncompressed video/audio streams out of a compressed file.

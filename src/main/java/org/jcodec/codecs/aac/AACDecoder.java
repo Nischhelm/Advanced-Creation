@@ -1,15 +1,15 @@
 package org.jcodec.codecs.aac;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
 import org.jcodec.codecs.aac.ADTSParser.Header;
 import org.jcodec.common.AudioCodecMeta;
 import org.jcodec.common.AudioDecoder;
 import org.jcodec.common.UsedViaReflection;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.AudioBuffer;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 
 /**

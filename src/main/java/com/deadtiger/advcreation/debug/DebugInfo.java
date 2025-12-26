@@ -1,13 +1,10 @@
 package com.deadtiger.advcreation.debug;
 
-import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntityRenderer;
 import com.deadtiger.advcreation.utility.CursorVector;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderGlobal;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.Vec3d;
 
 import java.awt.*;

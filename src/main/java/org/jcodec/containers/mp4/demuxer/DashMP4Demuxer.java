@@ -1,18 +1,14 @@
 package org.jcodec.containers.mp4.demuxer;
 
+import org.jcodec.common.*;
+import org.jcodec.common.model.Packet;
+
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.jcodec.common.Demuxer;
-import org.jcodec.common.DemuxerTrack;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.SeekableDemuxerTrack;
-import org.jcodec.common.TrackType;
-import org.jcodec.common.model.Packet;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

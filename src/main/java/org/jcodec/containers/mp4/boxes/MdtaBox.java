@@ -1,9 +1,9 @@
 package org.jcodec.containers.mp4.boxes;
 
-import java.nio.ByteBuffer;
-
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.platform.Platform;
+
+import java.nio.ByteBuffer;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

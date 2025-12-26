@@ -1,18 +1,7 @@
 package org.jcodec.api;
 
-import static org.jcodec.common.Codec.H264;
-import static org.jcodec.common.Format.MOV;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Map;
-
-import org.jcodec.api.transcode.PixelStore;
+import org.jcodec.api.transcode.*;
 import org.jcodec.api.transcode.PixelStore.LoanerPicture;
-import org.jcodec.api.transcode.PixelStoreImpl;
-import org.jcodec.api.transcode.Sink;
-import org.jcodec.api.transcode.SinkImpl;
-import org.jcodec.api.transcode.VideoFrameWithPacket;
 import org.jcodec.common.Codec;
 import org.jcodec.common.Format;
 import org.jcodec.common.io.NIOUtils;
@@ -24,6 +13,13 @@ import org.jcodec.common.model.Picture;
 import org.jcodec.common.model.Rational;
 import org.jcodec.scale.ColorUtil;
 import org.jcodec.scale.Transform;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+
+import static org.jcodec.common.Codec.H264;
+import static org.jcodec.common.Format.MOV;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

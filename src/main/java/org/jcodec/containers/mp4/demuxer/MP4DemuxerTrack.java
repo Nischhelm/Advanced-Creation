@@ -1,22 +1,16 @@
 package org.jcodec.containers.mp4.demuxer;
 
-import static org.jcodec.containers.mp4.QTTimeUtil.mediaToEdited;
+import org.jcodec.common.io.SeekableByteChannel;
+import org.jcodec.common.model.Packet.FrameType;
+import org.jcodec.containers.mp4.MP4Packet;
+import org.jcodec.containers.mp4.boxes.*;
+import org.jcodec.containers.mp4.boxes.CompositionOffsetsBox.Entry;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
-import org.jcodec.common.io.SeekableByteChannel;
-import org.jcodec.common.model.Packet.FrameType;
-import org.jcodec.containers.mp4.MP4Packet;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.CompositionOffsetsBox;
-import org.jcodec.containers.mp4.boxes.CompositionOffsetsBox.Entry;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SyncSamplesBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
+import static org.jcodec.containers.mp4.QTTimeUtil.mediaToEdited;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

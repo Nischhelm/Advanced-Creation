@@ -1,21 +1,11 @@
 package org.jcodec.codecs.h264.io.write;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeBool;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeSEtrace;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeU;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeUEtrace;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeUtrace;
-import static org.jcodec.common.model.ColorSpace.MONO;
 
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.RefPicMarking;
+import org.jcodec.codecs.h264.io.model.*;
 import org.jcodec.codecs.h264.io.model.RefPicMarking.Instruction;
-import org.jcodec.codecs.h264.io.model.RefPicMarkingIDR;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
 import org.jcodec.common.io.BitWriter;
 
-import java.lang.IllegalArgumentException;
+import static org.jcodec.codecs.h264.io.write.CAVLCWriter.*;
+import static org.jcodec.common.model.ColorSpace.MONO;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

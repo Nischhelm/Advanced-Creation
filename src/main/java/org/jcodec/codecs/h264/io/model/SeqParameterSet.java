@@ -1,18 +1,4 @@
 package org.jcodec.codecs.h264.io.model;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readBool;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readNBit;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readSE;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readUEtrace;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeBool;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeNBit;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeSEtrace;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeTrailingBits;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeUEtrace;
-import static org.jcodec.common.model.ColorSpace.MONO;
-import static org.jcodec.common.model.ColorSpace.YUV420J;
-import static org.jcodec.common.model.ColorSpace.YUV422;
-import static org.jcodec.common.model.ColorSpace.YUV444;
-import static org.jcodec.platform.Platform.arrayEqualsInt;
 
 import org.jcodec.codecs.h264.H264Const;
 import org.jcodec.common.io.BitReader;
@@ -20,6 +6,11 @@ import org.jcodec.common.io.BitWriter;
 import org.jcodec.common.model.ColorSpace;
 
 import java.nio.ByteBuffer;
+
+import static org.jcodec.codecs.h264.decode.CAVLCReader.*;
+import static org.jcodec.codecs.h264.io.write.CAVLCWriter.*;
+import static org.jcodec.common.model.ColorSpace.*;
+import static org.jcodec.platform.Platform.arrayEqualsInt;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

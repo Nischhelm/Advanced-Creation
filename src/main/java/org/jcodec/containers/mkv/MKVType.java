@@ -1,33 +1,13 @@
 package org.jcodec.containers.mkv;
-import static org.jcodec.containers.mkv.util.EbmlUtil.toHexString;
 
-import java.util.Iterator;
-
-import org.jcodec.containers.mkv.boxes.EbmlBase;
-import org.jcodec.containers.mkv.boxes.EbmlBin;
-import org.jcodec.containers.mkv.boxes.EbmlDate;
-import org.jcodec.containers.mkv.boxes.EbmlFloat;
-import org.jcodec.containers.mkv.boxes.EbmlMaster;
-import org.jcodec.containers.mkv.boxes.EbmlSint;
-import org.jcodec.containers.mkv.boxes.EbmlString;
-import org.jcodec.containers.mkv.boxes.EbmlUint;
-import org.jcodec.containers.mkv.boxes.EbmlVoid;
-import org.jcodec.containers.mkv.boxes.MkvBlock;
-import org.jcodec.containers.mkv.boxes.MkvSegment;
+import org.jcodec.containers.mkv.boxes.*;
 import org.jcodec.platform.Platform;
 
-import java.lang.System;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
+
+import static org.jcodec.containers.mkv.util.EbmlUtil.toHexString;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed under FreeBSD License

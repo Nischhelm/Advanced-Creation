@@ -1,10 +1,10 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.common.tools.Debug.trace;
-
 import org.jcodec.codecs.h264.H264Utils2;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.tools.Debug;
+
+import static org.jcodec.common.tools.Debug.trace;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

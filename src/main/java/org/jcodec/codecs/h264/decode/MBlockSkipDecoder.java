@@ -1,16 +1,4 @@
 package org.jcodec.codecs.h264.decode;
-import static org.jcodec.codecs.h264.H264Const.identityMapping4;
-import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
-import static org.jcodec.codecs.h264.H264Utils.Mv.packMv;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.NULL_VECTOR;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.calcMVPredictionMedian;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.collectPredictors;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveMvs;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.savePrediction8x8;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveVect;
-import static org.jcodec.codecs.h264.io.model.SliceType.P;
-
-import java.util.Arrays;
 
 import org.jcodec.codecs.h264.H264Const.PartPred;
 import org.jcodec.codecs.h264.H264Utils.MvList;
@@ -19,6 +7,14 @@ import org.jcodec.codecs.h264.io.model.Frame;
 import org.jcodec.codecs.h264.io.model.SliceHeader;
 import org.jcodec.codecs.h264.io.model.SliceType;
 import org.jcodec.common.model.Picture;
+
+import java.util.Arrays;
+
+import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
+import static org.jcodec.codecs.h264.H264Const.identityMapping4;
+import static org.jcodec.codecs.h264.H264Utils.Mv.packMv;
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.*;
+import static org.jcodec.codecs.h264.io.model.SliceType.P;
 
 /**
  * A decoder for P skip macroblocks

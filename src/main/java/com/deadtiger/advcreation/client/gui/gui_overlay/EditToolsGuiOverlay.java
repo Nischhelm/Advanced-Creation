@@ -2,16 +2,15 @@ package com.deadtiger.advcreation.client.gui.gui_overlay;
 
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.EnumMainMode;
-import com.deadtiger.advcreation.client.input.Keybindings;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayBaseElement;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayCustomButton;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayCustomWindow;
+import com.deadtiger.advcreation.client.input.Keybindings;
+import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.edit_mode.adjust_modes.BaseAdjustMode;
 import com.deadtiger.advcreation.edit_mode.adjust_modes.DigRaiseAdjustMode;
 import com.deadtiger.advcreation.edit_mode.adjust_modes.LevelAdjustMode;
-import com.deadtiger.advcreation.edit_mode.adjust_modes.SmoothAdjustMode;
 import com.deadtiger.advcreation.reference.Reference;
-import com.deadtiger.advcreation.edit_mode.EditMode;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;

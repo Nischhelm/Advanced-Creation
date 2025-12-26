@@ -1,12 +1,12 @@
 package org.jcodec.containers.mp4.boxes;
 
-import java.util.List;
-import java.util.ListIterator;
-
 import org.jcodec.common.model.Rational;
 import org.jcodec.common.model.Size;
 import org.jcodec.containers.mp4.MP4TrackType;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
+
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

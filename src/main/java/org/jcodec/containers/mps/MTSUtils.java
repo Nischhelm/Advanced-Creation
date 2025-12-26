@@ -1,6 +1,4 @@
 package org.jcodec.containers.mps;
-import static org.jcodec.common.Preconditions.checkState;
-import static org.jcodec.common.io.NIOUtils.getRel;
 
 import org.jcodec.common.IntArrayList;
 import org.jcodec.common.io.NIOUtils;
@@ -13,6 +11,9 @@ import org.jcodec.containers.mps.psi.PSISection;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+
+import static org.jcodec.common.Preconditions.checkState;
+import static org.jcodec.common.io.NIOUtils.getRel;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

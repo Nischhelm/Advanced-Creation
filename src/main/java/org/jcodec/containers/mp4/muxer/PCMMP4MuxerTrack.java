@@ -1,4 +1,5 @@
 package org.jcodec.containers.mp4.muxer;
+
 import org.jcodec.common.AudioFormat;
 import org.jcodec.common.LongArrayList;
 import org.jcodec.common.model.Packet;
@@ -6,28 +7,11 @@ import org.jcodec.common.model.Rational;
 import org.jcodec.common.model.Size;
 import org.jcodec.common.model.Unit;
 import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsets64Box;
-import org.jcodec.containers.mp4.boxes.HandlerBox;
-import org.jcodec.containers.mp4.boxes.Header;
-import org.jcodec.containers.mp4.boxes.MediaBox;
-import org.jcodec.containers.mp4.boxes.MediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.MediaInfoBox;
-import org.jcodec.containers.mp4.boxes.MovieHeaderBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleDescriptionBox;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.SampleToChunkBox.SampleToChunkEntry;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
-import org.jcodec.containers.mp4.boxes.TrackHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
 
 import java.io.IOException;
-import java.lang.IllegalStateException;
 import java.nio.ByteBuffer;
 import java.util.Date;
 

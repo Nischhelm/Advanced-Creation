@@ -1,12 +1,9 @@
 package org.jcodec.common.logging;
 
-import static org.jcodec.common.logging.LogLevel.DEBUG;
-
-import java.lang.IllegalStateException;
-import java.lang.StackTraceElement;
-import java.lang.Thread;
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.jcodec.common.logging.LogLevel.DEBUG;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

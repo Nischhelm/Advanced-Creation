@@ -1,8 +1,8 @@
 package org.jcodec.common;
 
-import java.io.IOException;
-
 import org.jcodec.common.model.Packet;
+
+import java.io.IOException;
 
 /**
  * Interface for muxer track that many muxers implement.

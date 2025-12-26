@@ -1,9 +1,12 @@
 package org.jcodec.containers.mp4.muxer;
 
-import static org.jcodec.common.Preconditions.checkArgument;
-import static org.jcodec.common.Preconditions.checkNotNull;
-import static org.jcodec.common.Preconditions.checkState;
-import static org.jcodec.containers.mp4.MP4TrackType.SOUND;
+import org.jcodec.common.*;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.io.SeekableByteChannel;
+import org.jcodec.containers.mp4.Brand;
+import org.jcodec.containers.mp4.MP4TrackType;
+import org.jcodec.containers.mp4.MP4Util;
+import org.jcodec.containers.mp4.boxes.*;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -12,22 +15,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.AudioFormat;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.io.SeekableByteChannel;
-import org.jcodec.containers.mp4.Brand;
-import org.jcodec.containers.mp4.MP4TrackType;
-import org.jcodec.containers.mp4.MP4Util;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.FileTypeBox;
-import org.jcodec.containers.mp4.boxes.Header;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieHeaderBox;
+import static org.jcodec.common.Preconditions.*;
+import static org.jcodec.containers.mp4.MP4TrackType.SOUND;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

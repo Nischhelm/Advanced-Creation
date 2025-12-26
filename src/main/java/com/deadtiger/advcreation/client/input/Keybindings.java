@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.client.settings.KeyBinding;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
 public enum Keybindings
 {
     //Change advcreation mode BUILD/PLACE/CREATE_TEMPLATE keys

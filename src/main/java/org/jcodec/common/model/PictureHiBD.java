@@ -1,8 +1,7 @@
 package org.jcodec.common.model;
+
 import static java.lang.System.arraycopy;
 import static org.jcodec.common.model.ColorSpace.MAX_PLANES;
-
-import java.lang.IllegalArgumentException;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

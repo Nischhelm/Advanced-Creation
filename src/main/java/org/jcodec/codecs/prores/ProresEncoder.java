@@ -1,23 +1,4 @@
 package org.jcodec.codecs.prores;
-import static java.lang.Math.min;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_CHROMA_APCH;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_CHROMA_APCN;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_CHROMA_APCO;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_CHROMA_APCS;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_LUMA_APCH;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_LUMA_APCN;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_LUMA_APCO;
-import static org.jcodec.codecs.prores.ProresConsts.QMAT_LUMA_APCS;
-import static org.jcodec.codecs.prores.ProresConsts.dcCodebooks;
-import static org.jcodec.codecs.prores.ProresConsts.firstDCCodebook;
-import static org.jcodec.codecs.prores.ProresConsts.interlaced_scan;
-import static org.jcodec.codecs.prores.ProresConsts.levCodebooks;
-import static org.jcodec.codecs.prores.ProresConsts.progressive_scan;
-import static org.jcodec.codecs.prores.ProresConsts.runCodebooks;
-import static org.jcodec.common.dct.SimpleIDCT10Bit.fdctProres10;
-import static org.jcodec.common.model.ColorSpace.YUV422;
-import static org.jcodec.common.tools.MathUtil.log2;
-import static org.jcodec.common.tools.MathUtil.sign;
 
 import org.jcodec.common.VideoEncoder;
 import org.jcodec.common.io.BitWriter;
@@ -28,6 +9,13 @@ import org.jcodec.common.model.Rect;
 import org.jcodec.common.tools.ImageOP;
 
 import java.nio.ByteBuffer;
+
+import static java.lang.Math.min;
+import static org.jcodec.codecs.prores.ProresConsts.*;
+import static org.jcodec.common.dct.SimpleIDCT10Bit.fdctProres10;
+import static org.jcodec.common.model.ColorSpace.YUV422;
+import static org.jcodec.common.tools.MathUtil.log2;
+import static org.jcodec.common.tools.MathUtil.sign;
 
 /**
  * 

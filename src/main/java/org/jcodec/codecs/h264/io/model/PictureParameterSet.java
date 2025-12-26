@@ -1,16 +1,4 @@
 package org.jcodec.codecs.h264.io.model;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.moreRBSPData;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readBool;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readNBit;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readSE;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readU;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readUEtrace;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeBool;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeNBit;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeSEtrace;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeTrailingBits;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeU;
-import static org.jcodec.codecs.h264.io.write.CAVLCWriter.writeUEtrace;
 
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.BitWriter;
@@ -18,6 +6,9 @@ import org.jcodec.platform.Platform;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
+
+import static org.jcodec.codecs.h264.decode.CAVLCReader.*;
+import static org.jcodec.codecs.h264.io.write.CAVLCWriter.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

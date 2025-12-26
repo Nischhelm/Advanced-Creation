@@ -2,8 +2,6 @@ package org.jcodec.codecs.mpeg4.es;
 
 import java.nio.ByteBuffer;
 
-import static org.jcodec.common.Preconditions.checkState;
-
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed
  * under FreeBSD License

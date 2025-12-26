@@ -1,14 +1,14 @@
 package org.jcodec.codecs.aac.blocks;
 
-import static org.jcodec.codecs.aac.BlockType.TYPE_CPE;
-import static org.jcodec.codecs.aac.BlockType.TYPE_SCE;
-import static org.jcodec.codecs.aac.blocks.BlockCCE.CouplingPoint.AFTER_IMDCT;
-import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.ZERO_BT;
-
 import org.jcodec.codecs.aac.BlockType;
 import org.jcodec.codecs.aac.blocks.BlockICS.BandType;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.VLC;
+
+import static org.jcodec.codecs.aac.BlockType.TYPE_CPE;
+import static org.jcodec.codecs.aac.BlockType.TYPE_SCE;
+import static org.jcodec.codecs.aac.blocks.BlockCCE.CouplingPoint.AFTER_IMDCT;
+import static org.jcodec.codecs.aac.blocks.BlockICS.BandType.ZERO_BT;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

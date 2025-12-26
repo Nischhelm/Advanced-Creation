@@ -1,17 +1,10 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.codecs.h264.H264Const.PartPred.Bi;
-import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
-import static org.jcodec.codecs.h264.H264Const.PartPred.L1;
-import static org.jcodec.common.tools.MathUtil.clip;
-
 import org.jcodec.codecs.h264.H264Const.PartPred;
-import org.jcodec.codecs.h264.io.model.Frame;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.PredictionWeightTable;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
-import org.jcodec.common.tools.MathUtil;
+import org.jcodec.codecs.h264.io.model.*;
+
+import static org.jcodec.codecs.h264.H264Const.PartPred.*;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

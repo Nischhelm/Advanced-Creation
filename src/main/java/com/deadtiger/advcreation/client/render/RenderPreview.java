@@ -1,7 +1,6 @@
 package com.deadtiger.advcreation.client.render;
 
 import com.deadtiger.advcreation.block.ModBlocks;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.build_template.BuildTemplateMode;
 import com.deadtiger.advcreation.client.gui.gui_screen.selection_wheel.GuiAdjustModeSelectionScreen;
 import com.deadtiger.advcreation.client.input.KeyInputHandler;

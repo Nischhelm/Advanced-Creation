@@ -1,6 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiBaseButton;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 

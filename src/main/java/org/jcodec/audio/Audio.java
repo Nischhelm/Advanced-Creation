@@ -1,7 +1,6 @@
 package org.jcodec.audio;
+
 import java.io.IOException;
-import java.lang.IllegalArgumentException;
-import java.lang.System;
 import java.nio.FloatBuffer;
 
 /**

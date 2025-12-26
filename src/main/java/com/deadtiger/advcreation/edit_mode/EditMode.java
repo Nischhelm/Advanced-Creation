@@ -10,8 +10,8 @@ import com.deadtiger.advcreation.edit_mode.utility.EnumTerrainShapeMode;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.utility.MultiThreadLock;
 import com.deadtiger.advcreation.utility.PlacementHelper;
@@ -24,7 +24,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class EditMode
 {

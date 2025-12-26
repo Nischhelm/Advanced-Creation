@@ -1,6 +1,5 @@
 package com.deadtiger.advcreation.edit_mode.adjust_modes;
 
-import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
 import com.deadtiger.advcreation.build_mode.utility.ExtremaXYZ;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;

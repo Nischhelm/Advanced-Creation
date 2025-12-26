@@ -1,16 +1,8 @@
 package org.jcodec.codecs.mpa;
 
-import static org.jcodec.codecs.mpa.MpaConst.JOINT_STEREO;
-import static org.jcodec.codecs.mpa.MpaConst.MPEG1;
-import static org.jcodec.codecs.mpa.MpaConst.MPEG25_LSF;
-import static org.jcodec.codecs.mpa.MpaConst.MPEG2_LSF;
-import static org.jcodec.codecs.mpa.MpaConst.SAMPLE_FREQ_32K;
-import static org.jcodec.codecs.mpa.MpaConst.SAMPLE_FREQ_48K;
-import static org.jcodec.codecs.mpa.MpaConst.SINGLE_CHANNEL;
-import static org.jcodec.codecs.mpa.MpaConst.bitrates;
-import static org.jcodec.codecs.mpa.MpaConst.frequencies;
-
 import java.nio.ByteBuffer;
+
+import static org.jcodec.codecs.mpa.MpaConst.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

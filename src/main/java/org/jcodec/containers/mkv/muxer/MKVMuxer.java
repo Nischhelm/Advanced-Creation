@@ -1,60 +1,19 @@
 package org.jcodec.containers.mkv.muxer;
 
-import static org.jcodec.containers.mkv.MKVType.CodecID;
-import static org.jcodec.containers.mkv.MKVType.Cues;
-import static org.jcodec.containers.mkv.MKVType.DateUTC;
-import static org.jcodec.containers.mkv.MKVType.DocType;
-import static org.jcodec.containers.mkv.MKVType.DocTypeReadVersion;
-import static org.jcodec.containers.mkv.MKVType.DocTypeVersion;
-import static org.jcodec.containers.mkv.MKVType.EBML;
-import static org.jcodec.containers.mkv.MKVType.EBMLMaxIDLength;
-import static org.jcodec.containers.mkv.MKVType.EBMLMaxSizeLength;
-import static org.jcodec.containers.mkv.MKVType.EBMLReadVersion;
-import static org.jcodec.containers.mkv.MKVType.EBMLVersion;
-import static org.jcodec.containers.mkv.MKVType.Info;
-import static org.jcodec.containers.mkv.MKVType.MuxingApp;
-import static org.jcodec.containers.mkv.MKVType.Name;
-import static org.jcodec.containers.mkv.MKVType.PixelHeight;
-import static org.jcodec.containers.mkv.MKVType.PixelWidth;
-import static org.jcodec.containers.mkv.MKVType.Segment;
-import static org.jcodec.containers.mkv.MKVType.TimecodeScale;
-import static org.jcodec.containers.mkv.MKVType.TrackEntry;
-import static org.jcodec.containers.mkv.MKVType.TrackNumber;
-import static org.jcodec.containers.mkv.MKVType.TrackType;
-import static org.jcodec.containers.mkv.MKVType.TrackUID;
-import static org.jcodec.containers.mkv.MKVType.Tracks;
-import static org.jcodec.containers.mkv.MKVType.Video;
-import static org.jcodec.containers.mkv.MKVType.WritingApp;
-import static org.jcodec.containers.mkv.MKVType.createByType;
-
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
+import org.jcodec.common.*;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.model.Rational;
 import org.jcodec.containers.mkv.CuesFactory;
 import org.jcodec.containers.mkv.MKVType;
 import org.jcodec.containers.mkv.SeekHeadFactory;
-import org.jcodec.containers.mkv.boxes.EbmlBase;
-import org.jcodec.containers.mkv.boxes.EbmlBin;
-import org.jcodec.containers.mkv.boxes.EbmlDate;
-import org.jcodec.containers.mkv.boxes.EbmlFloat;
-import org.jcodec.containers.mkv.boxes.EbmlMaster;
-import org.jcodec.containers.mkv.boxes.EbmlString;
-import org.jcodec.containers.mkv.boxes.EbmlUint;
-import org.jcodec.containers.mkv.boxes.MkvBlock;
+import org.jcodec.containers.mkv.boxes.*;
 import org.jcodec.containers.mkv.muxer.MKVMuxerTrack.MKVMuxerTrackType;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.*;
+
+import static org.jcodec.containers.mkv.MKVType.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

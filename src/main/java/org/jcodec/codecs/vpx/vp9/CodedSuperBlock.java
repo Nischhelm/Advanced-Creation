@@ -1,20 +1,11 @@
 package org.jcodec.codecs.vpx.vp9;
 
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARTITION_HORZ;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARTITION_NONE;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARTITION_SPLIT;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARTITION_VERT;
-import static org.jcodec.codecs.vpx.vp9.Consts.SZ_8x8;
-import static org.jcodec.codecs.vpx.vp9.Consts.TREE_PARTITION;
-import static org.jcodec.codecs.vpx.vp9.Consts.blSizeLookup;
+import org.jcodec.codecs.vpx.VPXBooleanDecoder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jcodec.codecs.vpx.VPXBooleanDecoder;
+import static org.jcodec.codecs.vpx.vp9.Consts.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

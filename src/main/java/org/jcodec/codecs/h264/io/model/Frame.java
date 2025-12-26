@@ -1,11 +1,11 @@
 package org.jcodec.codecs.h264.io.model;
 
-import java.util.Comparator;
-
 import org.jcodec.codecs.h264.H264Utils.MvList2D;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.model.Rect;
+
+import java.util.Comparator;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

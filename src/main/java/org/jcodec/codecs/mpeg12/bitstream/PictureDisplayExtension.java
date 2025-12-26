@@ -1,9 +1,9 @@
 package org.jcodec.codecs.mpeg12.bitstream;
+
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.BitWriter;
 import org.jcodec.common.model.Point;
 
-import java.lang.IllegalArgumentException;
 import java.nio.ByteBuffer;
 
 /**

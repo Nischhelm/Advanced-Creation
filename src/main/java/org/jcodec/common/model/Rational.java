@@ -1,9 +1,9 @@
 package org.jcodec.common.model;
 
+import org.jcodec.common.tools.MathUtil;
+
 import static java.lang.Integer.parseInt;
 import static org.jcodec.common.model.RationalLarge.reduceLong;
-
-import org.jcodec.common.tools.MathUtil;
 
 
 /**

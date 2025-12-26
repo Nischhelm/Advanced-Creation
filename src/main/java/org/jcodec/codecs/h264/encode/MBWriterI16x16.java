@@ -1,14 +1,5 @@
 package org.jcodec.codecs.h264.encode;
 
-import static org.jcodec.codecs.h264.H264Const.BLK_DISP_MAP;
-import static org.jcodec.codecs.h264.H264Const.BLK_X;
-import static org.jcodec.codecs.h264.H264Const.BLK_Y;
-import static org.jcodec.codecs.h264.H264Const.MB_DISP_OFF_LEFT;
-import static org.jcodec.codecs.h264.H264Const.MB_DISP_OFF_TOP;
-import static org.jcodec.codecs.h264.H264Const.QP_SCALE_CR;
-import static org.jcodec.codecs.h264.decode.CoeffTransformer.reorderDC4x4;
-import static org.jcodec.codecs.h264.io.model.MBType.I_16x16;
-
 import org.jcodec.codecs.h264.H264Const;
 import org.jcodec.codecs.h264.H264Encoder.NonRdVector;
 import org.jcodec.codecs.h264.decode.ChromaPredictionBuilder;
@@ -20,6 +11,10 @@ import org.jcodec.codecs.h264.io.write.CAVLCWriter;
 import org.jcodec.common.io.BitWriter;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.codecs.h264.H264Const.*;
+import static org.jcodec.codecs.h264.decode.CoeffTransformer.reorderDC4x4;
+import static org.jcodec.codecs.h264.io.model.MBType.I_16x16;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,6 +1,5 @@
 package org.jcodec.containers.mkv.util;
 
-import java.lang.StringBuilder;
 import java.nio.ByteBuffer;
 
 /**

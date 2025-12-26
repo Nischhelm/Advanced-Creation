@@ -1,6 +1,14 @@
 package org.jcodec.containers.mps;
-import static java.util.Arrays.asList;
-import static org.jcodec.containers.mps.MPSUtils.readPESHeader;
+
+import org.jcodec.codecs.mpeg12.MPEGUtil;
+import org.jcodec.codecs.mpeg12.bitstream.*;
+import org.jcodec.common.io.BitReader;
+import org.jcodec.common.io.FileChannelWrapper;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.tools.MainUtils;
+import org.jcodec.common.tools.MainUtils.Cmd;
+import org.jcodec.common.tools.MainUtils.Flag;
+import org.jcodec.platform.Platform;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,26 +17,8 @@ import java.lang.reflect.Modifier;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 
-import org.jcodec.codecs.mpeg12.MPEGUtil;
-import org.jcodec.codecs.mpeg12.bitstream.CopyrightExtension;
-import org.jcodec.codecs.mpeg12.bitstream.GOPHeader;
-import org.jcodec.codecs.mpeg12.bitstream.PictureCodingExtension;
-import org.jcodec.codecs.mpeg12.bitstream.PictureDisplayExtension;
-import org.jcodec.codecs.mpeg12.bitstream.PictureHeader;
-import org.jcodec.codecs.mpeg12.bitstream.PictureSpatialScalableExtension;
-import org.jcodec.codecs.mpeg12.bitstream.PictureTemporalScalableExtension;
-import org.jcodec.codecs.mpeg12.bitstream.QuantMatrixExtension;
-import org.jcodec.codecs.mpeg12.bitstream.SequenceDisplayExtension;
-import org.jcodec.codecs.mpeg12.bitstream.SequenceExtension;
-import org.jcodec.codecs.mpeg12.bitstream.SequenceHeader;
-import org.jcodec.codecs.mpeg12.bitstream.SequenceScalableExtension;
-import org.jcodec.common.io.BitReader;
-import org.jcodec.common.io.FileChannelWrapper;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.tools.MainUtils;
-import org.jcodec.common.tools.MainUtils.Cmd;
-import org.jcodec.common.tools.MainUtils.Flag;
-import org.jcodec.platform.Platform;
+import static java.util.Arrays.asList;
+import static org.jcodec.containers.mps.MPSUtils.readPESHeader;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

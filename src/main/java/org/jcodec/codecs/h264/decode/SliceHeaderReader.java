@@ -1,26 +1,16 @@
 package org.jcodec.codecs.h264.decode;
-import static org.jcodec.codecs.h264.io.model.SeqParameterSet.getPicHeightInMbs;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readBool;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readSE;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readU;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readUEtrace;
-import static org.jcodec.common.model.ColorSpace.MONO;
 
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.h264.io.model.NALUnitType;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.PredictionWeightTable;
-import org.jcodec.codecs.h264.io.model.RefPicMarking;
+import org.jcodec.codecs.h264.io.model.*;
 import org.jcodec.codecs.h264.io.model.RefPicMarking.InstrType;
 import org.jcodec.codecs.h264.io.model.RefPicMarking.Instruction;
-import org.jcodec.codecs.h264.io.model.RefPicMarkingIDR;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
 import org.jcodec.common.IntArrayList;
 import org.jcodec.common.io.BitReader;
 
 import java.util.ArrayList;
+
+import static org.jcodec.codecs.h264.decode.CAVLCReader.*;
+import static org.jcodec.codecs.h264.io.model.SeqParameterSet.getPicHeightInMbs;
+import static org.jcodec.common.model.ColorSpace.MONO;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

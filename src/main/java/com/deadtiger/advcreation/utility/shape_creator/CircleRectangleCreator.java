@@ -2,8 +2,6 @@ package com.deadtiger.advcreation.utility.shape_creator;
 
 import net.minecraft.util.math.Vec3d;
 
-import java.util.HashMap;
-
 public class CircleRectangleCreator extends BaseShapeCreator
 {
 

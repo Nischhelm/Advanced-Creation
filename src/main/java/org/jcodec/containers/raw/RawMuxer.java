@@ -1,14 +1,10 @@
 package org.jcodec.containers.raw;
 
-import java.io.IOException;
-
-import org.jcodec.common.AudioCodecMeta;
-import org.jcodec.common.Codec;
-import org.jcodec.common.Muxer;
-import org.jcodec.common.MuxerTrack;
-import org.jcodec.common.VideoCodecMeta;
+import org.jcodec.common.*;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.model.Packet;
+
+import java.io.IOException;
 
 public class RawMuxer implements Muxer, MuxerTrack {
 

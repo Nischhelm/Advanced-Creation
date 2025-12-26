@@ -1,20 +1,7 @@
 package org.jcodec.codecs.vpx;
-import static org.jcodec.codecs.vpx.VP8Util.MAX_MODE_LF_DELTAS;
-import static org.jcodec.codecs.vpx.VP8Util.MAX_REF_LF_DELTAS;
-import static org.jcodec.codecs.vpx.VP8Util.getBitInBytes;
-import static org.jcodec.codecs.vpx.VP8Util.getBitsInBytes;
-import static org.jcodec.codecs.vpx.VP8Util.getDefaultCoefProbs;
-import static org.jcodec.codecs.vpx.VP8Util.getMacroblockCount;
-import static org.jcodec.codecs.vpx.VP8Util.keyFrameYModeProb;
-import static org.jcodec.codecs.vpx.VP8Util.keyFrameYModeTree;
-import static org.jcodec.codecs.vpx.VP8Util.vp8CoefUpdateProbs;
-import static org.jcodec.common.Preconditions.checkState;
 
-import java.nio.ByteBuffer;
-
+import org.jcodec.codecs.vpx.VP8Util.*;
 import org.jcodec.codecs.vpx.VPXMacroblock.Subblock;
-import org.jcodec.codecs.vpx.VP8Util.QuantizationParams;
-import org.jcodec.codecs.vpx.VP8Util.SubblockConstants;
 import org.jcodec.common.UsedViaReflection;
 import org.jcodec.common.VideoCodecMeta;
 import org.jcodec.common.VideoDecoder;
@@ -23,6 +10,10 @@ import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.model.Size;
 import org.jcodec.common.tools.MathUtil;
+
+import java.nio.ByteBuffer;
+
+import static org.jcodec.common.Preconditions.checkState;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

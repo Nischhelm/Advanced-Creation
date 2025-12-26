@@ -1,23 +1,16 @@
 package org.jcodec.codecs.mpa;
 
-import static org.jcodec.codecs.mpa.MpaConst.MPEG1;
-import static org.jcodec.codecs.mpa.MpaConst.bigValEscBits;
-import static org.jcodec.codecs.mpa.MpaConst.bigValMaxval;
-import static org.jcodec.codecs.mpa.MpaConst.bigValVlc;
-import static org.jcodec.codecs.mpa.MpaConst.scaleFactorLen;
-import static org.jcodec.common.Vector2Int.el16_0;
-import static org.jcodec.common.Vector2Int.el16_1;
-import static org.jcodec.common.Vector4Int.el8_0;
-import static org.jcodec.common.Vector4Int.el8_1;
-import static org.jcodec.common.Vector4Int.el8_2;
-import static org.jcodec.common.Vector4Int.el8_3;
-
-import java.nio.ByteBuffer;
-
 import org.jcodec.common.Vector2Int;
 import org.jcodec.common.Vector4Int;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.tools.MathUtil;
+
+import java.nio.ByteBuffer;
+
+import static org.jcodec.codecs.mpa.MpaConst.*;
+import static org.jcodec.common.Vector2Int.el16_0;
+import static org.jcodec.common.Vector2Int.el16_1;
+import static org.jcodec.common.Vector4Int.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

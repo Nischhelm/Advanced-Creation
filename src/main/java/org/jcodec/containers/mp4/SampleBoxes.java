@@ -1,14 +1,8 @@
 package org.jcodec.containers.mp4;
 
-import static org.jcodec.platform.Platform.stringFromBytes;
+import org.jcodec.containers.mp4.boxes.*;
 
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.TextMetaDataSampleEntry;
-import org.jcodec.containers.mp4.boxes.TimecodeSampleEntry;
-import org.jcodec.containers.mp4.boxes.URIMetaSampleEntry;
-import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
-import org.jcodec.containers.mp4.boxes.XMLMetaDataSampleEntry;
+import static org.jcodec.platform.Platform.stringFromBytes;
 
 public class SampleBoxes extends Boxes {
 

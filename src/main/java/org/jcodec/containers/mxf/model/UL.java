@@ -1,10 +1,11 @@
 package org.jcodec.containers.mxf.model;
+
 import org.jcodec.common.StringUtils;
 import org.jcodec.platform.Platform;
 
-import static org.jcodec.common.Preconditions.checkNotNull;
-
 import java.nio.ByteBuffer;
+
+import static org.jcodec.common.Preconditions.checkNotNull;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

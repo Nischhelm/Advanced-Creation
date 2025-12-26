@@ -1,22 +1,13 @@
 package org.jcodec.containers.mp4.boxes;
 
-import java.util.Arrays;
-import java.util.Iterator;
-
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.containers.mp4.IBoxFactory;
+import org.jcodec.platform.Platform;
 
-import java.lang.StringBuilder;
 import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
-
-import org.jcodec.platform.Platform;
+import java.util.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

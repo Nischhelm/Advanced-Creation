@@ -1,6 +1,4 @@
 package org.jcodec.codecs.vpx;
-import static org.jcodec.codecs.vpx.VP8Util.PRED_BLOCK_127;
-import static org.jcodec.codecs.vpx.VP8Util.pickDefaultPrediction;
 
 import org.jcodec.api.NotImplementedException;
 import org.jcodec.api.NotSupportedException;
@@ -8,8 +6,10 @@ import org.jcodec.codecs.vpx.VP8Util.QuantizationParams;
 import org.jcodec.codecs.vpx.VP8Util.SubblockConstants;
 import org.jcodec.common.model.Picture;
 
-import java.lang.System;
 import java.util.Arrays;
+
+import static org.jcodec.codecs.vpx.VP8Util.PRED_BLOCK_127;
+import static org.jcodec.codecs.vpx.VP8Util.pickDefaultPrediction;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

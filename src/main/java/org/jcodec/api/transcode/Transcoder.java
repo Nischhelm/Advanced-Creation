@@ -1,11 +1,5 @@
 package org.jcodec.api.transcode;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.jcodec.api.transcode.PixelStore.LoanerPicture;
 import org.jcodec.api.transcode.filters.ColorTransformFilter;
 import org.jcodec.common.AudioCodecMeta;
@@ -13,6 +7,12 @@ import org.jcodec.common.IntArrayList;
 import org.jcodec.common.VideoCodecMeta;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Packet;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

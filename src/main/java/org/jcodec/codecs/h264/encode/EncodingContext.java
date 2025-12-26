@@ -1,9 +1,9 @@
 package org.jcodec.codecs.h264.encode;
 
-import static java.lang.System.arraycopy;
-
 import org.jcodec.codecs.h264.io.CAVLC;
 import org.jcodec.codecs.h264.io.model.MBType;
+
+import static java.lang.System.arraycopy;
 
 public class EncodingContext {
     public CAVLC[] cavlc;

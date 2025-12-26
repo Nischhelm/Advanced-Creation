@@ -1,7 +1,5 @@
 package org.jcodec.api.specific;
 
-import java.nio.ByteBuffer;
-
 import org.jcodec.api.MediaInfo;
 import org.jcodec.codecs.h264.H264Decoder;
 import org.jcodec.codecs.h264.H264Utils;
@@ -9,12 +7,10 @@ import org.jcodec.codecs.h264.io.model.NALUnit;
 import org.jcodec.codecs.h264.io.model.NALUnitType;
 import org.jcodec.codecs.h264.io.model.SeqParameterSet;
 import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.model.ColorSpace;
-import org.jcodec.common.model.Packet;
-import org.jcodec.common.model.Picture;
-import org.jcodec.common.model.Rational;
-import org.jcodec.common.model.Size;
+import org.jcodec.common.model.*;
 import org.jcodec.containers.mp4.MP4Packet;
+
+import java.nio.ByteBuffer;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

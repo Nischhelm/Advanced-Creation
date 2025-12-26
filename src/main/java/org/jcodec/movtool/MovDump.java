@@ -1,9 +1,5 @@
 package org.jcodec.movtool;
 
-import static org.jcodec.common.io.IOUtils.closeQuietly;
-import static org.jcodec.common.io.NIOUtils.readableChannel;
-import static org.jcodec.common.io.NIOUtils.writableChannel;
-
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.containers.mp4.MP4Util;
 import org.jcodec.containers.mp4.MP4Util.Atom;
@@ -14,6 +10,10 @@ import org.jcodec.containers.mp4.boxes.NodeBox;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import static org.jcodec.common.io.IOUtils.closeQuietly;
+import static org.jcodec.common.io.NIOUtils.readableChannel;
+import static org.jcodec.common.io.NIOUtils.writableChannel;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,12 +1,5 @@
 package org.jcodec.movtool;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.jcodec.common.ArrayUtil;
 import org.jcodec.common.IntArrayList;
 import org.jcodec.common.IntObjectMap;
@@ -18,24 +11,17 @@ import org.jcodec.common.tools.MainUtils.Flag;
 import org.jcodec.containers.mp4.Brand;
 import org.jcodec.containers.mp4.MP4Util;
 import org.jcodec.containers.mp4.MP4Util.Atom;
-import org.jcodec.containers.mp4.boxes.ChunkOffsets64Box;
-import org.jcodec.containers.mp4.boxes.CompositionOffsetsBox;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.CompositionOffsetsBox.Entry;
-import org.jcodec.containers.mp4.boxes.MediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieFragmentBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox;
-import org.jcodec.containers.mp4.boxes.SyncSamplesBox;
 import org.jcodec.containers.mp4.boxes.SampleToChunkBox.SampleToChunkEntry;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
-import org.jcodec.containers.mp4.boxes.TrackFragmentBaseMediaDecodeTimeBox;
-import org.jcodec.containers.mp4.boxes.TrackFragmentBox;
-import org.jcodec.containers.mp4.boxes.TrackFragmentHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
-import org.jcodec.containers.mp4.boxes.TrunBox;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

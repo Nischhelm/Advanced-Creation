@@ -1,12 +1,12 @@
 package org.jcodec.codecs.h264.encode;
 
-import static java.lang.Math.abs;
-import static org.jcodec.codecs.h264.H264Const.QP_SCALE_CR;
-import static org.jcodec.common.tools.MathUtil.clip;
-
 import org.jcodec.codecs.h264.decode.deblock.DeblockingFilter;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.tools.MathUtil;
+
+import static java.lang.Math.abs;
+import static org.jcodec.codecs.h264.H264Const.QP_SCALE_CR;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

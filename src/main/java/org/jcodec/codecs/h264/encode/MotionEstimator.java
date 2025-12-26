@@ -1,12 +1,12 @@
 package org.jcodec.codecs.h264.encode;
 
-import static java.lang.Math.min;
-import static org.jcodec.codecs.h264.encode.H264EncoderUtils.median;
-import static org.jcodec.common.tools.MathUtil.clip;
-
 import org.jcodec.codecs.h264.io.model.SeqParameterSet;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.tools.MathUtil;
+
+import static java.lang.Math.min;
+import static org.jcodec.codecs.h264.encode.H264EncoderUtils.median;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

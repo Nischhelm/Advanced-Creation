@@ -1,11 +1,11 @@
 package org.jcodec.codecs.h264.decode;
 
+import org.jcodec.common.ArrayUtil;
+import org.jcodec.common.tools.MathUtil;
+
 import static org.jcodec.codecs.h264.H264Const.LUMA_4x4_BLOCK_LUT;
 import static org.jcodec.codecs.h264.H264Const.LUMA_4x4_POS_LUT;
 import static org.jcodec.common.tools.MathUtil.clip;
-
-import org.jcodec.common.ArrayUtil;
-import org.jcodec.common.tools.MathUtil;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

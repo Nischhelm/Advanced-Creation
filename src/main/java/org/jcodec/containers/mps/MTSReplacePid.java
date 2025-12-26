@@ -1,4 +1,5 @@
 package org.jcodec.containers.mps;
+
 import org.jcodec.common.IntIntMap;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
@@ -9,7 +10,6 @@ import org.jcodec.containers.mps.psi.PSISection;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
 import java.util.Set;

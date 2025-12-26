@@ -1,9 +1,10 @@
 package org.jcodec.codecs.h264.io.write;
-import static org.jcodec.common.tools.Debug.trace;
 
 import org.jcodec.api.NotImplementedException;
 import org.jcodec.common.io.BitWriter;
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.common.tools.Debug.trace;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

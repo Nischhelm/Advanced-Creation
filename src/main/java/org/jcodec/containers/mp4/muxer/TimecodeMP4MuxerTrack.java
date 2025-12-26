@@ -1,17 +1,10 @@
 package org.jcodec.containers.mp4.muxer;
 
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 import org.jcodec.common.Codec;
 import org.jcodec.common.model.Packet;
+import org.jcodec.common.model.Packet.FrameType;
 import org.jcodec.common.model.Rational;
 import org.jcodec.common.model.TapeTimecode;
-import org.jcodec.common.model.Packet.FrameType;
 import org.jcodec.containers.mp4.MP4Packet;
 import org.jcodec.containers.mp4.MP4TrackType;
 import org.jcodec.containers.mp4.boxes.Box;
@@ -19,6 +12,13 @@ import org.jcodec.containers.mp4.boxes.Edit;
 import org.jcodec.containers.mp4.boxes.MovieHeaderBox;
 import org.jcodec.containers.mp4.boxes.TimecodeSampleEntry;
 import org.jcodec.movtool.Util;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,29 +1,5 @@
 package org.jcodec.common;
 
-import static org.jcodec.common.Codec.AAC;
-import static org.jcodec.common.Codec.JPEG;
-import static org.jcodec.common.Codec.MPEG2;
-import static org.jcodec.common.Codec.VP8;
-import static org.jcodec.common.Format.DASH;
-import static org.jcodec.common.Format.DASHURL;
-import static org.jcodec.common.Format.IMG;
-import static org.jcodec.common.Format.MKV;
-import static org.jcodec.common.Format.MOV;
-import static org.jcodec.common.Format.MPEG_AUDIO;
-import static org.jcodec.common.Format.MPEG_PS;
-import static org.jcodec.common.Format.WAV;
-import static org.jcodec.common.Format.WEBP;
-import static org.jcodec.common.Format.Y4M;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 import org.jcodec.codecs.aac.AACDecoder;
 import org.jcodec.codecs.h264.BufferH264ES;
 import org.jcodec.codecs.h264.H264Decoder;
@@ -55,6 +31,18 @@ import org.jcodec.containers.y4m.Y4MDemuxer;
 import org.jcodec.platform.Platform;
 import org.jcodec.scale.ColorUtil;
 import org.jcodec.scale.Transform;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.ByteBuffer;
+import java.nio.channels.ReadableByteChannel;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+import static org.jcodec.common.Codec.*;
+import static org.jcodec.common.Format.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

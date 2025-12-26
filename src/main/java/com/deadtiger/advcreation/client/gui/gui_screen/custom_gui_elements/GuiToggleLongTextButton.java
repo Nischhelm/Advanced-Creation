@@ -1,13 +1,13 @@
 package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
 import com.deadtiger.advcreation.client.gui.gui_screen.helpScreen.GuiScreenTextPrinter;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
-;
 
 import java.util.ArrayList;
+
+;
 
 public class GuiToggleLongTextButton extends GuiToggleButton
 {

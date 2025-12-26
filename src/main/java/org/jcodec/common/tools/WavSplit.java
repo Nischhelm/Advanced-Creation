@@ -1,11 +1,4 @@
 package org.jcodec.common.tools;
-import static java.util.Arrays.asList;
-import static org.jcodec.common.Preconditions.checkState;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
 
 import org.jcodec.codecs.wav.WavHeader;
 import org.jcodec.common.AudioFormat;
@@ -15,6 +8,14 @@ import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.common.tools.MainUtils.Cmd;
 import org.jcodec.common.tools.MainUtils.Flag;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.ReadableByteChannel;
+
+import static java.util.Arrays.asList;
+import static org.jcodec.common.Preconditions.checkState;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,56 +1,13 @@
 package org.jcodec.codecs.vpx.vp9;
 
-import static org.jcodec.codecs.vpx.vp9.Consts.ALLOW_32X32;
-import static org.jcodec.codecs.vpx.vp9.Consts.ALTREF_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_SIZE_GROUPS;
-import static org.jcodec.codecs.vpx.vp9.Consts.CLASS0_SIZE;
-import static org.jcodec.codecs.vpx.vp9.Consts.COMPOUND_REF;
-import static org.jcodec.codecs.vpx.vp9.Consts.COMP_MODE_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.CS_BT_601;
-import static org.jcodec.codecs.vpx.vp9.Consts.CS_RGB;
-import static org.jcodec.codecs.vpx.vp9.Consts.GOLDEN_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.INTERP_FILTER_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.INTER_MODES;
-import static org.jcodec.codecs.vpx.vp9.Consts.INTER_MODE_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.INTRA_MODES;
-import static org.jcodec.codecs.vpx.vp9.Consts.INV_REMAP_TABLE;
-import static org.jcodec.codecs.vpx.vp9.Consts.IS_INTER_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.KEY_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.LAST_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.LITERAL_TO_FILTER_TYPE;
-import static org.jcodec.codecs.vpx.vp9.Consts.MAX_REF_FRAMES;
-import static org.jcodec.codecs.vpx.vp9.Consts.MAX_SEGMENTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.MAX_TILE_WIDTH_B64;
-import static org.jcodec.codecs.vpx.vp9.Consts.MIN_TILE_WIDTH_B64;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_CLASSES;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_FR_SIZE;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_JOINTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.MV_OFFSET_BITS;
-import static org.jcodec.codecs.vpx.vp9.Consts.ONLY_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARTITION_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARTITION_TYPES;
-import static org.jcodec.codecs.vpx.vp9.Consts.REFERENCE_MODE_SELECT;
-import static org.jcodec.codecs.vpx.vp9.Consts.REFS_PER_FRAME;
-import static org.jcodec.codecs.vpx.vp9.Consts.REF_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.SEGMENTATION_FEATURE_BITS;
-import static org.jcodec.codecs.vpx.vp9.Consts.SEGMENTATION_FEATURE_SIGNED;
-import static org.jcodec.codecs.vpx.vp9.Consts.SEG_LVL_MAX;
-import static org.jcodec.codecs.vpx.vp9.Consts.SINGLE_REF;
-import static org.jcodec.codecs.vpx.vp9.Consts.SKIP_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.SWITCHABLE;
-import static org.jcodec.codecs.vpx.vp9.Consts.SWITCHABLE_FILTERS;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_MODE_SELECT;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_SIZES;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_SIZE_CONTEXTS;
-import static org.jcodec.codecs.vpx.vp9.Consts.tx_mode_to_biggest_tx_size;
-
-import java.nio.ByteBuffer;
-
 import org.jcodec.codecs.vpx.VPXBooleanDecoder;
 import org.jcodec.common.ArrayUtil;
 import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.NIOUtils;
+
+import java.nio.ByteBuffer;
+
+import static org.jcodec.codecs.vpx.vp9.Consts.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

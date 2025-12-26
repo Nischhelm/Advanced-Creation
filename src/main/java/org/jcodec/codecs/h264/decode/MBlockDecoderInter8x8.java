@@ -1,38 +1,22 @@
 package org.jcodec.codecs.h264.decode;
-import static org.jcodec.codecs.h264.H264Const.ARRAY;
-import static org.jcodec.codecs.h264.H264Const.BLK8x8_BLOCKS;
-import static org.jcodec.codecs.h264.H264Const.BLK_8x8_MB_OFF_LUMA;
-import static org.jcodec.codecs.h264.H264Const.COMP_BLOCK_4x4_LUT;
-import static org.jcodec.codecs.h264.H264Const.COMP_BLOCK_8x8_LUT;
-import static org.jcodec.codecs.h264.H264Const.COMP_POS_4x4_LUT;
-import static org.jcodec.codecs.h264.H264Const.COMP_POS_8x8_LUT;
-import static org.jcodec.codecs.h264.H264Const.bPartPredModes;
-import static org.jcodec.codecs.h264.H264Const.bSubMbTypes;
-import static org.jcodec.codecs.h264.H264Const.PartPred.Direct;
-import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvX;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvY;
-import static org.jcodec.codecs.h264.H264Utils.Mv.packMv;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.NULL_VECTOR;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.calcMVPredictionMedian;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.collectPredictors;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.debugPrint;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.mergeResidual;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveMvs;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.savePrediction8x8;
-import static org.jcodec.codecs.h264.decode.PredictionMerger.mergePrediction;
-import static org.jcodec.codecs.h264.decode.PredictionMerger.weightPrediction;
-
-import java.util.Arrays;
 
 import org.jcodec.codecs.h264.H264Const;
-import org.jcodec.codecs.h264.H264Const.PartPred;
+import org.jcodec.codecs.h264.H264Const.*;
 import org.jcodec.codecs.h264.H264Utils.MvList;
 import org.jcodec.codecs.h264.decode.aso.Mapper;
 import org.jcodec.codecs.h264.io.model.Frame;
 import org.jcodec.codecs.h264.io.model.SliceHeader;
 import org.jcodec.codecs.h264.io.model.SliceType;
 import org.jcodec.common.model.Picture;
+
+import java.util.Arrays;
+
+import static org.jcodec.codecs.h264.H264Const.PartPred.Direct;
+import static org.jcodec.codecs.h264.H264Const.PartPred.L0;
+import static org.jcodec.codecs.h264.H264Utils.Mv.*;
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.*;
+import static org.jcodec.codecs.h264.decode.PredictionMerger.mergePrediction;
+import static org.jcodec.codecs.h264.decode.PredictionMerger.weightPrediction;
 
 /**
  * A decoder for Inter 16x16, 16x8 and 8x16 macroblocks

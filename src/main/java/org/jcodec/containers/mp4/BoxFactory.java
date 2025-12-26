@@ -1,15 +1,6 @@
 package org.jcodec.containers.mp4;
 
-import org.jcodec.containers.mp4.boxes.AudioSampleEntry;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.DataRefBox;
-import org.jcodec.containers.mp4.boxes.Header;
-import org.jcodec.containers.mp4.boxes.MetaDataSampleEntry;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleDescriptionBox;
-import org.jcodec.containers.mp4.boxes.TimecodeSampleEntry;
-import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
-import org.jcodec.containers.mp4.boxes.WaveExtension;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.platform.Platform;
 
 /**

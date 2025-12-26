@@ -1,7 +1,6 @@
 package com.deadtiger.advcreation.template;
 
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.utility.TileEntityPlacementHelper;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;

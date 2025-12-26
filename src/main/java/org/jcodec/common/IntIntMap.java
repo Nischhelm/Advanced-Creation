@@ -1,8 +1,8 @@
 package org.jcodec.common;
-import static java.lang.System.arraycopy;
 
-import java.lang.IllegalArgumentException;
 import java.util.Arrays;
+
+import static java.lang.System.arraycopy;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

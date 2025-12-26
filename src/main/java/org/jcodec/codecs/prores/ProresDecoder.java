@@ -1,20 +1,6 @@
 package org.jcodec.codecs.prores;
-import static java.lang.Math.min;
-import static java.util.Arrays.fill;
-import static org.jcodec.codecs.prores.ProresConsts.dcCodebooks;
-import static org.jcodec.codecs.prores.ProresConsts.firstDCCodebook;
-import static org.jcodec.codecs.prores.ProresConsts.interlaced_scan;
-import static org.jcodec.codecs.prores.ProresConsts.levCodebooks;
-import static org.jcodec.codecs.prores.ProresConsts.progressive_scan;
-import static org.jcodec.codecs.prores.ProresConsts.runCodebooks;
-import static org.jcodec.common.dct.SimpleIDCT10Bit.idct10;
-import static org.jcodec.common.tools.MathUtil.log2;
-import static org.jcodec.common.tools.MathUtil.toSigned;
 
-import java.nio.ByteBuffer;
-
-import org.jcodec.codecs.prores.ProresConsts.FrameHeader;
-import org.jcodec.codecs.prores.ProresConsts.PictureHeader;
+import org.jcodec.codecs.prores.ProresConsts.*;
 import org.jcodec.common.UsedViaReflection;
 import org.jcodec.common.VideoCodecMeta;
 import org.jcodec.common.VideoDecoder;
@@ -27,6 +13,14 @@ import org.jcodec.common.model.Rect;
 import org.jcodec.common.model.Size;
 import org.jcodec.common.tools.MathUtil;
 import org.jcodec.platform.Platform;
+
+import java.nio.ByteBuffer;
+
+import static java.lang.Math.min;
+import static java.util.Arrays.fill;
+import static org.jcodec.common.dct.SimpleIDCT10Bit.idct10;
+import static org.jcodec.common.tools.MathUtil.log2;
+import static org.jcodec.common.tools.MathUtil.toSigned;
 
 /**
  * 

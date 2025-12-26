@@ -1,14 +1,13 @@
 package org.jcodec.codecs.h264.decode;
-import static java.lang.System.arraycopy;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvC;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvRef;
-import static org.jcodec.codecs.h264.H264Utils.Mv.packMv;
-import static org.jcodec.common.ArrayUtil.shiftLeft1;
-import static org.jcodec.common.tools.MathUtil.clip;
 
 import org.jcodec.codecs.h264.H264Utils.MvList;
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.Picture;
+
+import static java.lang.System.arraycopy;
+import static org.jcodec.codecs.h264.H264Utils.Mv.*;
+import static org.jcodec.common.ArrayUtil.shiftLeft1;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 public class MBlockDecoderUtils {
     private static boolean debug;

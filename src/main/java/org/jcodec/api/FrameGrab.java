@@ -1,18 +1,10 @@
 package org.jcodec.api;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
 import org.jcodec.api.specific.AVCMP4Adaptor;
 import org.jcodec.api.specific.ContainerAdaptor;
 import org.jcodec.api.specific.GenericAdaptor;
 import org.jcodec.codecs.vpx.VP8Decoder;
-import org.jcodec.common.Codec;
-import org.jcodec.common.DemuxerTrackMeta;
-import org.jcodec.common.Format;
-import org.jcodec.common.JCodecUtil;
-import org.jcodec.common.SeekableDemuxerTrack;
+import org.jcodec.common.*;
 import org.jcodec.common.io.FileChannelWrapper;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.io.SeekableByteChannel;
@@ -22,10 +14,12 @@ import org.jcodec.containers.mkv.demuxer.MKVDemuxer;
 import org.jcodec.containers.mp4.demuxer.DashMP4Demuxer;
 import org.jcodec.containers.mp4.demuxer.MP4Demuxer;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+
 import static org.jcodec.common.Codec.H264;
-import static org.jcodec.common.Format.MOV;
-import static org.jcodec.common.Format.MPEG_PS;
-import static org.jcodec.common.Format.MPEG_TS;
+import static org.jcodec.common.Format.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

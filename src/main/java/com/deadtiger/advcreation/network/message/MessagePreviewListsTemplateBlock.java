@@ -1,9 +1,9 @@
 package com.deadtiger.advcreation.network.message;
 
+import com.deadtiger.advcreation.network.NetworkHandler;
 import com.deadtiger.advcreation.network.NetworkManager;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.network.network_utility.ByteBufCustomUtils;
-import com.deadtiger.advcreation.network.NetworkHandler;
 import com.deadtiger.advcreation.template.TemplateBlock;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.state.IBlockState;
@@ -12,7 +12,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;

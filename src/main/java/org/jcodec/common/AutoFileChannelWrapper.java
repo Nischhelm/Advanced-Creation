@@ -1,7 +1,5 @@
 package org.jcodec.common;
 
-import static java.lang.System.currentTimeMillis;
-
 import org.jcodec.common.io.AutoPool;
 import org.jcodec.common.io.AutoResource;
 import org.jcodec.common.io.SeekableByteChannel;
@@ -11,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+
+import static java.lang.System.currentTimeMillis;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

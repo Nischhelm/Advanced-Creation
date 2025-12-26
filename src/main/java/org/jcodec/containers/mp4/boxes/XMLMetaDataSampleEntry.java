@@ -1,8 +1,8 @@
 package org.jcodec.containers.mp4.boxes;
 
-import java.nio.ByteBuffer;
-
 import org.jcodec.common.io.NIOUtils;
+
+import java.nio.ByteBuffer;
 
 public class XMLMetaDataSampleEntry extends MetaDataSampleEntry {
     private String contentEncoding; // optional

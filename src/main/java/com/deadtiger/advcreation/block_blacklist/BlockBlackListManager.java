@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
-import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.Scanner;
 

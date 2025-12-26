@@ -1,10 +1,10 @@
 package org.jcodec.containers.mxf.model;
-import java.util.Iterator;
 
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.Rational;
 
 import java.nio.ByteBuffer;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 

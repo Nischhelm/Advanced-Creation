@@ -1,7 +1,6 @@
 package com.deadtiger.advcreation.client.render;
 
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 

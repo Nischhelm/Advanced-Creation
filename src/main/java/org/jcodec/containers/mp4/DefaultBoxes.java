@@ -1,55 +1,7 @@
 package org.jcodec.containers.mp4;
 
-import org.jcodec.containers.mp4.boxes.Box;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.Box.LeafBox;
-import org.jcodec.containers.mp4.boxes.ChunkOffsets64Box;
-import org.jcodec.containers.mp4.boxes.ChunkOffsetsBox;
-import org.jcodec.containers.mp4.boxes.ClearApertureBox;
-import org.jcodec.containers.mp4.boxes.ClipRegionBox;
-import org.jcodec.containers.mp4.boxes.CompositionOffsetsBox;
-import org.jcodec.containers.mp4.boxes.DataInfoBox;
-import org.jcodec.containers.mp4.boxes.DataRefBox;
-import org.jcodec.containers.mp4.boxes.EditListBox;
-import org.jcodec.containers.mp4.boxes.EditsBox;
-import org.jcodec.containers.mp4.boxes.EncodedPixelBox;
-import org.jcodec.containers.mp4.boxes.FileTypeBox;
-import org.jcodec.containers.mp4.boxes.GenericMediaInfoBox;
-import org.jcodec.containers.mp4.boxes.HandlerBox;
-import org.jcodec.containers.mp4.boxes.IListBox;
-import org.jcodec.containers.mp4.boxes.KeysBox;
-import org.jcodec.containers.mp4.boxes.LoadSettingsBox;
-import org.jcodec.containers.mp4.boxes.MediaBox;
-import org.jcodec.containers.mp4.boxes.MediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.MediaInfoBox;
-import org.jcodec.containers.mp4.boxes.MetaBox;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.MovieExtendsBox;
-import org.jcodec.containers.mp4.boxes.MovieExtendsHeaderBox;
-import org.jcodec.containers.mp4.boxes.MovieFragmentBox;
-import org.jcodec.containers.mp4.boxes.MovieFragmentHeaderBox;
-import org.jcodec.containers.mp4.boxes.MovieHeaderBox;
-import org.jcodec.containers.mp4.boxes.NameBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.PartialSyncSamplesBox;
-import org.jcodec.containers.mp4.boxes.ProductionApertureBox;
-import org.jcodec.containers.mp4.boxes.SampleDescriptionBox;
-import org.jcodec.containers.mp4.boxes.SampleSizesBox;
-import org.jcodec.containers.mp4.boxes.SampleToChunkBox;
-import org.jcodec.containers.mp4.boxes.SegmentIndexBox;
-import org.jcodec.containers.mp4.boxes.SegmentTypeBox;
-import org.jcodec.containers.mp4.boxes.SoundMediaHeaderBox;
-import org.jcodec.containers.mp4.boxes.SyncSamplesBox;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
-import org.jcodec.containers.mp4.boxes.TimecodeMediaInfoBox;
-import org.jcodec.containers.mp4.boxes.TrackExtendsBox;
-import org.jcodec.containers.mp4.boxes.TrackFragmentBaseMediaDecodeTimeBox;
-import org.jcodec.containers.mp4.boxes.TrackFragmentBox;
-import org.jcodec.containers.mp4.boxes.TrackFragmentHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrackHeaderBox;
-import org.jcodec.containers.mp4.boxes.TrakBox;
-import org.jcodec.containers.mp4.boxes.TrunBox;
-import org.jcodec.containers.mp4.boxes.UdtaBox;
-import org.jcodec.containers.mp4.boxes.VideoMediaHeaderBox;
 
 public class DefaultBoxes extends Boxes {
     public DefaultBoxes() {

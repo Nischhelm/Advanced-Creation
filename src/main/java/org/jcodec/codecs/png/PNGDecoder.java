@@ -1,14 +1,12 @@
 package org.jcodec.codecs.png;
 
-import static org.jcodec.codecs.png.IHDR.PNG_COLOR_MASK_ALPHA;
-import static org.jcodec.codecs.png.IHDR.PNG_COLOR_MASK_COLOR;
-import static org.jcodec.codecs.png.IHDR.PNG_COLOR_MASK_PALETTE;
-import static org.jcodec.codecs.png.PNGConsts.TAG_IDAT;
-import static org.jcodec.codecs.png.PNGConsts.TAG_IEND;
-import static org.jcodec.codecs.png.PNGConsts.TAG_IHDR;
-import static org.jcodec.codecs.png.PNGConsts.TAG_PLTE;
-import static org.jcodec.codecs.png.PNGConsts.TAG_tRNS;
-import static org.jcodec.common.tools.MathUtil.abs;
+import org.jcodec.common.VideoCodecMeta;
+import org.jcodec.common.VideoDecoder;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.logging.Logger;
+import org.jcodec.common.model.ColorSpace;
+import org.jcodec.common.model.Picture;
+import org.jcodec.common.model.Size;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
@@ -18,13 +16,9 @@ import java.util.List;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
-import org.jcodec.common.VideoCodecMeta;
-import org.jcodec.common.VideoDecoder;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.logging.Logger;
-import org.jcodec.common.model.ColorSpace;
-import org.jcodec.common.model.Picture;
-import org.jcodec.common.model.Size;
+import static org.jcodec.codecs.png.IHDR.*;
+import static org.jcodec.codecs.png.PNGConsts.*;
+import static org.jcodec.common.tools.MathUtil.abs;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

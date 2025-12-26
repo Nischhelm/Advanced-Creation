@@ -1,5 +1,13 @@
 package org.jcodec.movtool;
 
+import org.jcodec.common.io.IOUtils;
+import org.jcodec.common.tools.MainUtils;
+import org.jcodec.common.tools.MainUtils.Cmd;
+import org.jcodec.common.tools.MainUtils.Flag;
+import org.jcodec.common.tools.MainUtils.FlagType;
+import org.jcodec.containers.mp4.boxes.MetaValue;
+import org.jcodec.platform.Platform;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,14 +17,6 @@ import java.nio.ByteOrder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.jcodec.common.io.IOUtils;
-import org.jcodec.common.tools.MainUtils;
-import org.jcodec.common.tools.MainUtils.Cmd;
-import org.jcodec.common.tools.MainUtils.Flag;
-import org.jcodec.common.tools.MainUtils.FlagType;
-import org.jcodec.containers.mp4.boxes.MetaValue;
-import org.jcodec.platform.Platform;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

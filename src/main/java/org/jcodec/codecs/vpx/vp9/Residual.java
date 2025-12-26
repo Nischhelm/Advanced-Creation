@@ -1,32 +1,8 @@
 package org.jcodec.codecs.vpx.vp9;
 
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_16X16;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_16X32;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_16X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_32X16;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_32X32;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_32X64;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_4X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_64X32;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_64X64;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X16;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_8X8;
-import static org.jcodec.codecs.vpx.vp9.Consts.BLOCK_INVALID;
-import static org.jcodec.codecs.vpx.vp9.Consts.DCT_VAL_CAT1;
-import static org.jcodec.codecs.vpx.vp9.Consts.DCT_VAL_CAT3;
-import static org.jcodec.codecs.vpx.vp9.Consts.PARETO_TABLE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TOKEN_TREE;
-import static org.jcodec.codecs.vpx.vp9.Consts.TX_4X4;
-import static org.jcodec.codecs.vpx.vp9.Consts.blH;
-import static org.jcodec.codecs.vpx.vp9.Consts.blW;
-import static org.jcodec.codecs.vpx.vp9.Consts.cat_probs;
-import static org.jcodec.codecs.vpx.vp9.Consts.coefband_4x4;
-import static org.jcodec.codecs.vpx.vp9.Consts.coefband_8x8plus;
-import static org.jcodec.codecs.vpx.vp9.Consts.extra_bits;
-
 import org.jcodec.codecs.vpx.VPXBooleanDecoder;
+
+import static org.jcodec.codecs.vpx.vp9.Consts.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,13 +1,10 @@
 package org.jcodec.containers.mxf;
 
-import static org.jcodec.common.Codec.DV;
-import static org.jcodec.common.Codec.J2K;
-import static org.jcodec.common.Codec.MPEG2;
-import static org.jcodec.common.Codec.MPEG4;
-import static org.jcodec.containers.mxf.model.UL.newUL;
-
 import org.jcodec.common.Codec;
 import org.jcodec.containers.mxf.model.UL;
+
+import static org.jcodec.common.Codec.*;
+import static org.jcodec.containers.mxf.model.UL.newUL;
 
 public class MXFCodec {
 

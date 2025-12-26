@@ -1,10 +1,10 @@
 package org.jcodec.api.transcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PixelStoreImpl implements PixelStore {
     private List<Picture> buffers;

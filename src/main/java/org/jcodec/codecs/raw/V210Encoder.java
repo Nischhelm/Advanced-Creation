@@ -1,5 +1,4 @@
 package org.jcodec.codecs.raw;
-import static java.lang.System.arraycopy;
 
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.tools.MathUtil;
@@ -7,6 +6,8 @@ import org.jcodec.common.tools.MathUtil;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+
+import static java.lang.System.arraycopy;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

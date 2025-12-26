@@ -1,8 +1,9 @@
 package org.jcodec.codecs.h264.decode;
-import static java.lang.System.arraycopy;
-import static org.jcodec.common.tools.MathUtil.clip;
 
 import org.jcodec.common.model.Picture;
+
+import static java.lang.System.arraycopy;
+import static org.jcodec.common.tools.MathUtil.clip;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

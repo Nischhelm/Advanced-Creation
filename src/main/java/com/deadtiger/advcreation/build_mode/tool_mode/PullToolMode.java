@@ -6,17 +6,15 @@ import com.deadtiger.advcreation.build_mode.utility.EnumPosOrder;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
 import com.deadtiger.advcreation.client.player.IsometricCamera;
-import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import com.deadtiger.advcreation.template.Template;
-import com.deadtiger.advcreation.template.TemplateBlock;
-import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.client.render.RenderPreview;
+import com.deadtiger.advcreation.client.render.RenderTemplate;
+import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.utility.PlacementHelper;
 import net.minecraft.block.BlockSkull;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -29,7 +27,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.awt.color.ICC_ColorSpace;
 import java.util.*;
 
 public class PullToolMode extends BaseToolMode

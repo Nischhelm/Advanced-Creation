@@ -1,34 +1,8 @@
 package org.jcodec.codecs.h264;
 
-import static org.jcodec.codecs.h264.H264Utils.escapeNAL;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.jcodec.codecs.h264.encode.CQPRateControl;
-import org.jcodec.codecs.h264.encode.EncodedMB;
-import org.jcodec.codecs.h264.encode.EncodingContext;
-import org.jcodec.codecs.h264.encode.IntraPredEstimator;
-import org.jcodec.codecs.h264.encode.MBDeblocker;
-import org.jcodec.codecs.h264.encode.MBEncoderHelper;
-import org.jcodec.codecs.h264.encode.MBWriterI16x16;
-import org.jcodec.codecs.h264.encode.MBWriterINxN;
-import org.jcodec.codecs.h264.encode.MBWriterP16x16;
-import org.jcodec.codecs.h264.encode.MotionEstimator;
-import org.jcodec.codecs.h264.encode.RateControl;
+import org.jcodec.codecs.h264.encode.*;
 import org.jcodec.codecs.h264.io.CAVLC;
-import org.jcodec.codecs.h264.io.model.Frame;
-import org.jcodec.codecs.h264.io.model.MBType;
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.h264.io.model.NALUnitType;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.RefPicMarkingIDR;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
+import org.jcodec.codecs.h264.io.model.*;
 import org.jcodec.codecs.h264.io.write.CAVLCWriter;
 import org.jcodec.codecs.h264.io.write.SliceHeaderWriter;
 import org.jcodec.codecs.png.PNGEncoder;
@@ -44,6 +18,14 @@ import org.jcodec.common.model.Size;
 import org.jcodec.common.tools.MathUtil;
 import org.jcodec.scale.ColorUtil;
 import org.jcodec.scale.Transform;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.LinkedList;
+import java.util.List;
+
+import static org.jcodec.codecs.h264.H264Utils.escapeNAL;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

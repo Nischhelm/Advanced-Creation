@@ -1,32 +1,6 @@
 package org.jcodec.codecs.mpa;
 
-import static org.jcodec.codecs.mpa.Mp3Bitstream.readCoeffs;
-import static org.jcodec.codecs.mpa.Mp3Bitstream.readLSFScaleFactors;
-import static org.jcodec.codecs.mpa.Mp3Bitstream.readScaleFactors;
-import static org.jcodec.codecs.mpa.Mp3Mdct.oneLong;
-import static org.jcodec.codecs.mpa.Mp3Mdct.threeShort;
-import static org.jcodec.codecs.mpa.MpaConst.JOINT_STEREO;
-import static org.jcodec.codecs.mpa.MpaConst.MPEG1;
-import static org.jcodec.codecs.mpa.MpaConst.MPEG25_LSF;
-import static org.jcodec.codecs.mpa.MpaConst.SINGLE_CHANNEL;
-import static org.jcodec.codecs.mpa.MpaConst.ca;
-import static org.jcodec.codecs.mpa.MpaConst.cs;
-import static org.jcodec.codecs.mpa.MpaConst.frequencies;
-import static org.jcodec.codecs.mpa.MpaConst.pretab;
-import static org.jcodec.codecs.mpa.MpaConst.power43Tab;
-import static org.jcodec.codecs.mpa.MpaConst.quantizerTab;
-import static org.jcodec.codecs.mpa.MpaConst.sfbLong;
-import static org.jcodec.codecs.mpa.MpaConst.sfbShort;
-import static org.jcodec.codecs.mpa.MpaConst.win;
-
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Arrays;
-
-import org.jcodec.codecs.mpa.Mp3Bitstream.Granule;
-import org.jcodec.codecs.mpa.Mp3Bitstream.MP3SideInfo;
-import org.jcodec.codecs.mpa.Mp3Bitstream.ScaleFactors;
+import org.jcodec.codecs.mpa.Mp3Bitstream.*;
 import org.jcodec.common.AudioCodecMeta;
 import org.jcodec.common.AudioDecoder;
 import org.jcodec.common.AudioFormat;
@@ -34,6 +8,15 @@ import org.jcodec.common.io.BitReader;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.AudioBuffer;
 import org.jcodec.common.tools.MathUtil;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Arrays;
+
+import static org.jcodec.codecs.mpa.Mp3Mdct.oneLong;
+import static org.jcodec.codecs.mpa.Mp3Mdct.threeShort;
+import static org.jcodec.codecs.mpa.MpaConst.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

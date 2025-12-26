@@ -1,12 +1,12 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.codecs.h264.io.model.SeqParameterSet.getPicHeightInMbs;
-
 import org.jcodec.codecs.h264.H264Utils;
 import org.jcodec.codecs.h264.io.model.Frame;
 import org.jcodec.codecs.h264.io.model.MBType;
 import org.jcodec.codecs.h264.io.model.SeqParameterSet;
 import org.jcodec.codecs.h264.io.model.SliceHeader;
+
+import static org.jcodec.codecs.h264.io.model.SeqParameterSet.getPicHeightInMbs;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

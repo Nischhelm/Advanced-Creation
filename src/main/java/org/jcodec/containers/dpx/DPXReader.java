@@ -1,8 +1,8 @@
 package org.jcodec.containers.dpx;
 
-import static java.nio.ByteBuffer.allocate;
-import static java.util.Locale.US;
-import static org.jcodec.common.StringUtils.isEmpty;
+import org.jcodec.common.io.IOUtils;
+import org.jcodec.common.io.NIOUtils;
+import org.jcodec.common.io.SeekableByteChannel;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,9 +13,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.jcodec.common.io.IOUtils;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.io.SeekableByteChannel;
+import static java.nio.ByteBuffer.allocate;
+import static java.util.Locale.US;
+import static org.jcodec.common.StringUtils.isEmpty;
 
 public class DPXReader {
     private static final int READ_BUFFER_SIZE = 2048 + 1024;

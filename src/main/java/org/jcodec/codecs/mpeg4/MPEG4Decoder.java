@@ -1,18 +1,5 @@
 package org.jcodec.codecs.mpeg4;
 
-import static org.jcodec.codecs.mpeg4.MPEG4BiRenderer.renderBi;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.checkResyncMarker;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.readBi;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.readCoeffIntra;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.readInterCoeffs;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.readInterModeCoeffs;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.readIntraMode;
-import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.readVideoPacketHeader;
-import static org.jcodec.codecs.mpeg4.MPEG4Renderer.renderInter;
-import static org.jcodec.codecs.mpeg4.MPEG4Renderer.renderIntra;
-
-import java.nio.ByteBuffer;
-
 import org.jcodec.codecs.mpeg4.Macroblock.Vector;
 import org.jcodec.common.UsedViaReflection;
 import org.jcodec.common.VideoCodecMeta;
@@ -22,6 +9,13 @@ import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
 import org.jcodec.common.model.Rect;
 import org.jcodec.common.model.Size;
+
+import java.nio.ByteBuffer;
+
+import static org.jcodec.codecs.mpeg4.MPEG4BiRenderer.renderBi;
+import static org.jcodec.codecs.mpeg4.MPEG4Bitstream.*;
+import static org.jcodec.codecs.mpeg4.MPEG4Renderer.renderInter;
+import static org.jcodec.codecs.mpeg4.MPEG4Renderer.renderIntra;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

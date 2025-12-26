@@ -1,5 +1,17 @@
 package org.jcodec.codecs.h264;
-import static java.util.Arrays.asList;
+
+import org.jcodec.codecs.h264.decode.SliceHeaderReader;
+import org.jcodec.codecs.h264.io.model.*;
+import org.jcodec.codecs.h264.io.write.SliceHeaderWriter;
+import org.jcodec.codecs.h264.mp4.AvcCBox;
+import org.jcodec.common.IntArrayList;
+import org.jcodec.common.io.*;
+import org.jcodec.common.model.Size;
+import org.jcodec.containers.mp4.boxes.Box;
+import org.jcodec.containers.mp4.boxes.Box.LeafBox;
+import org.jcodec.containers.mp4.boxes.NodeBox;
+import org.jcodec.containers.mp4.boxes.SampleEntry;
+import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,27 +22,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import org.jcodec.codecs.h264.decode.SliceHeaderReader;
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.h264.io.model.NALUnitType;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
-import org.jcodec.codecs.h264.io.model.SliceType;
-import org.jcodec.codecs.h264.io.write.SliceHeaderWriter;
-import org.jcodec.codecs.h264.mp4.AvcCBox;
-import org.jcodec.common.IntArrayList;
-import org.jcodec.common.io.BitReader;
-import org.jcodec.common.io.BitWriter;
-import org.jcodec.common.io.FileChannelWrapper;
-import org.jcodec.common.io.NIOUtils;
-import org.jcodec.common.io.SeekableByteChannel;
-import org.jcodec.common.model.Size;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.Box.LeafBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.SampleEntry;
-import org.jcodec.containers.mp4.boxes.VideoSampleEntry;
+import static java.util.Arrays.asList;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

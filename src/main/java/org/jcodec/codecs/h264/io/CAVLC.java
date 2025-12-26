@@ -1,8 +1,4 @@
 package org.jcodec.codecs.h264.io;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readU;
-import static org.jcodec.codecs.h264.decode.CAVLCReader.readZeroBitCount;
-import static org.jcodec.common.model.ColorSpace.YUV422;
-import static org.jcodec.common.model.ColorSpace.YUV444;
 
 import org.jcodec.codecs.h264.H264Const;
 import org.jcodec.codecs.h264.io.model.MBType;
@@ -13,6 +9,11 @@ import org.jcodec.common.io.BitWriter;
 import org.jcodec.common.io.VLC;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.codecs.h264.decode.CAVLCReader.readU;
+import static org.jcodec.codecs.h264.decode.CAVLCReader.readZeroBitCount;
+import static org.jcodec.common.model.ColorSpace.YUV422;
+import static org.jcodec.common.model.ColorSpace.YUV444;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

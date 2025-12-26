@@ -1,11 +1,11 @@
 package org.jcodec.containers.mp4.boxes;
 
-import static org.jcodec.containers.mp4.TimeUtil.fromMovTime;
-import static org.jcodec.containers.mp4.TimeUtil.toMovTime;
-
 import org.jcodec.common.io.NIOUtils;
 
 import java.nio.ByteBuffer;
+
+import static org.jcodec.containers.mp4.TimeUtil.fromMovTime;
+import static org.jcodec.containers.mp4.TimeUtil.toMovTime;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

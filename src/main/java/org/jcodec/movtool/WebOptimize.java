@@ -1,9 +1,10 @@
 package org.jcodec.movtool;
-import java.io.File;
-import java.io.IOException;
 
 import org.jcodec.containers.mp4.MP4Util;
 import org.jcodec.containers.mp4.MP4Util.Movie;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

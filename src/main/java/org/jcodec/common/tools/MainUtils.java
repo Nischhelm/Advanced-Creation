@@ -1,24 +1,17 @@
 package org.jcodec.common.tools;
 
+import org.jcodec.common.StringUtils;
+import org.jcodec.common.io.IOUtils;
+import org.jcodec.platform.Platform;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.jcodec.common.StringUtils;
-import org.jcodec.common.io.IOUtils;
-import org.jcodec.platform.Platform;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

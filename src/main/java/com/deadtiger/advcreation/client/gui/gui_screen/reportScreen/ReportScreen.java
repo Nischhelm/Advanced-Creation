@@ -2,7 +2,6 @@ package com.deadtiger.advcreation.client.gui.gui_screen.reportScreen;
 
 import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.*;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiCustomWindow;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.report.Report;
 import net.minecraft.client.Minecraft;

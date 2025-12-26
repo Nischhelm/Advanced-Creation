@@ -1,10 +1,10 @@
 package org.jcodec.containers.mkv.boxes;
+
+import java.nio.ByteBuffer;
+
 import static org.jcodec.containers.mkv.util.EbmlUtil.ebmlEncode;
 import static org.jcodec.containers.mkv.util.EbmlUtil.ebmlLength;
 import static org.jcodec.platform.Platform.arrayEqualsByte;
-
-import java.lang.System;
-import java.nio.ByteBuffer;
 
 
 /**

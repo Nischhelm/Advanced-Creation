@@ -1,13 +1,13 @@
 package org.jcodec.codecs.mpeg4;
 
-import static org.jcodec.codecs.mpeg4.MPEG4Consts.SCAN_TABLES;
+import org.jcodec.common.io.BitReader;
+import org.jcodec.common.logging.Logger;
+import org.jcodec.common.tools.MathUtil;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import org.jcodec.common.io.BitReader;
-import org.jcodec.common.logging.Logger;
-import org.jcodec.common.tools.MathUtil;
+import static org.jcodec.codecs.mpeg4.MPEG4Consts.SCAN_TABLES;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

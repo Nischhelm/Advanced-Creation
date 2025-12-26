@@ -1,8 +1,9 @@
 package org.jcodec.containers.mps.index;
+
+import org.jcodec.common.RunLength.Integer;
 import org.jcodec.common.io.NIOUtils;
 
 import java.nio.ByteBuffer;
-import org.jcodec.common.RunLength.Integer;
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed
  * under FreeBSD License

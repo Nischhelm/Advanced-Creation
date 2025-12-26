@@ -1,7 +1,5 @@
 package org.jcodec.movtool;
 
-import java.io.File;
-
 import org.jcodec.common.logging.Logger;
 import org.jcodec.common.model.RationalLarge;
 import org.jcodec.common.tools.MainUtils;
@@ -11,6 +9,8 @@ import org.jcodec.containers.mp4.boxes.MovieFragmentBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
 import org.jcodec.containers.mp4.boxes.TrakBox;
+
+import java.io.File;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

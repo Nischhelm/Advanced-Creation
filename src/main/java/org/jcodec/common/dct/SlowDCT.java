@@ -1,10 +1,8 @@
 package org.jcodec.common.dct;
-import static java.lang.Math.PI;
-import static java.lang.Math.cos;
-import static java.lang.Math.round;
-import static java.lang.Math.sqrt;
 
 import org.jcodec.scale.ImageConvert;
+
+import static java.lang.Math.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org )

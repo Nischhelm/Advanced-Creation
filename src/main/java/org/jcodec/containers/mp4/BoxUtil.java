@@ -3,9 +3,9 @@ package org.jcodec.containers.mp4;
 import org.jcodec.common.Callbacks;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.containers.mp4.boxes.Box;
+import org.jcodec.containers.mp4.boxes.Box.LeafBox;
 import org.jcodec.containers.mp4.boxes.Header;
 import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.Box.LeafBox;
 import org.jcodec.platform.Platform;
 
 import java.nio.ByteBuffer;

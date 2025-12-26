@@ -1,8 +1,8 @@
 package org.jcodec.codecs.mpa;
 
-import static org.jcodec.codecs.mpa.MpaConst.dp;
-
 import org.jcodec.common.tools.MathUtil;
+
+import static org.jcodec.codecs.mpa.MpaConst.dp;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

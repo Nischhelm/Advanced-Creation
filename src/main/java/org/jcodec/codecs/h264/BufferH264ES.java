@@ -1,12 +1,8 @@
 package org.jcodec.codecs.h264;
+
 import org.jcodec.codecs.h264.decode.SliceHeaderReader;
-import org.jcodec.codecs.h264.io.model.NALUnit;
-import org.jcodec.codecs.h264.io.model.NALUnitType;
-import org.jcodec.codecs.h264.io.model.PictureParameterSet;
-import org.jcodec.codecs.h264.io.model.RefPicMarking;
+import org.jcodec.codecs.h264.io.model.*;
 import org.jcodec.codecs.h264.io.model.RefPicMarking.InstrType;
-import org.jcodec.codecs.h264.io.model.SeqParameterSet;
-import org.jcodec.codecs.h264.io.model.SliceHeader;
 import org.jcodec.common.Demuxer;
 import org.jcodec.common.DemuxerTrack;
 import org.jcodec.common.DemuxerTrackMeta;

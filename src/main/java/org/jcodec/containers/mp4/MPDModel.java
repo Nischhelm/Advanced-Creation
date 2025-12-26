@@ -1,16 +1,15 @@
 package org.jcodec.containers.mp4;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.xml.stream.XMLStreamException;
-
 import org.jcodec.api.JCodecException;
 import org.jcodec.common.XMLMapper;
 import org.jcodec.common.XMLMapper.TypeHandler;
 import org.jcodec.common.model.Rational;
+
+import javax.xml.stream.XMLStreamException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
 
 public class MPDModel {
     public static class Time {

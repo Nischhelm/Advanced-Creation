@@ -1,11 +1,5 @@
 package org.jcodec.movtool;
 
-import static java.lang.Integer.parseInt;
-import static java.lang.Math.max;
-import static org.jcodec.common.io.NIOUtils.readableChannel;
-import static org.jcodec.common.io.NIOUtils.writableChannel;
-import static org.jcodec.movtool.Util.forceEditList;
-
 import org.jcodec.common.JCodecUtil2;
 import org.jcodec.common.StringUtils;
 import org.jcodec.common.io.NIOUtils;
@@ -23,6 +17,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+
+import static java.lang.Integer.parseInt;
+import static java.lang.Math.max;
+import static org.jcodec.common.io.NIOUtils.readableChannel;
+import static org.jcodec.common.io.NIOUtils.writableChannel;
+import static org.jcodec.movtool.Util.forceEditList;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

@@ -1,15 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_utility;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.Closeable;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
-
-import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.client.resources.IResourceManager;
@@ -18,6 +8,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.io.IOUtils;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
 @SideOnly(Side.CLIENT)
 public class GifTexture extends VideoTexture

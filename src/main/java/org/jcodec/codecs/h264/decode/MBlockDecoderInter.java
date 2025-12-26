@@ -1,29 +1,17 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.codecs.h264.H264Const.COMP_BLOCK_4x4_LUT;
-import static org.jcodec.codecs.h264.H264Const.COMP_BLOCK_8x8_LUT;
-import static org.jcodec.codecs.h264.H264Const.COMP_POS_4x4_LUT;
-import static org.jcodec.codecs.h264.H264Const.COMP_POS_8x8_LUT;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvC;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvRef;
-import static org.jcodec.codecs.h264.H264Utils.Mv.packMv;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.NULL_VECTOR;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.calcMVPredictionMedian;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.collectPredictors;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.debugPrint;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.mergeResidual;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveMvs;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveVect;
-import static org.jcodec.codecs.h264.decode.PredictionMerger.mergePrediction;
-import static org.jcodec.common.model.ColorSpace.MONO;
-
 import org.jcodec.codecs.h264.H264Const;
-import org.jcodec.codecs.h264.H264Const.PartPred;
+import org.jcodec.codecs.h264.H264Const.*;
 import org.jcodec.codecs.h264.H264Utils.MvList;
 import org.jcodec.codecs.h264.decode.aso.Mapper;
 import org.jcodec.codecs.h264.io.model.Frame;
 import org.jcodec.codecs.h264.io.model.SliceHeader;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.h264.H264Utils.Mv.*;
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.*;
+import static org.jcodec.codecs.h264.decode.PredictionMerger.mergePrediction;
+import static org.jcodec.common.model.ColorSpace.MONO;
 
 /**
  * A decoder for Inter 16x16, 16x8 and 8x16 macroblocks

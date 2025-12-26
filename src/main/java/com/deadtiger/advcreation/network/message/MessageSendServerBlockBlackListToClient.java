@@ -3,9 +3,7 @@ package com.deadtiger.advcreation.network.message;
 import com.deadtiger.advcreation.block_blacklist.BlockBlackListManager;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
-
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

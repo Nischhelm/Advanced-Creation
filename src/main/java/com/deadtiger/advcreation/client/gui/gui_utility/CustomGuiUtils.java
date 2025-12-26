@@ -32,10 +32,14 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.*;
-import java.util.*;
-
-import static net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CustomGuiUtils
 {

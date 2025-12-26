@@ -1,13 +1,8 @@
 package org.jcodec.containers.mp4;
+
 import org.jcodec.common.model.RationalLarge;
-import org.jcodec.containers.mp4.boxes.Box;
-import org.jcodec.containers.mp4.boxes.Edit;
-import org.jcodec.containers.mp4.boxes.MovieBox;
-import org.jcodec.containers.mp4.boxes.NodeBox;
-import org.jcodec.containers.mp4.boxes.TimeToSampleBox;
+import org.jcodec.containers.mp4.boxes.*;
 import org.jcodec.containers.mp4.boxes.TimeToSampleBox.TimeToSampleEntry;
-import org.jcodec.containers.mp4.boxes.TimecodeSampleEntry;
-import org.jcodec.containers.mp4.boxes.TrakBox;
 import org.jcodec.containers.mp4.demuxer.TimecodeMP4DemuxerTrack;
 
 import java.io.IOException;

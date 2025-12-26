@@ -1,6 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiTextFieldFillIn;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;

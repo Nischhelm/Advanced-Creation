@@ -2,18 +2,13 @@ package com.deadtiger.advcreation.client.gui.gui_overlay;
 
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.EnumMainMode;
-import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.*;
+import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayBaseElement;
+import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayOnOffButton;
 import com.deadtiger.advcreation.client.input.Keybindings;
-import com.deadtiger.advcreation.client.player.IsometricCamera;
 import com.deadtiger.advcreation.client.player.ToolEnabled;
 import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import com.deadtiger.advcreation.network.NetworkHandler;
-import com.deadtiger.advcreation.network.message.MessageUpdatePlayerSetting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
-
-import static net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText;
 
 public class ToolDisableGuiOverlay extends AbstractGuiOverlay {
     private int buttonWidth = 55, buttonHeight = 20;

@@ -1,10 +1,10 @@
 package org.jcodec.codecs.h264.decode;
 
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.collectPredictors;
-import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveVectIntra;
-
 import org.jcodec.codecs.h264.decode.aso.Mapper;
 import org.jcodec.common.model.Picture;
+
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.collectPredictors;
+import static org.jcodec.codecs.h264.decode.MBlockDecoderUtils.saveVectIntra;
 
 /**
  * A decoder for Intra PCM macroblocks

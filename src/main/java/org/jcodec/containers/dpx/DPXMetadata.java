@@ -1,6 +1,5 @@
 package org.jcodec.containers.dpx;
 
-import static java.lang.String.format;
 import static org.jcodec.common.StringUtils.zeroPad2;
 
 public class DPXMetadata {

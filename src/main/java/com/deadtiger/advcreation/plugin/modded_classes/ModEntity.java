@@ -16,11 +16,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.*;
-
 import org.lwjgl.input.Mouse;
 
 import javax.annotation.Nullable;
-import java.util.*;
+import java.util.List;
 
 public class ModEntity
 {

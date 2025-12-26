@@ -1,16 +1,5 @@
 package org.jcodec.containers.mkv;
 
-import static org.jcodec.containers.mkv.MKVType.Attachments;
-import static org.jcodec.containers.mkv.MKVType.Chapters;
-import static org.jcodec.containers.mkv.MKVType.Cluster;
-import static org.jcodec.containers.mkv.MKVType.Cues;
-import static org.jcodec.containers.mkv.MKVType.Info;
-import static org.jcodec.containers.mkv.MKVType.SeekHead;
-import static org.jcodec.containers.mkv.MKVType.Tags;
-import static org.jcodec.containers.mkv.MKVType.Tracks;
-import static org.jcodec.containers.mkv.MKVType.createById;
-import static org.jcodec.containers.mkv.util.EbmlUtil.toHexString;
-
 import org.jcodec.common.io.SeekableByteChannel;
 import org.jcodec.containers.mkv.boxes.EbmlBase;
 import org.jcodec.containers.mkv.boxes.EbmlBin;
@@ -19,11 +8,13 @@ import org.jcodec.containers.mkv.boxes.EbmlVoid;
 import org.jcodec.containers.mkv.util.EbmlUtil;
 
 import java.io.IOException;
-import java.lang.System;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import static org.jcodec.containers.mkv.MKVType.*;
+import static org.jcodec.containers.mkv.util.EbmlUtil.toHexString;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

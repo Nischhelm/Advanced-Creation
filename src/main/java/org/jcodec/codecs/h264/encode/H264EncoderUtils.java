@@ -2,8 +2,6 @@ package org.jcodec.codecs.h264.encode;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvC;
-import static org.jcodec.codecs.h264.H264Utils.Mv.mvRef;
 
 /**
  * Contains utility functions commonly used in H264 encoder

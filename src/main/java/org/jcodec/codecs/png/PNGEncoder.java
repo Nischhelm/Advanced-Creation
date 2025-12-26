@@ -1,18 +1,16 @@
 package org.jcodec.codecs.png;
 
-import java.nio.ByteBuffer;
-import java.util.zip.CRC32;
-import java.util.zip.Deflater;
-
 import org.jcodec.common.VideoEncoder;
 import org.jcodec.common.io.NIOUtils;
 import org.jcodec.common.model.ColorSpace;
 import org.jcodec.common.model.Picture;
 
+import java.nio.ByteBuffer;
+import java.util.zip.CRC32;
+import java.util.zip.Deflater;
+
 import static org.jcodec.codecs.png.IHDR.PNG_COLOR_MASK_COLOR;
-import static org.jcodec.codecs.png.PNGConsts.TAG_IDAT;
-import static org.jcodec.codecs.png.PNGConsts.TAG_IEND;
-import static org.jcodec.codecs.png.PNGConsts.TAG_IHDR;
+import static org.jcodec.codecs.png.PNGConsts.*;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed

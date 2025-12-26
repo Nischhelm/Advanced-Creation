@@ -1,9 +1,10 @@
 package org.jcodec.common;
-import static java.lang.System.arraycopy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static java.lang.System.arraycopy;
 
 /**
  * This class is part of JCodec ( www.jcodec.org ) This software is distributed
