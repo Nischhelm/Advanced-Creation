@@ -1,219 +1,181 @@
-buildscript {
-    repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        jcenter()
-        maven { url = 'https://repo.spongepowered.org/maven' }
-        mavenCentral()
-        maven {url= 'http://127.0.0.1:5000/forgeLibs/'}
-
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-    }
-}
-        
-apply plugin: 'net.minecraftforge.gradle'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
-
-version = '1.12.2-beta1.2.3'
-group = 'com.deadtiger.advcreation' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'AdvancedCreation'
-//archivesBaseName = "AdvancedCreationCore"
-
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-repositories {
-    maven {
-        name = "ilexiconn"
-//        url = "https://maven.mcmoddev.com"
-        url ="http://127.0.0.1:5000/forgeLibs"
-    }
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version "${forge_gradle_version}"
+    id 'org.spongepowered.mixin' version "${mixin_gradle_version}"
+    id 'wtf.gofancy.fancygradle' version "${fancy_gradle_version}"
 }
 
+version = mod_version
+group = mod_group
+base.archivesName = mod_name
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    //mappings channel: 'snapshot', version: '20171003-1.12'
-    mappings channel: 'snapshot', version: '20171003-1.12'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
+    mappings channel: mappings_channel, version: mappings_version
     accessTransformer = file('src/main/resources/META-INF/advCreation_at.cfg')
 
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
-            workingDirectory project.file('run')
+            args "--username=InDev"
 
-            jvmArg "-Dfml.coreMods.load=com.deadtiger.advcreation.plugin.AdvCreationCorePlugin"
+            jvmArg "-Dfml.coreMods.load=${mixin_loader_class}"
             jvmArg "-Dmixin.hotSwap=true"
             jvmArg "-Dmixin.checks.interfaces=true"
             jvmArg "-Dmixin.debug=true"
 
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            workingDirectory project.file('run')
 
-            // Recommended logging level for the console
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
-            arg '-torg.spongepowered.asm.launch.MixinTweaker'
         }
 
         server {
 
-            jvmArg "-Dfml.coreMods.load=com.deadtiger.advcreation.plugin.AdvCreationCorePlugin"
+            jvmArg "-Dfml.coreMods.load=${mixin_loader_class}"
             jvmArg "-Dmixin.hotSwap=true"
             jvmArg "-Dmixin.checks.interfaces=true"
 
-            // Recommended logging data for a userdev environment
+            workingDirectory project.file('run')
+
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-            arg '-torg.spongepowered.asm.launch.MixinTweaker'
-
         }
     }
 }
 
 repositories {
-    maven { url = 'https://repo.spongepowered.org/maven' }
-    flatDir {
-        dirs 'libs'
-    }
-}
-
-configurations {
-    embed
-    compile.extendsFrom(embed)
+    flatDir { dirs 'libs' }
+    maven { url = 'https://www.cursemaven.com' }
 }
 
 dependencies {
-    // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
-    // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
-    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-//    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2855'
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    embed('org.spongepowered:mixin:0.8.3-SNAPSHOT') {
-        exclude module: 'guava'
-        exclude module: 'commons-io'
-        exclude module: 'gson'
-    }
+    compileOnly "org.spongepowered:mixin:${mixin_version}"
+    annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
+    compileOnly "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
+    annotationProcessor "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
 
-    // You may put jars on which you depend on in ./libs or you may define them like so..
-    // compile "some.group:artifact:version:classifier"
-    // compile "some.group:artifact:version"
-//
-//    implementation 'org.jcodec:jcodec:0.2.5'
-
-    // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // These dependencies get remapped to your current MCP mappings
-    // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-//    compile "net.ilexiconn:llibrary:1.7.9-1.12.2:dev"
-    compile "libs:llibrary:1.7.9-1.12.2:dev"
+    implementation fg.deobf("curse.maven:fermiumbooter-${fermiumbooter_version}")
+    implementation fg.deobf("curse.maven:llibrary-${llibrary_version}")
+    compileOnly fg.deobf("curse.maven:bewitchment-legacy-${bewitchment_version}")
 }
 
 mixin {
-    add sourceSets.main, mod_mixin_refmap.replace('${mod_id}', mod_id)
-    config mod_mixin_configs.replace('${mod_id}', mod_id)
+    add sourceSets.main, "mixins.${mod_id}.refmap.json"
+}
+
+fancyGradle {
+    patches {
+        resources
+        coremods
+        asm
+        mergetool
+    }
+}
+
+processResources {
+    var replaceProperties = [
+            'mod_id': mod_id,
+            'mod_name': mod_name,
+            'version': mod_version,
+            'mcversion': minecraft_version,
+            'mod_description': mod_description,
+            'mod_author': mod_author
+    ]
+
+    inputs.properties replaceProperties
+
+    filesMatching('mcmod.info') {
+        expand replaceProperties
+    }
 }
 
 jar {
-    from {
-        configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
-    } {
-        exclude "LICENSE.txt", "META-INF/MANIFSET.MF", "META-INF/maven/**", "META-INF/*.RSA", "META-INF/*.SF"
-    }
-
     manifest {
-        attributes 'FMLCorePlugin': 'com.deadtiger.advcreation.plugin.AdvCreationCorePlugin'
-        attributes 'FMLCorePluginContainsFMLMod': true
-        attributes 'FMLAT': 'advCreation_at.cfg'
-        attributes "ForceLoadAsMod": "true"
-        attributes "TweakClass": "org.spongepowered.asm.launch.MixinTweaker"
-        attributes "TweakOrder": "0"
+        def attr = [:]
+        attr['Specification-Title']         = mod_name
+        attr['Specification-Vendor']        = mod_author
+        attr['Specification-Version']       = '1'
+        attr['Implementation-Title']        = mod_name
+        attr['Implementation-Vendor']       = mod_author
+        attr['Implementation-Version']      = mod_version
+        attr['Implementation-Timestamp']    = new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        attr['FMLCorePlugin']               = mixin_loader_class
+        attr['FMLCorePluginContainsFMLMod'] = 'true'
+        attr['TweakClass']                  = 'org.spongepowered.asm.launch.MixinTweaker'
+        attr['ForceLoadAsMod']              = "true"
+        attr['FMLAT']                       = 'accesstransformer.cfg'
+
+        def currentTasks = gradle.startParameter.taskNames
+        if (currentTasks[0] == 'build' || currentTasks[0] == 'assemble')
+            attr['ForceLoadAsMod'] = "true"
+        attributes(attr)
     }
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
-jar {
-    manifest {
-        attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
+tasks.register("copyReobfJar", Copy) {
+    dependsOn("reobfJar")
+
+    from(layout.buildDirectory.file("reobfJar/output.jar"))
+    into(layout.projectDirectory.dir("run/mods"))
+    rename("output.jar", "${mod_name}-${mod_version}.jar")
+}
+
+afterEvaluate {
+    tasks.matching { it.name.startsWith("reobfJar") }.configureEach {
+        finalizedBy("copyReobfJar")
     }
 }
 
+jar.finalizedBy('reobfJar')
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar') 
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifact jar
-        }
-    }
-    repositories {
-        maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
-        }
-    }
-}
-
-sourceSets {
-    main { output.resourcesDir = output.classesDir }
-}
-
-// Advanced Creation Build Tasks
-task assembleJars {
-    group "advanced-creation"
-    dependsOn runExternalTask("buildJar", "buildJar.gradle", ["assemble"])
-    dependsOn runExternalTask("buildJarCore", "buildJarCore.gradle", ["assemble"])
-}
-
-task cleanJars {
-    group "advanced-creation"
-    delete "$rootDir/output"
-}
-
-task cleanAll {
-    group "advanced-creation"
-    dependsOn cleanJars
-    dependsOn clean
-}
-
-def runExternalTask(taskName, buildFilePath, tasksToRun) {
-    tasks.create([name: taskName,type: GradleBuild]){
-        group "advanced-creation"
-        buildFile = buildFilePath
-        tasks = tasksToRun
-    }
-}
+//The following is stuff that i couldn't use. Idk if you need any of it to still be included?
+//jar {
+//    from {
+//        configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
+//    } {
+//        exclude "LICENSE.txt", "META-INF/MANIFEST.MF", "META-INF/maven/**", "META-INF/*.RSA", "META-INF/*.SF"
+//    }
+//}
+//
+//publishing {
+//    publications {
+//        mavenJava(MavenPublication) {
+//            artifact jar
+//        }
+//    }
+//    repositories {
+//        maven {
+//            url "file:///${project.projectDir}/mcmodsrepo"
+//        }
+//    }
+//}
+//
+//// Advanced Creation Build Tasks
+//task assembleJars {
+//    group "advanced-creation"
+//    dependsOn runExternalTask("buildJar", "buildJar.gradle", ["assemble"])
+//    dependsOn runExternalTask("buildJarCore", "buildJarCore.gradle", ["assemble"])
+//}
+//
+//task cleanJars {
+//    group "advanced-creation"
+//    delete "$rootDir/output"
+//}
+//
+//task cleanAll {
+//    group "advanced-creation"
+//    dependsOn cleanJars
+//    dependsOn clean
+//}
+//
+//def runExternalTask(taskName, buildFilePath, tasksToRun) {
+//    tasks.create([name: taskName,type: GradleBuild]){
+//        group "advanced-creation"
+//        buildFile = buildFilePath
+//        tasks = tasksToRun
+//    }
+//}
