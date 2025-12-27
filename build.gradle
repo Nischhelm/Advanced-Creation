@@ -4,6 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version "${forge_gradle_version}"
     id 'org.spongepowered.mixin' version "${mixin_gradle_version}"
     id 'wtf.gofancy.fancygradle' version "${fancy_gradle_version}"
+    id 'com.github.johnrengelman.shadow' version "${shadow_gradle_version}"
 }
 
 version = mod_version
@@ -62,7 +63,7 @@ dependencies {
     implementation fg.deobf("curse.maven:llibrary-${llibrary_version}")
     compileOnly fg.deobf("curse.maven:bewitchment-legacy-${bewitchment_version}")
 
-    implementation 'org.jcodec:jcodec:0.2.5' //TODO: shade this in
+    shadow 'org.jcodec:jcodec:0.2.5'
 }
 
 mixin {
@@ -95,6 +96,19 @@ processResources {
     }
 }
 
+shadowJar {
+    configurations = [project.configurations.shadow]
+    mergeServiceFiles()
+
+    //exclude 'org/spongepowered/asm/launch/MixinLaunchPlugin*' //not sure if you want to exclude parts
+
+    archiveClassifier.set('1.12.2')
+}
+
+reobf {
+    shadowJar {}
+}
+
 jar {
     manifest {
         def attr = [:]
@@ -116,6 +130,8 @@ jar {
             attr['ForceLoadAsMod'] = "true"
         attributes(attr)
     }
+
+    archiveClassifier.set('1.12.2-THIN')
 }
 
 tasks.register("copyReobfJar", Copy) {
@@ -132,6 +148,7 @@ afterEvaluate {
     }
 }
 
+build.dependsOn(shadowJar)
 jar.finalizedBy('reobfJar')
 
 //The following is stuff that i couldn't use. Idk if you need any of it to still be included?
