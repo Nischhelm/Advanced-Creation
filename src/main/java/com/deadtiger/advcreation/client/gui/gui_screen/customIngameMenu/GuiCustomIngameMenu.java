@@ -254,7 +254,7 @@ public class GuiCustomIngameMenu
                 ((GuiFreeToggleButton)ignorePlantsButton).visible = true;
                 ignoreLiquidsButton.visible = true;
                 CURR_THIRD_PERSON_VIEW =  3;
-                isometricButton.displayString = isometricDisplayStrings[CURR_THIRD_PERSON_VIEW] + " (" + Keybindings.TO_ISOMETRIC_VIEW.getKeybind().getDisplayName() + ")";
+                if(isometricButton != null) isometricButton.displayString = isometricDisplayStrings[CURR_THIRD_PERSON_VIEW] + " (" + Keybindings.TO_ISOMETRIC_VIEW.getKeybind().getDisplayName() + ")";
                 IsometricCamera.newThirdPersonViewValue =  CURR_THIRD_PERSON_VIEW;
                 IsometricCamera.CHANGED_PERSPECTIVE = true;
             }
@@ -374,7 +374,7 @@ public class GuiCustomIngameMenu
             {
                 if(Minecraft.getMinecraft().player.isCreative())
                 {
-                    CustomGuiUtils.drawHoveringText("Toggle Isomeric View", mouseX+10, mouseY-3,width,heigth,-1,fontRenderer);
+                    CustomGuiUtils.drawHoveringText("Toggle Isometric View", mouseX+10, mouseY-3,width,heigth,-1,fontRenderer);
                 }
                 else
                     CustomGuiUtils.drawHoveringText("Isometric View is only available in the CREATIVE gamemode", mouseX+10, mouseY-3,width,heigth,-1,fontRenderer);
@@ -386,7 +386,7 @@ public class GuiCustomIngameMenu
             {
                 if(Minecraft.getMinecraft().player.isCreative())
                 {
-                    CustomGuiUtils.drawHoveringText("Toggle Isomeric View", mouseX+10, mouseY-3,width,heigth,-1,fontRenderer);
+                    CustomGuiUtils.drawHoveringText("Toggle Isometric View", mouseX+10, mouseY-3,width,heigth,-1,fontRenderer);
                 }
                 else
                     CustomGuiUtils.drawHoveringText("Isometric View is only available in the CREATIVE gamemode", mouseX+10, mouseY-3,width,heigth,-1,fontRenderer);
