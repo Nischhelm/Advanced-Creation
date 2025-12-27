@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 //@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = "required-after:fermiumbooter")
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class AdvCreation
 {
     //boolean that needs to be true when you compile as a jar

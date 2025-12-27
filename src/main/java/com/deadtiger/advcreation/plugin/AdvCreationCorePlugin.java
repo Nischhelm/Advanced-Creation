@@ -1,23 +1,23 @@
 package com.deadtiger.advcreation.plugin;
 
-import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.utility.LogHelper;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.spongepowered.asm.launch.MixinBootstrap;
+import org.spongepowered.asm.mixin.Mixins;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 
-@IFMLLoadingPlugin.MCVersion(Reference.MC_VERSION)
-@IFMLLoadingPlugin.TransformerExclusions({"com.deadtiger.advcreation.plugin"})
-@IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE+2)
+@IFMLLoadingPlugin.MCVersion("1.12.2")
 public class AdvCreationCorePlugin implements IFMLLoadingPlugin
 {
-    public static final boolean isClient = FMLLaunchHandler.side().isClient();
+    public AdvCreationCorePlugin() {
+        MixinBootstrap.init();
+        Mixins.addConfiguration("mixins.advcreation.json");
+    }
 
     @Override
     public String[] getASMTransformerClass() {
-
         LogHelper.info("getting ASM TransformerClass CLIENT");
         return new String[]{
 //                "com.deadtiger.advcreation.plugin.transformer.ShowMouseClassTransformer",
@@ -30,13 +30,11 @@ public class AdvCreationCorePlugin implements IFMLLoadingPlugin
 //                "com.deadtiger.advcreation.plugin.transformer.DeactivateScrollInventoryClassTransformer",
                 "com.deadtiger.advcreation.plugin.transformer.GeneralTransformer"
         };
-
     }
     
     @Override
     public String getModContainerClass() {
-        return "com.deadtiger.advcreation.plugin.AdvCreationCoreModContainer";
-        //return null;
+        return null;
     }
     
     @Nullable
