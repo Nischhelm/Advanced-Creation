@@ -223,13 +223,13 @@ public class FakeWorld extends World
     }
 
     @Override
-    public Chunk getChunkFromBlockCoords(BlockPos pos)
+    public Chunk getChunk(BlockPos pos)
     {
         return fakeChunk;
     }
 
     @Override
-    public Chunk getChunkFromChunkCoords(int chunkX, int chunkZ)
+    public Chunk getChunk(int chunkX, int chunkZ)
     {
         return fakeChunk;
     }
@@ -1102,7 +1102,7 @@ public class FakeWorld extends World
     }
 
     @Override
-    public int isBlockIndirectlyGettingPowered(BlockPos pos)
+    public int getRedstonePowerFromNeighbors(BlockPos pos)
     {
         return 0;
     }
