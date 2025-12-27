@@ -2,11 +2,13 @@ package com.deadtiger.advcreation.template;
 
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.build_mode.utility.ExtremaXYZ;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
 import com.deadtiger.advcreation.reference.Reference;
-import com.deadtiger.advcreation.utility.*;
+import com.deadtiger.advcreation.utility.PlacementHelper;
+import com.deadtiger.advcreation.utility.TemplateFolderUtility;
+import com.deadtiger.advcreation.utility.UnzipUtility;
+import com.deadtiger.advcreation.utility.ZipUtility;
 import com.google.common.hash.Hashing;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -212,7 +214,7 @@ public class Template
 
     public boolean writeTemplate()
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         templateHashcode = generateTemplateHashcode();
 
@@ -238,7 +240,7 @@ public class Template
     public boolean moveToTrash()
     {
         boolean trashedSuccesfully = false;
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         File zipped_templates = new File(mcDataDir, "advcreation_templates_zips");
 
@@ -285,7 +287,7 @@ public class Template
     public boolean zipTemplate(boolean trash)
     {
         boolean zippedSuccessfully = false;
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         File newDir = new File(saves, this.getDirname());
 
@@ -358,7 +360,7 @@ public class Template
 
     public boolean createOnlyPropertiesFile()
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
 
         if (!ensureDirectoryExists(saves)) return false;
@@ -526,7 +528,7 @@ public class Template
     //load templates
     public boolean readTemplate(int i, String filename, boolean hashcode, String folderName)
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File folder = new File(mcDataDir, "advcreation_templates");
         File saves = new File(folder, filename.split(".nbt")[0]);
         File template = null;
@@ -1757,7 +1759,7 @@ public class Template
         {
             TemplateBlock tempBlock = getTempBlockOffset(j);
 
-            if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+            if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
                 continue;
 
             BlockPos new_pos = position.add(tempBlock.getX_offset(), tempBlock.getY_offset(), tempBlock.getZ_offset());

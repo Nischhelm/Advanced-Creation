@@ -1,9 +1,8 @@
 package com.deadtiger.advcreation.client.render;
 
 import com.deadtiger.advcreation.build_mode.BuildMode;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.network.message.MessagePlaceListsTemplateBlock;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;

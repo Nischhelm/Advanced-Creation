@@ -1,12 +1,9 @@
 package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
-import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayBaseElement;
-import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayRedirectToParent;
 import com.deadtiger.advcreation.reference.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.ResourceLocation;
 
 

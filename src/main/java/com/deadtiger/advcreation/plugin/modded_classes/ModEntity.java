@@ -16,11 +16,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.*;
-
 import org.lwjgl.input.Mouse;
 
 import javax.annotation.Nullable;
-import java.util.*;
+import java.util.List;
 
 public class ModEntity
 {
@@ -331,7 +330,7 @@ public class ModEntity
         //normal code used in firstperson perspective
         Vec3d vec3d = entity.getPositionEyes(partialTicks);
         Vec3d vec3d1 = entity.getLook(partialTicks);
-        Vec3d vec3d2 = vec3d.addVector(vec3d1.x * blockReachDistance, vec3d1.y * blockReachDistance, vec3d1.z * blockReachDistance);
+        Vec3d vec3d2 = vec3d.add(vec3d1.x * blockReachDistance, vec3d1.y * blockReachDistance, vec3d1.z * blockReachDistance);
         
         // the if checks for if the game is paused which is only for debug purposes
         Minecraft mc = Minecraft.getMinecraft();
@@ -368,7 +367,7 @@ public class ModEntity
             {
                 vec3d = entity.getPositionEyes(partialTicks);
                 vec3d1 = entity.getLook(partialTicks);
-                vec3d2 = vec3d.addVector(vec3d1.x * blockReachDistance, vec3d1.y * blockReachDistance, vec3d1.z * blockReachDistance);
+                vec3d2 = vec3d.add(vec3d1.x * blockReachDistance, vec3d1.y * blockReachDistance, vec3d1.z * blockReachDistance);
                 //result =  entity.world.rayTraceBlocks(vec3d, vec3d2, false, false, true);
 //            result = ModWorld.rayTraceBlocks(vec3d, vec3d2, false, false, true,entity.world);
                 result = ModWorld.rayTraceBlocks(vec3d, vec3d2, !IsometricCamera.IGNORE_FLUIDS, false, true,entity.world);
@@ -581,12 +580,12 @@ public class ModEntity
 
         DebugInfo.cameraVectorToCursorOnScreen = new Vec3d(X_mouseAngled, Y_mouseAngled, Z_mouseAngled);
 
-        //vec3d = entity.getPositionEyes(partialTicks).addVector(-(((float) 960 - Mouse.getX()) / 43.8), 15, ((float) 508 - Mouse.getY()) / 43.8);
-        //vec3d = entity.getPositionEyes(partialTicks).addVector((((float)screen_X_mouse) / (960.0f*1.25f)), 15, (((float)screen_Z_mouse) / (508.0f*1.25f)));
-        Vec3d vec3d = entity.getPositionEyes(partialTicks).addVector(X_mouseAngled, Y_mouseAngled, Z_mouseAngled);
+        //vec3d = entity.getPositionEyes(partialTicks).add(-(((float) 960 - Mouse.getX()) / 43.8), 15, ((float) 508 - Mouse.getY()) / 43.8);
+        //vec3d = entity.getPositionEyes(partialTicks).add((((float)screen_X_mouse) / (960.0f*1.25f)), 15, (((float)screen_Z_mouse) / (508.0f*1.25f)));
+        Vec3d vec3d = entity.getPositionEyes(partialTicks).add(X_mouseAngled, Y_mouseAngled, Z_mouseAngled);
         //setting: FOV 30
-        //vec3d = entity.getPositionEyes(partialTicks).addVector(((float)screen_X_mouse )/ 115.0f, 15, ((float) screen_Z_mouse) / 115.0f);
-        Vec3d vec3d2 = vec3d.addVector(cursor_vectorAngled_X, cursor_vectorAngled_Y, cursor_vectorAngled_Z);
+        //vec3d = entity.getPositionEyes(partialTicks).add(((float)screen_X_mouse )/ 115.0f, 15, ((float) screen_Z_mouse) / 115.0f);
+        Vec3d vec3d2 = vec3d.add(cursor_vectorAngled_X, cursor_vectorAngled_Y, cursor_vectorAngled_Z);
 
         calculateViewMiddlePointVector(half_screen_width,half_screen_height,cameraAngle_X,cameraAngle_Y,entity,partialTicks);
 
@@ -603,12 +602,12 @@ public class ModEntity
             if(vec3d.y < pos.getY()+2)
             {
                 Vec3d unit = (vec3d2.subtract(vec3d).normalize());
-                posPlane = posPlane.addVector(0,-2 - (unit.y),0);
+                posPlane = posPlane.add(0,-2 - (unit.y),0);
             }
             else
             {
                 Vec3d unit = (vec3d.subtract(vec3d2).normalize());
-                posPlane = posPlane.addVector(0,(unit.y),0);
+                posPlane = posPlane.add(0,(unit.y),0);
             }
 
             

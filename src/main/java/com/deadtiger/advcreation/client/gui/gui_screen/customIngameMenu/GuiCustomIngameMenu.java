@@ -16,7 +16,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameType;
 import net.minecraftforge.client.event.GuiScreenEvent;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GuiCustomIngameMenu

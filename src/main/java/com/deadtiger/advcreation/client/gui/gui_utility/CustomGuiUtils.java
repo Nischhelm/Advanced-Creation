@@ -32,10 +32,14 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.*;
-import java.util.*;
-
-import static net.minecraftforge.fml.client.config.GuiUtils.drawHoveringText;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CustomGuiUtils
 {
@@ -320,7 +324,7 @@ public class CustomGuiUtils
     //get icon for a template
     public static ResourceLocation getResourceLocationsByName(Template template,EnumFacing face, boolean selected)
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
         
         if (!saves.exists()) {
@@ -374,7 +378,7 @@ public class CustomGuiUtils
     
     public static boolean delectIcons(String templateName)
     {
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "advcreation_templates");
     
         if(!saves.exists())

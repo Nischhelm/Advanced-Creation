@@ -6,19 +6,18 @@ import com.deadtiger.advcreation.build_mode.utility.ExtremaXYZ;
 import com.deadtiger.advcreation.build_mode.utility.FillVector;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
-import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.client.render.RenderTemplate;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.utility.PlacementHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class RectangleToolMode extends BaseToolMode
 {
@@ -54,7 +53,7 @@ public class RectangleToolMode extends BaseToolMode
     public void updateBlocksRightClick1(TemplateBlock endGlobalblock, Vec3d hitVec, Vec3d newStartVec)
     {
         normalHitPos = new BlockPos(BuildMode.END_VEC);
-        BuildMode.END_VEC = BuildMode.END_VEC.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+        BuildMode.END_VEC = BuildMode.END_VEC.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
         BlockPos offsetPos = new BlockPos( BuildMode.END_VEC);
         this.addPositionToGuiOverlay(offsetPos);
 //        GuiOverlayManager.setPlacePointedCoordinate(normalHitPos);
@@ -78,7 +77,7 @@ public class RectangleToolMode extends BaseToolMode
     public void updateBlocksRightClick2(TemplateBlock endGlobalblock, Vec3d hitVec, Vec3d newStartVec)
     {
         normalHitPos = new BlockPos(BuildMode.END_VEC);
-        BuildMode.END_VEC = BuildMode.END_VEC.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+        BuildMode.END_VEC = BuildMode.END_VEC.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
         BlockPos offsetPos = new BlockPos( BuildMode.END_VEC);
         this.addPositionToGuiOverlay(offsetPos);
 //        GuiOverlayManager.setPlacePointedCoordinate(normalHitPos);
@@ -99,7 +98,7 @@ public class RectangleToolMode extends BaseToolMode
             //copy the side lines for each block of the bottom line
             for (int i = 0; i < bottom.size(); i++)
             {
-                correctBottom = bottom.get(i).addVector(0.5,0.5,0.5);
+                correctBottom = bottom.get(i).add(0.5,0.5,0.5);
                 addRectVector(correctBottom, newLineVec, blockDict);
             }
             //detect and close any holes in the resulting plane
@@ -323,8 +322,8 @@ public class RectangleToolMode extends BaseToolMode
         //unit vec and the number of times to iterate
         double scale = 0.25;
         Vec3d unitVector = toAddVec1.normalize().scale(scale);
-        double lenght = toAddVec1.lengthVector();
-        int times = (int) Math.ceil(lenght / (unitVector.lengthVector()));
+        double lenght = toAddVec1.length();
+        int times = (int) Math.ceil(lenght / (unitVector.length()));
         //variables that are used in the loop
         Vec3d stepsTo = new Vec3d(0, 0, 0);
         BlockPos currPosition = new BlockPos(BuildMode.START_BLOCK.getBlockPos());
@@ -339,7 +338,7 @@ public class RectangleToolMode extends BaseToolMode
             boolean changePrevPrev = false;
             Vec3d checkStepsTo = stepsTo.add(unitVector);
             //if the new vector is to long half the unitVector once and see if it fits
-            if(checkStepsTo.lengthVector() <= lenght)
+            if(checkStepsTo.length() <= lenght)
             {
                 stepsTo = checkStepsTo;
             }
@@ -349,7 +348,7 @@ public class RectangleToolMode extends BaseToolMode
                 stepsTo = stepsTo.add(unitVector);
             }
             toAddVec1.normalize().scale(0.25);
-            if(stepsTo.lengthVector() <= lenght)
+            if(stepsTo.length() <= lenght)
             {
                 newVec = startVec.add(stepsTo);
                 currPosition = new BlockPos(newVec);
@@ -409,8 +408,8 @@ public class RectangleToolMode extends BaseToolMode
         //unit vec and the number of times to iterate
         double scale = 0.25;
         Vec3d unitVector = toAddVec1.normalize().scale(scale);
-        double lenght = toAddVec1.lengthVector();
-        int times = (int) Math.ceil(lenght / (unitVector.lengthVector()));
+        double lenght = toAddVec1.length();
+        int times = (int) Math.ceil(lenght / (unitVector.length()));
 
         //variables that are used in the loop
         Vec3d stepsTo = new Vec3d(0, 0, 0);
@@ -426,7 +425,7 @@ public class RectangleToolMode extends BaseToolMode
             boolean changePrevPrev = false;
             Vec3d checkStepsTo = stepsTo.add(unitVector);
             //if the new vector is to long half the unitVector once and see if it fits
-            if(checkStepsTo.lengthVector() <= lenght)
+            if(checkStepsTo.length() <= lenght)
             {
                 stepsTo = checkStepsTo;
             }
@@ -436,7 +435,7 @@ public class RectangleToolMode extends BaseToolMode
                 stepsTo = stepsTo.add(unitVector);
             }
             toAddVec1.normalize().scale(0.25);
-            if(stepsTo.lengthVector() <= lenght)
+            if(stepsTo.length() <= lenght)
             {
                 newVec = startVec.add(stepsTo);
                 currPosition = new BlockPos(newVec);

@@ -6,14 +6,14 @@ import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_template.BuildTemplateMode;
 import com.deadtiger.advcreation.client.FpsOptimiser;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
+import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.*;
 import com.deadtiger.advcreation.client.gui.gui_screen.absoluteCoordScreen.AbsoluteCoordScreen;
+import com.deadtiger.advcreation.client.gui.gui_screen.helpScreen.GuiHelpScreenVisual;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
+import com.deadtiger.advcreation.client.input.Keybindings;
 import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
-import com.deadtiger.advcreation.client.input.Keybindings;
-import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.*;
-import com.deadtiger.advcreation.client.gui.gui_screen.helpScreen.GuiHelpScreenVisual;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntityRenderer;
 import com.deadtiger.advcreation.reference.Reference;
 import net.minecraft.client.Minecraft;
@@ -22,7 +22,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.client.config.GuiUtils;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -420,7 +419,7 @@ public class MainModeGuiOverlay extends AbstractGuiOverlay
                 // some code as test to change the position of the placePointedCoordinate on screen to the new offset position
 //                Vec3d offsetVec= new Vec3d(offsetBlockPos.getX(),offsetBlockPos.getY(),offsetBlockPos.getY());
 //                Vec3d cursorOffset = Vec3d.ZERO;
-//                if(offsetVec.lengthVector() >= 1.0)
+//                if(offsetVec.length() >= 1.0)
 //                    cursorOffset = IsometricCamera.CAMERA_LOOK_VECTOR.crossProduct(offsetVec.normalize());
 
 //                int placedPointedTextPosX = x_resized + (int) (cursorOffset.z*width);

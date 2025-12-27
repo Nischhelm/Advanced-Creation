@@ -76,7 +76,7 @@ public class ClientProxy extends CommonProxy
         //to make sure the temp files for the gifs in the helpscreen are deleted
         Runtime.getRuntime().addShutdownHook(new Thread( new deleteGifResources() ));
 
-        BlockBlackListManager.initialiseBlackList( new File(Minecraft.getMinecraft().mcDataDir, BlockBlackListManager.BLACKLIST_FILENAME));
+        BlockBlackListManager.initialiseBlackList( new File(Minecraft.getMinecraft().gameDir, BlockBlackListManager.BLACKLIST_FILENAME));
 
 
     }

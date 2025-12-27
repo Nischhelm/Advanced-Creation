@@ -2,6 +2,7 @@ package com.deadtiger.advcreation.client.player;
 
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.mixin.accessor.EntityPlayerSPAccessor;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntityRenderer;
 import com.deadtiger.advcreation.plugin.modded_classes.ModMouseHelper;
 import com.deadtiger.advcreation.utility.PlacementHelper;
@@ -138,7 +139,7 @@ public class IsometricMovement
         forceFlying(player);
         //###  never sprint ###
 //        TODO: I'm not sure if this is the right replacement for sprintToggleTimer
-        player.sprintToggleTimer = 7;
+        ((EntityPlayerSPAccessor) player).setSprintToggleTimer(7);
         player.setSprinting(false);
 
         //if the sprint key is pressed I will unpress it

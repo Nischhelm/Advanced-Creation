@@ -5,20 +5,19 @@ import com.deadtiger.advcreation.build_mode.utility.EnumFillMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumPosOrder;
 import com.deadtiger.advcreation.build_mode.utility.FillVector;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
+import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
+import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.template.TemplateBlock;
-import com.deadtiger.advcreation.client.render.RenderTemplate;
-import com.deadtiger.advcreation.client.render.RenderPreview;
-import com.deadtiger.advcreation.utility.shape_creator.CircleCreator;
 import com.deadtiger.advcreation.utility.PlacementHelper;
+import com.deadtiger.advcreation.utility.shape_creator.CircleCreator;
 import net.minecraft.block.BlockAir;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import scala.reflect.internal.Trees;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,7 +60,7 @@ public class CircleToolMode extends BaseToolMode
         
         //the initial radiusVec
         Vec3d radiusVec = BuildMode.LINE_VEC;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
     
         //constraining the max radius(difflenght)
         if (radiusLength > ConfigurationHandler.toolConfig.CIRCLE_MAX_RADIUS) {
@@ -128,7 +127,7 @@ public class CircleToolMode extends BaseToolMode
 
         for (Vec3d vec: blockDict.keySet())
         {
-            Vec3d blockMiddleVec = vec.addVector(0.5,0.5,0.5);
+            Vec3d blockMiddleVec = vec.add(0.5,0.5,0.5);
             double s = newStartVec.distanceTo(blockMiddleVec);
             double a = newStartVec.z - blockMiddleVec.z;
             double angle = Math.acos(a/s);

@@ -1,6 +1,5 @@
 package com.deadtiger.advcreation.edit_mode.adjust_modes;
 
-import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
 import com.deadtiger.advcreation.build_mode.utility.ExtremaXYZ;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
@@ -17,7 +16,6 @@ import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.utility.PlacementHelper;
 import com.deadtiger.advcreation.utility.shape_creator.BaseShapeCreator;
 import com.deadtiger.advcreation.utility.shape_creator.CircleRectangleCreator;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockLog;
@@ -185,7 +183,7 @@ public class SmoothAdjustMode extends BaseAdjustMode
         //the initial radiusVec
         Vec3d radiusVec = new Vec3d(radius, 0, 0);
         EditMode.LINEVEC = radiusVec;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
 
         // Jumps to one of the nice circles in the middleCircleDict when the length is of the radius is close to it
         // These are recorded in the XZ plane and are transformed to other planes when necessary

@@ -112,7 +112,7 @@ public class MP4Decoder
         }
         frameCount = frames.size();
 
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File saves = new File(mcDataDir, "mp4Files");
         ensureDirectoryExists(saves);
         File file = new File(saves,name + ".txt");

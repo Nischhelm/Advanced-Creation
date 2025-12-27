@@ -97,7 +97,7 @@ public class IsometricCamera
 //                dir = -1;
 //
 //
-//            float extraDistanceLength = (float) (dir * extraDistance.lengthVector());
+//            float extraDistanceLength = (float) (dir * extraDistance.length());
 //
 //            double newDistance = extraDistanceLength + ModEntityRenderer.customCameraDistance;
 //            double scaledZoom = ZOOMING* scaling;
@@ -162,7 +162,7 @@ public class IsometricCamera
             Vec3d  refMoveVec = new Vec3d (newPos.x - playerPos.x, newPos.y -  playerPos.y, newPos.z -  playerPos.z);
 
             //if the distance between the current focuspoint and the current zoom in point is less then 0.5 block don't bother moving the camera focus point
-            if(refMoveVec.lengthVector() > 0.5)
+            if(refMoveVec.length() > 0.5)
             {
                 double scaledZoom = ZOOMING* scaling;
 
@@ -175,10 +175,10 @@ public class IsometricCamera
                 double pointDistance = newPos.distanceTo(entityplayer.getPositionEyes(ClientEventHandler.renderTickTime).add(IsometricCamera.FOCUS_POINT_TO_SCREEN_MIDDLE));
 
                 //move distance as scaled verison of the ratio between distance from camera to zoompoint and distance from camera focus point to zoom point
-                double relativeMoveDistance = (refMoveVec.lengthVector()*(scaledZoom/pointDistance))*1.5;
+                double relativeMoveDistance = (refMoveVec.length()*(scaledZoom/pointDistance))*1.5;
                 //move distance as fraction of the distance from camera focus point to zoom point
                 if(!HAS_ZOOMED)
-                    INTIAL_TOTAL_MOVE_DISTANCE = refMoveVec.lengthVector();
+                    INTIAL_TOTAL_MOVE_DISTANCE = refMoveVec.length();
                 double partialMoveDistance = INTIAL_TOTAL_MOVE_DISTANCE/5;
                 //take which ever one is the fastest
                 double moveDistance = relativeMoveDistance;
@@ -187,10 +187,10 @@ public class IsometricCamera
 //                    DebugInfo.debugPrint("1. partialMoveDistance is higher, partial: " + String.format("%,.4f",partialMoveDistance) + " relative: " + String.format("%,.4f",relativeMoveDistance) );
                     moveDistance = partialMoveDistance;
                     //to minimize overshoot for when the partialMoveDistance is way too fast for the distance that needs to be traveled
-                    if(partialMoveDistance*1.5 > refMoveVec.lengthVector())
+                    if(partialMoveDistance*1.5 > refMoveVec.length())
                     {
                         INTIAL_TOTAL_MOVE_DISTANCE = INTIAL_TOTAL_MOVE_DISTANCE/2;
-                        moveDistance = relativeMoveDistance*(INTIAL_TOTAL_MOVE_DISTANCE/refMoveVec.lengthVector());
+                        moveDistance = relativeMoveDistance*(INTIAL_TOTAL_MOVE_DISTANCE/refMoveVec.length());
                     }
 
                 }
@@ -210,12 +210,12 @@ public class IsometricCamera
                 }
 
                 //if the zoom position you are zooming too is closer to the playerPos then the calculated moveVector directly move to the zoom pos
-                if(refMoveVec.lengthVector() > moveVector.lengthVector())
+                if(refMoveVec.length() > moveVector.length())
                     newPos = entityplayer.getPositionVector().add(moveVector);
                 else
                 {
 //                    DebugInfo.debugPrint("3. moveVector.lenght is longer then refMoveVec.lenght() " + newPos);
-                    newPos = CURR_ZOOM_IN_VEC.add(focuspointToCamera.normalize().scale(1)).addVector(0,-entityplayer.getEyeHeight(),0);
+                    newPos = CURR_ZOOM_IN_VEC.add(focuspointToCamera.normalize().scale(1)).add(0,-entityplayer.getEyeHeight(),0);
 //                    DebugInfo.debugPrint("3.5 newPos is changed to " + newPos);
                 }
 

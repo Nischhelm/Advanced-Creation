@@ -2,7 +2,6 @@ package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
-import org.jcodec.common.io.NIOUtils;
 
 public class GuiFreeToggleButton extends GuiFreeButton
 {

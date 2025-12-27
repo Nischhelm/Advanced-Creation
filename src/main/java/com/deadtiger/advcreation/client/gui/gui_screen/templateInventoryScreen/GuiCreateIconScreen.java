@@ -2,8 +2,8 @@ package com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen;
 
 import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiBigTemplateButton;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
-import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.reference.Reference;
+import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateManager;
 import com.deadtiger.advcreation.utility.IconMaker;
 import net.minecraft.client.Minecraft;
@@ -155,7 +155,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setHovered(false);
                 yCoord = mc.displayHeight-240-(270-offset);
                 if(j-1>= 0)
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
 
 
                 if(j<listOfTemplates.size())
@@ -181,7 +181,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setOverRideHover(true);
                 templateButton.setHovered(false);
                 if(j-1>= 0)
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
         
                 if(j<listOfTemplates.size())
                 {
@@ -202,7 +202,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setOverRideHover(true);
                 templateButton.setHovered(false);
                 if(j-1>= 0)
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
         
                 if(j<listOfTemplates.size())
                 {
@@ -223,7 +223,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setOverRideHover(true);
                 templateButton.setHovered(false);
                 if(j-1>= 0)
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),false, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
         
                 if(j<listOfTemplates.size())
                 {
@@ -244,7 +244,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setOverRideHover(true);
                 templateButton.setHovered(true);
                 if(j-1>= 0)
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
         
                 if(j<listOfTemplates.size())
                 {
@@ -265,7 +265,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setOverRideHover(true);
                 templateButton.setHovered(true);
                 if(j-1>= 0)
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
         
                 if(j<listOfTemplates.size())
                 {
@@ -287,7 +287,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setHovered(true);
                 if(j-1>= 0)
                 {
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
                     listOfTemplates.get(j-1).calculatedProperties = false;
                     listOfTemplates.get(j-1).tryCalculateProperties();
                     listOfTemplates.get(j-1).createOnlyPropertiesFile();
@@ -313,7 +313,7 @@ public class GuiCreateIconScreen extends GuiScreen
                 templateButton.setHovered(true);
                 if(j-1>= 0)
                 {
-                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.mcDataDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
+                    bufferedimage = IconMaker.saveScreenshot(listOfTemplates.get(j-1),true, mc.gameDir,0,yCoord,guiScreenWidth+offset_size,guiScreenWidth+offset_size, 0,0,mc.getFramebuffer(),bufferedimage,true);
 //                    listOfTemplates.get(j-1).tryCalculateProperties();
 //                    listOfTemplates.get(j-1).createOnlyPropertiesFile();
                     listOfTemplates.get(j-1).zipTemplate();
@@ -356,7 +356,7 @@ public class GuiCreateIconScreen extends GuiScreen
                     Display.setResizable(false);
                     Display.setResizable(true);
                 }
-                File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+                File mcDataDir = Minecraft.getMinecraft().gameDir;
                 File saves = new File(mcDataDir,"advcreation_templates");
 
 

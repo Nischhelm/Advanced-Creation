@@ -1,7 +1,6 @@
 package com.deadtiger.advcreation.itemblock;
 
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;

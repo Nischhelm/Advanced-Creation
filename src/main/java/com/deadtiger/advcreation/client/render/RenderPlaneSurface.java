@@ -1,11 +1,9 @@
 package com.deadtiger.advcreation.client.render;
 
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
-import com.deadtiger.advcreation.client.render.RenderTemplate;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.player.EntityPlayer;

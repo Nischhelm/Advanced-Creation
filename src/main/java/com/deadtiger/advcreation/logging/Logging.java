@@ -7,13 +7,13 @@ import com.deadtiger.advcreation.build_mode.tool_mode.BaseToolMode;
 import com.deadtiger.advcreation.build_template.BuildTemplateMode;
 import com.deadtiger.advcreation.build_template.TemplateBuildingMode;
 import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplaceInventoryScreenFunctionality;
-import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
 import com.deadtiger.advcreation.client.input.Keybindings;
-import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import com.deadtiger.advcreation.network.message.MessageLogToServer;
-import com.deadtiger.advcreation.network.NetworkHandler;
 import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.edit_mode.adjust_modes.BaseAdjustMode;
+import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.network.NetworkHandler;
+import com.deadtiger.advcreation.network.message.MessageLogToServer;
+import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
 import com.deadtiger.advcreation.template.TemplateManager;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.relauncher.Side;
@@ -44,7 +44,7 @@ public class Logging
         TIME = LocalDateTime.now(ZoneId.systemDefault());
         PREV_LOGTIME = System.currentTimeMillis();
 
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         MOD_LOGS_DIR = new File(mcDataDir, "mod_logs");
 
     }

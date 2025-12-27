@@ -2,7 +2,6 @@ package com.deadtiger.advcreation.client.gui.gui_screen.helpScreen.pages;
 
 import com.deadtiger.advcreation.client.input.Keybindings;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.util.text.TextFormatting;
 
 public class AbsoluteCoordPage extends AbstractPage
 {

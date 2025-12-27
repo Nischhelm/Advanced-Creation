@@ -7,10 +7,10 @@ import com.deadtiger.advcreation.build_mode.tool_mode.CopyPasteToolMode;
 import com.deadtiger.advcreation.build_mode.tool_mode.MoveToolMode;
 import com.deadtiger.advcreation.build_template.BuildTemplateMode;
 import com.deadtiger.advcreation.build_template.TemplateBuildingMode;
-import com.deadtiger.advcreation.client.gui.gui_screen.warningScreen.GuiWarningScreenFactory;
-import com.deadtiger.advcreation.client.input.Keybindings;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.*;
 import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplaceInventoryScreenFunctionality;
+import com.deadtiger.advcreation.client.gui.gui_screen.warningScreen.GuiWarningScreenFactory;
+import com.deadtiger.advcreation.client.input.Keybindings;
 import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.reference.Reference;
@@ -422,7 +422,7 @@ public class SelectInventoryItemGuiOverlay extends AbstractGuiOverlay
     {
         if (!this.mc.playerController.isSpectator())
         {
-            mc.mcProfiler.startSection("toolHighlight");
+            mc.profiler.startSection("toolHighlight");
 
             if (this.remainingHighlightTicks > 0 && !this.highlightingItemStack.isEmpty())
             {
@@ -461,7 +461,7 @@ public class SelectInventoryItemGuiOverlay extends AbstractGuiOverlay
                 }
             }
 
-            mc.mcProfiler.endSection();
+            mc.profiler.endSection();
         }
 
     }

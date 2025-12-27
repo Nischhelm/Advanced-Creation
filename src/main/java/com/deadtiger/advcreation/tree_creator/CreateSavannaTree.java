@@ -1,7 +1,10 @@
 package com.deadtiger.advcreation.tree_creator;
 
 import com.deadtiger.advcreation.template.TemplateBlock;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockNewLeaf;
+import net.minecraft.block.BlockNewLog;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -74,8 +77,8 @@ public class CreateSavannaTree extends CreateAbstrTree
                     k3 = position.getY() + l1;
                     if (l1 >= k2 && l2 > 0)
                     {
-                        i3 += enumfacing.getFrontOffsetX();
-                        j1 += enumfacing.getFrontOffsetZ();
+                        i3 += enumfacing.getXOffset();
+                        j1 += enumfacing.getZOffset();
                         --l2;
                     }
 
@@ -127,8 +130,8 @@ public class CreateSavannaTree extends CreateAbstrTree
                         if (l4 >= 1)
                         {
                             j5 = position.getY() + l4;
-                            i3 += enumfacing1.getFrontOffsetX();
-                            j1 += enumfacing1.getFrontOffsetZ();
+                            i3 += enumfacing1.getXOffset();
+                            j1 += enumfacing1.getZOffset();
                             BlockPos blockpos1 = new BlockPos(i3, j5, j1);
                             this.placeLogAt(worldIn, blockpos1, blockList);
                             k1 = j5;

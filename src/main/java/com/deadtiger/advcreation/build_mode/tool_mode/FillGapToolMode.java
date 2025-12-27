@@ -3,12 +3,11 @@ package com.deadtiger.advcreation.build_mode.tool_mode;
 import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
 import com.deadtiger.advcreation.client.player.IsometricCamera;
-import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
-import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
-import com.deadtiger.advcreation.template.TemplateBlock;
-import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.client.render.RenderPreview;
+import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
+import com.deadtiger.advcreation.client.render.RenderTemplate;
+import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.utility.PlacementHelper;
 import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockLiquid;
@@ -43,7 +42,7 @@ public class FillGapToolMode extends BaseToolMode
     public void addNewBlockRightClick0(TemplateBlock block, Vec3d hitVec, BlockPos hitBlockPos, EnumFacing face)
     {
 //        normalHitPos = block.getBlockPos();
-//        Vec3d newHitvec = hitVec.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+//        Vec3d newHitvec = hitVec.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
 //        TemplateBlock newBlock = new TemplateBlock(block.getFace(),block.getBlockPos().add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET),block.getBlockState());
 
         Vec3d newHitvec = hitVec;

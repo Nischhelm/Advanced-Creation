@@ -2,13 +2,13 @@ package com.deadtiger.advcreation.client.gui.gui_overlay;
 
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.EnumMainMode;
+import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.*;
+import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplaceInventoryScreenFunctionality;
+import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplateInventoryScreenSimple;
 import com.deadtiger.advcreation.client.gui.gui_screen.warningScreen.GuiWarningScreenFactory;
 import com.deadtiger.advcreation.client.input.Keybindings;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
-import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.*;
-import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplateInventoryScreenSimple;
-import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplaceInventoryScreenFunctionality;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateManager;

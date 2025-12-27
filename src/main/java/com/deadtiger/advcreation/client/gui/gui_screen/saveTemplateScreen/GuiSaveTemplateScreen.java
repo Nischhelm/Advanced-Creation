@@ -2,23 +2,17 @@ package com.deadtiger.advcreation.client.gui.gui_screen.saveTemplateScreen;
 
 import com.deadtiger.advcreation.AdvCreation;
 import com.deadtiger.advcreation.build_template.BuildTemplateMode;
+import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.*;
+import com.deadtiger.advcreation.client.gui.gui_screen.reportScreen.ReportScreen;
 import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
 import com.deadtiger.advcreation.client.input.KeyInputHandler;
 import com.deadtiger.advcreation.client.input.Keybindings;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiCustomWindow;
-import com.deadtiger.advcreation.client.gui.gui_screen.reportScreen.ReportScreen;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiFreeButton;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiTextFieldDropDown;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiTextFieldFillIn;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiTextFieldOption;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiBaseButton;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.report.Report;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Mouse;
 

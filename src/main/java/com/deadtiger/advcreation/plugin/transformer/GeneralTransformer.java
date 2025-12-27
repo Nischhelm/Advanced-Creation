@@ -7,9 +7,6 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.tree.*;
 
 import java.lang.reflect.Method;
-
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -774,24 +771,7 @@ public class GeneralTransformer implements IClassTransformer
     //Moved to EntityRendererMixin (2) class injecting allowIsometricView() into the orientCamera() method ");
     public static void allowThirdPersonView(ClassNode classNode, boolean isObfuscated)
     {
-        if(!GeneralTransformer.checkedLLibraryUsage)
-        {
-            System.out.println("Checking your mods for incompatibilities with Advanced Creation");
-            for (ModContainer mod : Loader.instance().getModList())
-            {
-                System.out.println("modid: " + mod.getModId());
-                if(mod.getModId().contains("llibrary"))
-                    GeneralTransformer.usingLLibrary =true;
-            }
-            GeneralTransformer.checkedLLibraryUsage = true;
-
-            if(GeneralTransformer.usingLLibrary)
-                System.out.println("you are using Llibrary, Advanced Creation will make the necessary adjustments");
-            else
-                System.out.println("you are NOT using Llibrary, Advanced Creation DOES NOT need to make any adjustments");
-        }
-
-
+        checkForLlibrary();
 
         final String ENTITY_COLLIDE = isObfuscated ? "f" : "orientCamera"; //good
         final String ENTITY_COLLIDE_DESC = isObfuscated ? "(F)V" : "(F)V";  //good
@@ -871,6 +851,25 @@ public class GeneralTransformer implements IClassTransformer
                     method.instructions.insertBefore(popNode, toInsert);
                 }
             }
+        }
+    }
+
+    public static void checkForLlibrary() {
+        if(!GeneralTransformer.checkedLLibraryUsage)
+        {
+            System.out.println("Checking your mods for incompatibilities with Advanced Creation");
+            for (ModContainer mod : Loader.instance().getModList())
+            {
+                System.out.println("modid: " + mod.getModId());
+                if(mod.getModId().contains("llibrary"))
+                    GeneralTransformer.usingLLibrary =true;
+            }
+            GeneralTransformer.checkedLLibraryUsage = true;
+
+            if(GeneralTransformer.usingLLibrary)
+                System.out.println("you are using Llibrary, Advanced Creation will make the necessary adjustments");
+            else
+                System.out.println("you are NOT using Llibrary, Advanced Creation DOES NOT need to make any adjustments");
         }
     }
 

@@ -1,6 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element;
 
-import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.util.ResourceLocation;
 

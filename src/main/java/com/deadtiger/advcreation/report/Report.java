@@ -89,7 +89,7 @@ public class Report
     {
         TIME = LocalDateTime.now(ZoneId.systemDefault());
         Minecraft mc =  Minecraft.getMinecraft();
-        File mod_reports = new File(mc.mcDataDir,"reports");
+        File mod_reports = new File(mc.gameDir,"reports");
         File mod_reports_player = new File(mod_reports,"reports_" + Minecraft.getMinecraft().player.getName());
         String dirName ="report_" + TIME.toString().replace('.','-').replace(':','-') ;
         SCREENSHOT_DIR = new File(mod_reports_player, dirName);

@@ -1,11 +1,8 @@
 package com.deadtiger.advcreation.proxy;
 
-import com.deadtiger.advcreation.utility.FakeWorld;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.model.ModelLoader;
 
 public abstract class CommonProxy implements IProxy

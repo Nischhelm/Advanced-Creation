@@ -1,15 +1,14 @@
 package com.deadtiger.advcreation.client.gui.gui_overlay;
 
-import com.deadtiger.advcreation.EnumMainMode;
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
-
-import com.deadtiger.advcreation.client.input.Keybindings;
-import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
+import com.deadtiger.advcreation.EnumMainMode;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayBaseElement;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayCustomButton;
 import com.deadtiger.advcreation.client.gui.gui_overlay.gui_overlay_element.GuiOverlayCustomWindow;
 import com.deadtiger.advcreation.client.gui.gui_screen.foundation_block_inventory_screen.FoundationBlockInventoryScreen;
+import com.deadtiger.advcreation.client.gui.gui_utility.CustomGuiUtils;
+import com.deadtiger.advcreation.client.input.Keybindings;
+import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
 import com.deadtiger.advcreation.reference.Reference;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.item.ItemStack;
@@ -17,8 +16,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 
 import static com.deadtiger.advcreation.place_template.PlaceTemplateMode.EnumAirMode.*;
-import static com.deadtiger.advcreation.place_template.PlaceTemplateMode.EnumWallMode.*;
 import static com.deadtiger.advcreation.place_template.PlaceTemplateMode.EnumFoundationMode.*;
+import static com.deadtiger.advcreation.place_template.PlaceTemplateMode.EnumWallMode.*;
 
 public class PlaceToolsGuiOverlay extends AbstractGuiOverlay
 {

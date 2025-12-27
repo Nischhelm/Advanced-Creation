@@ -1,21 +1,19 @@
 package com.deadtiger.advcreation.edit_mode.adjust_modes;
 
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
-import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
+import com.deadtiger.advcreation.client.render.RenderPreview;
+import com.deadtiger.advcreation.client.render.RenderTemplate;
+import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.template.TemplateBlock;
-import com.deadtiger.advcreation.client.render.RenderTemplate;
-import com.deadtiger.advcreation.client.render.RenderPreview;
-import com.deadtiger.advcreation.edit_mode.EditMode;
 import com.deadtiger.advcreation.tree_creator.CreateAbstrTree;
 import com.deadtiger.advcreation.undo_actions.Action;
-import com.deadtiger.advcreation.utility.FakeWorld;
 import com.deadtiger.advcreation.utility.PlacementHelper;
 import com.deadtiger.advcreation.utility.shape_creator.CircleCreator;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -153,7 +151,7 @@ public class PlantAdjustMode extends BaseAdjustMode
         //the initial radiusVec
         Vec3d radiusVec = new Vec3d(radius,0,0);
         EditMode.LINEVEC = radiusVec;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
 
         //constraining the max radius
         if (radiusLength > 50.0) {
@@ -472,7 +470,7 @@ public class PlantAdjustMode extends BaseAdjustMode
                 if(handBlockState.getBlock() instanceof BlockDoublePlant)
                 {
                     int faceId = AdvCreation.rand.nextInt(3);
-                    handBlockState = handBlockState.withProperty(BlockDoublePlant.FACING,  EnumFacing.getHorizontal(faceId));
+                    handBlockState = handBlockState.withProperty(BlockDoublePlant.FACING,  EnumFacing.byHorizontalIndex(faceId));
 
 
 

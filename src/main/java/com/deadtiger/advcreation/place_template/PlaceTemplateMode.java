@@ -1,24 +1,23 @@
 package com.deadtiger.advcreation.place_template;
 
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.EnumMainMode;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
 import com.deadtiger.advcreation.client.gui.gui_screen.templateInventoryScreen.GuiTemplaceInventoryScreenFunctionality;
+import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
 import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
+import com.deadtiger.advcreation.network.NetworkHandler;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.network.message.MessagePlaceTemplateBlock;
-import com.deadtiger.advcreation.network.NetworkHandler;
 import com.deadtiger.advcreation.network.network_utility.ByteBufCustomUtils;
-import com.deadtiger.advcreation.utility.CursorVector;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
-import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.template.TemplateManager;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.undo_actions.UndoFunctionality;
+import com.deadtiger.advcreation.utility.CursorVector;
 import com.deadtiger.advcreation.utility.TileEntityPlacementHelper;
 import com.deadtiger.advcreation.utility.VecTransformer;
 import net.minecraft.block.BlockTorch;
@@ -34,10 +33,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.network.play.server.SPacketBlockChange;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.*;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -474,7 +473,7 @@ public class PlaceTemplateMode
 
             if (flag)
             {
-                iblockstate.getBlock().onBlockDestroyedByPlayer(playerMP.world, offset, iblockstate);
+                iblockstate.getBlock().onPlayerDestroy(playerMP.world, offset, iblockstate);
             }
             playerMP.connection.sendPacket(new SPacketBlockChange(playerMP.world, offset));
         }
@@ -811,7 +810,7 @@ public class PlaceTemplateMode
         {
             TemplateBlock tempBlock = offsetRotatedBlockList.get(j);
 
-            if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+            if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
                 continue;
 
             hashcode += ~~RenderPreview.drawPreviewBlock(position, tempBlock, entityplayer, partialTicks,EnumFacing.UP);
@@ -843,7 +842,7 @@ public class PlaceTemplateMode
 //        {
 //            TemplateBlock tempBlock = template.getTempBlockOffset(j);
 //
-//            if (tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed())
+//            if (tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed())
 //                continue;
 //
 //
@@ -938,7 +937,7 @@ public class PlaceTemplateMode
 
     private static int drawPreviewBlockAndAddToBlockPosList( Template template, BlockPos position, TemplateBlock tempBlock, int x, int y, int z, EntityPlayer entityplayer, Float partialTicks, EnumFacing face, ArrayList<BlockPos> blockPosListToFill, int hashcode)
     {
-        if (!(tempBlock.getBlockState().getBlock().getUnlocalizedName().equals("tile.air") || tempBlock.isEnclosed()))
+        if (!(tempBlock.getBlockState().getBlock().getTranslationKey().equals("tile.air") || tempBlock.isEnclosed()))
         {
             if (blockPosListToFill != null)
                 blockPosListToFill.add(new BlockPos(x, y, z));

@@ -3,19 +3,19 @@ package com.deadtiger.advcreation;
 
 import com.deadtiger.advcreation.block.ModBlocks;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
-import com.deadtiger.advcreation.handler.ConfigurationHandler;
-import com.deadtiger.advcreation.client.gui.gui_overlay.*;
+import com.deadtiger.advcreation.client.gui.gui_overlay.AbstractGuiOverlay;
 import com.deadtiger.advcreation.item.ModItems;
-import com.deadtiger.advcreation.network.*;
+import com.deadtiger.advcreation.network.NetworkHandler;
+import com.deadtiger.advcreation.network.NetworkManager;
 import com.deadtiger.advcreation.proxy.IProxy;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.utility.LogHelper;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.*;
-import net.minecraft.util.math.*;
+import net.minecraft.item.Item;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.client.GuiIngameForge;
-import net.minecraftforge.client.event.*;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -24,7 +24,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Random;
 
 //@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)

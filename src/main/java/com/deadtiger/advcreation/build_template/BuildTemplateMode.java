@@ -1,12 +1,12 @@
 package com.deadtiger.advcreation.build_template;
 
 import com.deadtiger.advcreation.AdvCreation;
-import com.deadtiger.advcreation.client.render.RenderBlockHighlighting;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
 import com.deadtiger.advcreation.client.player.IsometricCamera;
+import com.deadtiger.advcreation.client.render.RenderBlockHighlighting;
+import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
-import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.reference.Reference;
 import com.deadtiger.advcreation.template.Template;
 import com.deadtiger.advcreation.template.TemplateManager;

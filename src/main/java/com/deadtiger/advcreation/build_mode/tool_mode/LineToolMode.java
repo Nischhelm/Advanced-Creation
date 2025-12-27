@@ -25,7 +25,7 @@ public class LineToolMode extends BaseToolMode
         try
         {
             normalHitPos = new BlockPos(newStartVec.add(BuildMode.LINE_VEC));
-            BuildMode.LINE_VEC = BuildMode.LINE_VEC.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+            BuildMode.LINE_VEC = BuildMode.LINE_VEC.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
             drawBlockLine(newStartVec, BuildMode.LINE_VEC);
 
             //make sure you can put one block with the line tool

@@ -3,12 +3,9 @@ package com.deadtiger.advcreation.utility;
 import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
 import com.deadtiger.advcreation.build_template.BuildTemplateMode;
-import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-
-import static com.deadtiger.advcreation.utility.PlacementHelper.parseVec;
 
 public class VecTransformer
 {

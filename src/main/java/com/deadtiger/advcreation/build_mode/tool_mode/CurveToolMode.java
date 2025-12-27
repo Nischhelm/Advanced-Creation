@@ -4,10 +4,9 @@ import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumPosOrder;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
-import com.deadtiger.advcreation.client.render.RenderPreview;
 import com.deadtiger.advcreation.client.render.RenderSelectionHighlight;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.client.render.RenderTemplate;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.utility.PlacementHelper;
 import net.minecraft.block.BlockRailBase;
 import net.minecraft.block.BlockRedstoneWire;
@@ -56,7 +55,7 @@ public class CurveToolMode extends BaseToolMode
     public void updateBlocksRightClick1(TemplateBlock endGlobalblock, Vec3d hitVec, Vec3d newStartVec)
     {
         normalHitPos = new BlockPos(BuildMode.START_VEC.add(BuildMode.LINE_VEC));
-        BuildMode.LINE_VEC = BuildMode.LINE_VEC.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+        BuildMode.LINE_VEC = BuildMode.LINE_VEC.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
         BuildMode.LAST_BLOCK = new BlockPos(BuildMode.START_VEC.add(BuildMode.LINE_VEC));
         this.addPositionToGuiOverlay(BuildMode.LAST_BLOCK);
 //        GuiOverlayManager.setPlacePointedCoordinate(normalHitPos);
@@ -72,7 +71,7 @@ public class CurveToolMode extends BaseToolMode
     public void updateBlocksRightClick2(TemplateBlock endGlobalblock, Vec3d hitVec, Vec3d newStartVec)
     {
         normalHitPos = new BlockPos(BuildMode.END_VEC);
-        BuildMode.LINE_VEC = BuildMode.LINE_VEC.addVector(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
+        BuildMode.LINE_VEC = BuildMode.LINE_VEC.add(BuildMode.MOUSE_X_OFFSET,BuildMode.MOUSE_Y_OFFSET,BuildMode.MOUSE_Z_OFFSET);
         BuildMode.LAST_BLOCK = new BlockPos(BuildMode.START_VEC.add(BuildMode.LINE_VEC));
 
         this.addPositionToGuiOverlay(BuildMode.LAST_BLOCK);
@@ -96,7 +95,7 @@ public class CurveToolMode extends BaseToolMode
 //            }
 //
 //            Vec3d diffVec = BuildMode.LINE_VEC;
-//            double diffLength = diffVec.lengthVector();
+//            double diffLength = diffVec.length();
 //            if(diffLength > 1.0)
 //            {
 //                int pointsToAdd =(int) Math.floor(diffLength/0.25);
@@ -113,7 +112,7 @@ public class CurveToolMode extends BaseToolMode
 //                    double addY = p1.y + Math.pow((1.0 - t),2)*(p0.y-p1.y) + Math.pow( t,2)*(p2.y-p1.y);
 //                    double addZ = p1.z + Math.pow((1.0 - t),2)*(p0.z-p1.z) + Math.pow( t,2)*(p2.z-p1.z);
 //
-//                    Vec3d newPoint = BuildMode.START_VEC.addVector(addX, addY, addZ);
+//                    Vec3d newPoint = BuildMode.START_VEC.add(addX, addY, addZ);
 //                    RenderTemplate.drawLine(previousPoint.x,previousPoint.y,previousPoint.z,newPoint.x,newPoint.y,newPoint.z,entityplayer,0,
 //                        partialTicks,BuildMode.RED,BuildMode.GREEN,BuildMode.BLUE);
 //                    previousPoint = newPoint;
@@ -149,7 +148,7 @@ public class CurveToolMode extends BaseToolMode
 
     private void drawCurve(Vec3d vecToP1, Vec3d vecToP2)
     {
-        if(vecToP1.lengthVector() > 1.0)
+        if(vecToP1.length() > 1.0)
         {
             BlockPos[] prevPositions = {null,null,null};//{previousPosition,previousPreviousPosition,lastCheckedPosition}
 
@@ -193,9 +192,9 @@ public class CurveToolMode extends BaseToolMode
         if (p1 == null || p2 == null)
             return positionsList;
 
-//        int pointsToAdd =(int) Math.floor(p1.lengthVector() /0.10);
+//        int pointsToAdd =(int) Math.floor(p1.length() /0.10);
 
-        int pointsToAdd =(int) Math.floor((p1.lengthVector()*Math.max(p2.lengthVector(),2))*multiplier);
+        int pointsToAdd =(int) Math.floor((p1.length()*Math.max(p2.length(),2))*multiplier);
         double step = 1.0/pointsToAdd;
 
         //calculating a bezier curve
@@ -210,7 +209,7 @@ public class CurveToolMode extends BaseToolMode
             double addY = p1.y + Math.pow((1.0 - t), 2) * (p0.y - p1.y) + Math.pow(t, 2) * (p2.y - p1.y);
             double addZ = p1.z + Math.pow((1.0 - t), 2) * (p0.z - p1.z) + Math.pow(t, 2) * (p2.z - p1.z);
 
-            Vec3d newPoint = BuildMode.START_VEC.addVector(addX, addY, addZ);
+            Vec3d newPoint = BuildMode.START_VEC.add(addX, addY, addZ);
             previewCurveHelpLineVecPoints.add(newPoint);
             if (BuildMode.START_BLOCK.getBlockState() != null && (BuildMode.START_BLOCK.getBlockState().getBlock() instanceof BlockRedstoneWire || BuildMode.START_BLOCK.getBlockState().getBlock() instanceof BlockRailBase) )
             {

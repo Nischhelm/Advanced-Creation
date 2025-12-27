@@ -1,7 +1,5 @@
 package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiCustomButton;
-
 public class GuiToggleButton extends GuiCustomButton
 {
     

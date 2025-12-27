@@ -2,7 +2,10 @@ package com.deadtiger.advcreation.tree_creator;
 
 
 import com.deadtiger.advcreation.template.TemplateBlock;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockNewLeaf;
+import net.minecraft.block.BlockNewLog;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -66,8 +69,8 @@ public class CreateCanopyTree extends CreateAbstrTree {
                     {
                         if (k3 >= i1 && j1 > 0)
                         {
-                            k1 += enumfacing.getFrontOffsetX();
-                            l1 += enumfacing.getFrontOffsetZ();
+                            k1 += enumfacing.getXOffset();
+                            l1 += enumfacing.getZOffset();
                             --j1;
                         }
 

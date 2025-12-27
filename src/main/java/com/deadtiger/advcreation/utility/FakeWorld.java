@@ -4,7 +4,6 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableSetMultimap;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCocoa;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.crash.CrashReport;
@@ -17,7 +16,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.profiler.Profiler;
 import net.minecraft.scoreboard.Scoreboard;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -225,13 +223,13 @@ public class FakeWorld extends World
     }
 
     @Override
-    public Chunk getChunkFromBlockCoords(BlockPos pos)
+    public Chunk getChunk(BlockPos pos)
     {
         return fakeChunk;
     }
 
     @Override
-    public Chunk getChunkFromChunkCoords(int chunkX, int chunkZ)
+    public Chunk getChunk(int chunkX, int chunkZ)
     {
         return fakeChunk;
     }
@@ -1104,7 +1102,7 @@ public class FakeWorld extends World
     }
 
     @Override
-    public int isBlockIndirectlyGettingPowered(BlockPos pos)
+    public int getRedstonePowerFromNeighbors(BlockPos pos)
     {
         return 0;
     }

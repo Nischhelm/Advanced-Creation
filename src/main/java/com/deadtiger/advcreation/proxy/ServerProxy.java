@@ -3,7 +3,6 @@ package com.deadtiger.advcreation.proxy;
 import com.deadtiger.advcreation.block_blacklist.BlockBlackListManager;
 import com.deadtiger.advcreation.handler.ServerConfigurationHandler;
 import com.deadtiger.advcreation.logging.LoggingServer;
-import com.deadtiger.advcreation.utility.FakeWorld;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;

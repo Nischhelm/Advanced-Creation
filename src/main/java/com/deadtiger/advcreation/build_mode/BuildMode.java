@@ -8,8 +8,8 @@ import com.deadtiger.advcreation.client.player.IsometricCamera;
 import com.deadtiger.advcreation.handler.ConfigurationHandler;
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.place_template.PlaceTemplateMode;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.utility.CursorVector;
 import com.deadtiger.advcreation.utility.MultiThreadLock;
@@ -22,11 +22,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import static com.deadtiger.advcreation.utility.PlacementHelper.isNotGroundMaterial;
 import static com.deadtiger.advcreation.utility.PlacementHelper.parseVec;
@@ -316,7 +318,7 @@ public class BuildMode {
 //        else
 //        {
 //            block.setBlockPos(block.getBlockPos().add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET));
-//            TOOLMODE.addNewBlock(block,hitVec.addVector(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET), hitBlockPos.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET),face);
+//            TOOLMODE.addNewBlock(block,hitVec.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET), hitBlockPos.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET),face);
 //        }
 
     }
@@ -501,7 +503,7 @@ public class BuildMode {
 
 //            TOOLMODE.normalHitPos = new BlockPos(END_VEC);
 
-//            END_VEC = END_VEC.addVector(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET);
+//            END_VEC = END_VEC.add(MOUSE_X_OFFSET,MOUSE_Y_OFFSET,MOUSE_Z_OFFSET);
             if(ConfigurationHandler.toolConfig.ALWAYS_SNAP_TO_BLOCK_CENTER)
                 END_VEC = parseVec(END_VEC);
             LINE_VEC = END_VEC.subtract(NEW_START_VEC);

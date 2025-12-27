@@ -11,7 +11,6 @@ import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
 import com.deadtiger.advcreation.undo_actions.UndoFunctionality;
 import com.deadtiger.advcreation.utility.PlacementHelper;
-
 import net.minecraft.block.BlockDynamicLiquid;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -23,7 +22,6 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 
 import java.util.*;
 

@@ -45,7 +45,7 @@ public class TemplateManager
      */
     public static void extractTemplateZips()
     {
-        File mcDataFolder = Minecraft.getMinecraft().mcDataDir;
+        File mcDataFolder = Minecraft.getMinecraft().gameDir;
         File zippedTemplateFolder = new File(mcDataFolder, "advcreation_templates_zips");
         File templatesFolder = new File(mcDataFolder, "advcreation_templates");
 
@@ -86,7 +86,7 @@ public class TemplateManager
     public static void loadTemplates()
     {
         TEMPLATES_LIST.clear();
-        File mcDataFolder = Minecraft.getMinecraft().mcDataDir;
+        File mcDataFolder = Minecraft.getMinecraft().gameDir;
         File templatesFolder = new File(mcDataFolder, "advcreation_templates");
         if (!templatesFolder.exists())
         {
@@ -305,7 +305,7 @@ public class TemplateManager
         template.tryCalculateProperties();
         template.writeTemplate();
 
-        File mcDataDir = Minecraft.getMinecraft().mcDataDir;
+        File mcDataDir = Minecraft.getMinecraft().gameDir;
         File folder = new File(mcDataDir, "advcreation_templates");
         File oldTemplateFolder = new File(folder, filename.split(".nbt")[0]);
         File newTemplateFolder = new File(folder, template.getDirname());

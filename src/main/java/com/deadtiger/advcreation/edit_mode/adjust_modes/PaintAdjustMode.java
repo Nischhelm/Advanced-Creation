@@ -1,18 +1,18 @@
 package com.deadtiger.advcreation.edit_mode.adjust_modes;
 
-import com.deadtiger.advcreation.build_mode.BuildMode;
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
-import com.deadtiger.advcreation.build_mode.utility.FillVector;
 import com.deadtiger.advcreation.build_mode.utility.HelpFunctions;
 import com.deadtiger.advcreation.client.gui.GuiOverlayManager;
-import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.client.render.RenderTemplate;
 import com.deadtiger.advcreation.edit_mode.EditMode;
+import com.deadtiger.advcreation.template.TemplateBlock;
 import com.deadtiger.advcreation.undo_actions.Action;
-import com.deadtiger.advcreation.utility.shape_creator.BaseShapeCreator;
 import com.deadtiger.advcreation.utility.PlacementHelper;
+import com.deadtiger.advcreation.utility.shape_creator.BaseShapeCreator;
 import com.deadtiger.advcreation.utility.shape_creator.CircleRectangleCreator;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockFence;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -122,7 +122,7 @@ public class PaintAdjustMode extends BaseAdjustMode
         //the initial radiusVec
         Vec3d radiusVec = new Vec3d(radius,0,0);
         EditMode.LINEVEC = radiusVec;
-        double radiusLength = radiusVec.lengthVector();
+        double radiusLength = radiusVec.length();
         
         // Jumps to one of the nice circles in the middleCircleDict when the length is of the radius is close to it
         // These are recorded in the XZ plane and are transformed to other planes when necessary

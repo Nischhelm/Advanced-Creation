@@ -5,6 +5,8 @@ import com.deadtiger.advcreation.client.player.IsometricCamera;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntity;
 import com.deadtiger.advcreation.plugin.modded_classes.ModEntityRenderer;
 import com.deadtiger.advcreation.plugin.transformer.GeneralTransformer;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -15,19 +17,20 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.ModContainer;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 
 @Mixin(EntityRenderer.class)
 public abstract class EntityRendererMixin
 {
+    @Shadow private float thirdPersonDistancePrev;
+    @Shadow private boolean cloudFog;
+
     static
     {
         System.out.println("loaded EntityRendererMixin (1) class redirecting isSpectator() to setSpectatorToTrue(...) in the renderWorldPass() method ");
@@ -40,37 +43,20 @@ public abstract class EntityRendererMixin
 
     }
 
-
-    @Redirect(method = "renderWorldPass(IFJ)V", at = @At(value = "INVOKE", target = "net/minecraft/client/entity/EntityPlayerSP.isSpectator()Z"))
-    public boolean setSpectatorToTrue(EntityPlayerSP entityPlayerSP)
+    //This mixin has no reason not to be compatible with other mods
+    @WrapOperation(method = "renderWorldPass(IFJ)V", at = @At(value = "INVOKE", target = "net/minecraft/client/entity/EntityPlayerSP.isSpectator()Z"))
+    public boolean setSpectatorToTrue(EntityPlayerSP entityPlayerSP, Operation<Boolean> original)
     {
 //        System.out.println("Successfully done the mixin in renderWorldPass(IFJ)V");
         if(IsometricCamera.isPlayerInIsometricPerspective())
             return true;
-        return entityPlayerSP.isSpectator();
+        return original.call(entityPlayerSP);
     }
 
-    @Inject(method = "orientCamera(F)V", at = @At(value = "HEAD"), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method = "orientCamera(F)V", at = @At(value = "HEAD"), cancellable = true)
     public void allowIsometricView(float partialTicks, CallbackInfo ci)
     {
-
-
-        if(!GeneralTransformer.checkedLLibraryUsage)
-        {
-            System.out.println("Checking your mods for incompatibilities with Advanced Creation");
-            for (ModContainer mod : Loader.instance().getModList())
-            {
-                System.out.println("modid: " + mod.getModId());
-                if(mod.getModId().contains("llibrary"))
-                    GeneralTransformer.usingLLibrary =true;
-            }
-            GeneralTransformer.checkedLLibraryUsage = true;
-
-            if(GeneralTransformer.usingLLibrary)
-                System.out.println("you are using Llibrary, Advanced Creation will make the necessary adjustments");
-            else
-                System.out.println("you are NOT using Llibrary, Advanced Creation DOES NOT need to make any adjustments");
-        }
+        GeneralTransformer.checkForLlibrary();
 
 //        System.out.println("Successfully done the mixin in orientCamera(F)V");
         if(IsometricCamera.isPlayerInIsometricPerspective())
@@ -81,9 +67,7 @@ public abstract class EntityRendererMixin
             double d1 = entity.prevPosY + (entity.posY - entity.prevPosY) * (double)partialTicks + (double)f;
             double d2 = entity.prevPosZ + (entity.posZ - entity.prevPosZ) * (double)partialTicks;
 
-            EntityRenderer thisRenderer = (EntityRenderer) (Object) this;
-
-            float thirdPersonDistancePrev = ((float) ObfuscationReflectionHelper.getPrivateValue(EntityRenderer.class,thisRenderer,"field_78491_C")); // thirdPersonDistancePrev
+            float thirdPersonDistancePrev = this.thirdPersonDistancePrev;
             float rotationYaw = entity.rotationYaw;
             float rotationPitch = entity.rotationPitch;
             ModEntityRenderer.changeThirdPersonToIsometricNoReturn(partialTicks,d0,d1,d2,thirdPersonDistancePrev,rotationYaw,rotationPitch);
@@ -102,7 +86,7 @@ public abstract class EntityRendererMixin
                     yaw = entityanimal.prevRotationYawHead + (entityanimal.rotationYawHead - entityanimal.prevRotationYawHead) * partialTicks + 180.0F;
                 }
                 IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(Minecraft.getMinecraft().world, entity, partialTicks);
-                net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup event = new net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup(thisRenderer, entity, state, partialTicks, yaw, pitch, roll);
+                net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup event = new net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup((EntityRenderer) (Object) this, entity, state, partialTicks, yaw, pitch, roll);
                 net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event);
                 GlStateManager.rotate(event.getRoll(), 0.0F, 0.0F, 1.0F);
                 GlStateManager.rotate(event.getPitch(), 1.0F, 0.0F, 0.0F);
@@ -114,11 +98,8 @@ public abstract class EntityRendererMixin
             d1 = entity.prevPosY + (entity.posY - entity.prevPosY) * (double)partialTicks + (double)f;
             d2 = entity.prevPosZ + (entity.posZ - entity.prevPosZ) * (double)partialTicks;
 
-            boolean cloudfog = Minecraft.getMinecraft().renderGlobal.hasCloudFog(d0, d1, d2, partialTicks);
-            ObfuscationReflectionHelper.setPrivateValue(EntityRenderer.class,thisRenderer,cloudfog,"field_78500_U"); //cloudFog
+            this.cloudFog = Minecraft.getMinecraft().renderGlobal.hasCloudFog(d0, d1, d2, partialTicks);
         }
-
-
     }
 
 // // This worked to edit the hardcoded 4.0 but not what I need I need more
@@ -166,40 +147,36 @@ public abstract class EntityRendererMixin
     @Inject(method = "updateRenderer()V", at = @At(value = "FIELD", target = "Lnet/minecraft/client/renderer/EntityRenderer;thirdPersonDistancePrev:F", opcode = Opcodes.PUTFIELD,shift = At.Shift.AFTER))
     public void setThirdPersonDistance(CallbackInfo ci)
     {
-        EntityRenderer thisRenderer = (EntityRenderer) (Object) this;
 //        System.out.println("Successfully done the mixin setThirdPersonDistance");
-
-        float newthirdPersonDistancePrev = ModEntityRenderer.getUpdateRendererCameraDistance();
-        ObfuscationReflectionHelper.setPrivateValue(EntityRenderer.class,thisRenderer,newthirdPersonDistancePrev,"field_78491_C"); //thirdPersonDistancePrev
-
+        this.thirdPersonDistancePrev = ModEntityRenderer.getUpdateRendererCameraDistance();
     }
 
-    @Redirect(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "net/minecraft/entity/Entity.rayTrace(DF)Lnet/minecraft/util/math/RayTraceResult;"))
-    public RayTraceResult customRaytrace(Entity entity, double blockReachDistance, float partialTicks)
+    @WrapOperation(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "net/minecraft/entity/Entity.rayTrace(DF)Lnet/minecraft/util/math/RayTraceResult;"))
+    public RayTraceResult customRaytrace(Entity entity, double blockReachDistance, float partialTicks, Operation<RayTraceResult> original)
     {
 //        System.out.println("Successfully done the mixin of customRaytrace in getMouseOver(F)V");
 
         return ModEntity.rayTrace(entity,blockReachDistance,partialTicks);
     }
 
-    @Redirect(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "net/minecraft/entity/Entity.getPositionEyes(F)Lnet/minecraft/util/math/Vec3d;"))
-    public Vec3d getCustomPositionEyes(Entity entity, float partialTicks)
+    @WrapOperation(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "net/minecraft/entity/Entity.getPositionEyes(F)Lnet/minecraft/util/math/Vec3d;"))
+    public Vec3d getCustomPositionEyes(Entity entity, float partialTicks, Operation<Vec3d> original)
     {
 //        System.out.println("Successfully done the mixin getCustomPositionEyes in getMouseOver(F)V");
 
         return ModEntityRenderer.getCurrStartCursorVector(entity, partialTicks);
     }
 
-    @Redirect(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "net/minecraft/util/math/Vec3d.addVector(DDD)Lnet/minecraft/util/math/Vec3d;"))
-    public Vec3d customVectorCalculation(Vec3d vec3d, double x, double y, double z)
+    @WrapOperation(method = "getMouseOver(F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;add(DDD)Lnet/minecraft/util/math/Vec3d;"))
+    public Vec3d customVectorCalculation(Vec3d vec3d, double x, double y, double z, Operation<Vec3d> original)
     {
 //        System.out.println("Successfully done the mixin customVectorCalculation in getMouseOver(F)V");
         Entity entity = Minecraft.getMinecraft().getRenderViewEntity();
         return ModEntityRenderer.getCurrCursorPointVector(vec3d,x,y,z,entity);
     }
 
-    @Redirect(method = "updateCameraAndRender(FJ)V", at = @At(value = "INVOKE", target = "net/minecraft/client/entity/EntityPlayerSP.turn(FF)V"),require = 2)
-    public void turnPlayerToCursor(EntityPlayerSP entityPlayerSP, float yaw, float pitch)
+    @WrapOperation(method = "updateCameraAndRender(FJ)V", at = @At(value = "INVOKE", target = "net/minecraft/client/entity/EntityPlayerSP.turn(FF)V"),require = 2)
+    public void turnPlayerToCursor(EntityPlayerSP entityPlayerSP, float yaw, float pitch, Operation<Void> original)
     {
 //        System.out.println("Successfully done the mixin turnPlayerToCursor in updateCameraAndRender(FJ)V");
         ModEntityRenderer.changePlayerRotation(entityPlayerSP,yaw,pitch, ClientEventHandler.renderTickTime);

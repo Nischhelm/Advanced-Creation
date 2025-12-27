@@ -2,7 +2,6 @@ package com.deadtiger.advcreation.client.gui.gui_screen.warningScreen;
 
 import com.deadtiger.advcreation.network.NetworkPlaceBlockListFormatter;
 import com.deadtiger.advcreation.undo_actions.UndoFunctionality;
-import net.minecraft.client.gui.GuiScreen;
 
 import java.util.function.Function;
 

@@ -1,7 +1,6 @@
 package com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements;
 
 import com.deadtiger.advcreation.build_mode.utility.EnumDirectionMode;
-import com.deadtiger.advcreation.client.gui.gui_screen.custom_gui_elements.GuiCustomButton;
 import com.deadtiger.advcreation.reference.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
